@@ -18,6 +18,7 @@ import CategoryDetailPage from "./screens/HomePage/CategoryDetailPage";
 import BookDetailModal from "./screens/SoultePage/SoulteDetail";
 import LugatDetailPage from "./screens/LogatPage/LugatDetailPage";
 import WritingTestsPage from "./screens/DiktantPage/WritingTestsPage";
+import GrammarDetailPage from "./screens/KoreanPage/GrammarDetailPage";
 
 function AppLayout() {
   const appBg = useColorModeValue("#f4faff", "#0b1220");
@@ -51,6 +52,7 @@ function AppLayout() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/soulte" element={<SoultePage />} />
+              <Route path="/soulte/:id" element={<GrammarDetailPage />} />
             <Route path="/grammar" element={<KoreanPage />} />
             <Route path="/lugat" element={<LogatPage />} />
             <Route path="/tests" element={<TestPage />} />
@@ -64,6 +66,7 @@ function AppLayout() {
             } } />} />
             <Route path="/lugat/:id" element={<LugatDetailPage />} />
             <Route path="/ssugi" element={<WritingTestsPage />} />
+              <Route path="/grammar/:id" element={<GrammarDetailPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Box>
