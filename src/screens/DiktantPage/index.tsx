@@ -1,10 +1,10 @@
 import { Stack } from "@chakra-ui/react"
-import Diktant from "./Diktant"
+import WritingTestsPage from "./WritingTestsPage"
 
 const DiktantPage = () => {
     return (
         <Stack>
-            <Diktant />
+            <WritingTestsPage />
         </Stack>
     )
 }

@@ -17,6 +17,7 @@ import FaqPage from "./screens/KopSalvolPage";
 import CategoryDetailPage from "./screens/HomePage/CategoryDetailPage";
 import BookDetailModal from "./screens/SoultePage/SoulteDetail";
 import LugatDetailPage from "./screens/LogatPage/LugatDetailPage";
+import WritingTestsPage from "./screens/DiktantPage/WritingTestsPage";
 
 function AppLayout() {
   const appBg = useColorModeValue("#f4faff", "#0b1220");
@@ -62,6 +63,7 @@ function AppLayout() {
               throw new Error("Function not implemented.");
             } } />} />
             <Route path="/lugat/:id" element={<LugatDetailPage />} />
+            <Route path="/ssugi" element={<WritingTestsPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Box>
