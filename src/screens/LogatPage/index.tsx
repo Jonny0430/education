@@ -1,10 +1,10 @@
 import { Stack } from "@chakra-ui/react"
-import Logat from "./Logat"
+import LugatListPage from "./LugatListPage"
 
 const LogatPage = () => {
     return (
         <Stack>
-            <Logat />
+            <LugatListPage />
         </Stack>
     )
 }

@@ -16,6 +16,7 @@ import NarxPage from "./screens/NarxPage";
 import FaqPage from "./screens/KopSalvolPage";
 import CategoryDetailPage from "./screens/HomePage/CategoryDetailPage";
 import BookDetailModal from "./screens/SoultePage/SoulteDetail";
+import LugatDetailPage from "./screens/LogatPage/LugatDetailPage";
 
 function AppLayout() {
   const appBg = useColorModeValue("#f4faff", "#0b1220");
@@ -60,6 +61,7 @@ function AppLayout() {
             <Route path="/books/:id" element={<BookDetailModal isOpen={false} onClose={function (): void {
               throw new Error("Function not implemented.");
             } } />} />
+            <Route path="/lugat/:id" element={<LugatDetailPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Box>

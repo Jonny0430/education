@@ -17,7 +17,7 @@ type Props = {
   book?: Book | null;
 };
 
-export default function BookDetail({ isOpen, onClose, book }: Props) {
+export default function BookDetailModal({ isOpen, onClose, book }: Props) {
   const [openLesson, setOpenLesson] = useState<Lesson | null>(null);
   if (!book) return null;
 
