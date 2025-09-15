@@ -15,7 +15,7 @@ import XabarPage from "./screens/XabarPage";
 import NarxPage from "./screens/NarxPage";
 import FaqPage from "./screens/KopSalvolPage";
 import CategoryDetailPage from "./screens/HomePage/CategoryDetailPage";
-import BookDetail from "./screens/SoultePage/SoulteDetail";
+import BookDetailModal from "./screens/SoultePage/SoulteDetail";
 
 function AppLayout() {
   const appBg = useColorModeValue("#f4faff", "#0b1220");
@@ -57,7 +57,9 @@ function AppLayout() {
             <Route path="/pricing" element={<NarxPage />} />
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/courses/:id" element={<CategoryDetailPage />} />
-            <Route path="/books/:id" element={<BookDetail />} />
+            <Route path="/books/:id" element={<BookDetailModal isOpen={false} onClose={function (): void {
+              throw new Error("Function not implemented.");
+            } } />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Box>
