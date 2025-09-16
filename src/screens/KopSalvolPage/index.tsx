@@ -1,10 +1,10 @@
 import { Stack } from "@chakra-ui/react"
-import Faq from "./Faq"
+import KoreanFAQ from "./KoreanFAQ"
 
 const FaqPage = () => {
     return (
         <Stack>
-            <Faq />
+            <KoreanFAQ />
         </Stack>
     )
 }
