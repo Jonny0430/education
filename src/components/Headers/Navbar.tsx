@@ -142,9 +142,13 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
             onClick={isOpen ? onClose : onOpen}
             display={{ base: "inline-flex", lg: "none" }}
           />
+          <a href="/">
+          {/* <Button> */}
           <Text fontWeight="bold" color={titleCl}>
-            Education
+               Education
           </Text>
+          {/* </Button> */}
+          </a>
         </HStack>
 
         {/* O‘ng tomonda: amallar */}
