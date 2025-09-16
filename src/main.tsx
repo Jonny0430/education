@@ -9,7 +9,7 @@ import "./index.css"
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react"
 import { BrowserRouter as Route } from "react-router"
 import { theme } from "./libs/theme";
-import { HubSpotScript } from "./hooks/HubSpotScript";
+// import { HubSpotChat } from "./hooks/HubSpotScript";
 
  const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement | DocumentFragment
@@ -22,7 +22,7 @@ import { HubSpotScript } from "./hooks/HubSpotScript";
         <ChakraProvider theme={theme}>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Route>
-            <HubSpotScript />
+            {/* <HubSpotChat  /> */}
             <App />
           </Route>
         </ChakraProvider>

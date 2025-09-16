@@ -19,6 +19,7 @@ import BookDetailModal from "./screens/SoultePage/SoulteDetail";
 import LugatDetailPage from "./screens/LogatPage/LugatDetailPage";
 import WritingTestsPage from "./screens/DiktantPage/WritingTestsPage";
 import GrammarDetailPage from "./screens/KoreanPage/GrammarDetailPage";
+import { HubSpotChat } from "./hooks/HubSpotScript";
 
 function AppLayout() {
   const appBg = useColorModeValue("#f4faff", "#0b1220");
@@ -84,6 +85,7 @@ export default function App() {
   return (
     <ChakraProvider theme={theme}>
       <AppLayout />
+       <HubSpotChat  />
     </ChakraProvider>
   );
 }
