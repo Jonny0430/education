@@ -200,7 +200,7 @@ export default function BookDetailDrawer({ isOpen, onClose, book }: Props) {
           </Stack>
         </DrawerBody>
 
-        <DrawerFooter fontFamily={'inter'}>
+        <DrawerFooter >
           <Text fontSize="xs" color="gray.500">© Seoulte Books</Text>
         </DrawerFooter>
       </DrawerContent>

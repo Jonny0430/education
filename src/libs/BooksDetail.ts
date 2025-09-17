@@ -23,7 +23,7 @@ export const BOOKS: BookDetail[] = [
     learnBullets: ["Hangul o‘qish/yozish", "Batchim talaffuz", "은/는/이/가 ko‘makchilari", "Hozirgi zamon -아요/어요"],
     includes: ["Audio/QR resurslar", "Ish daftari (alohida)", "Kultura eslatmalari"],
     attachments: [
-      { id: "buy", name: "Buy (UBookstore) – ISBN 9788952131171", kind: "link", url: "https://ubookstore.com/products/3-p-s-1a-snu-korean-text-with-learning-alphabet-supplement" },
+      { id: "buy", name: "Buy (UBookstore) – ISBN 9788952131171", kind: "link", url: "https://online.fliphtml5.com/xihiu/mtft/#p=1" },
       { id: "resources", name: "Official resources (MP3/Video/QR)", kind: "link", url: SNU_RESOURCES },
       { id: "preview", name: "Google Books preview", kind: "link", url: gbooks("9788952131171") },
     ],
@@ -41,7 +41,7 @@ export const BOOKS: BookDetail[] = [
     learnBullets: ["Fe’llar zamoni kengaytmasi", "Gap tuzilishi", "Asosiy so‘z boyligi"],
     includes: ["Audio/QR resurslar", "Mashq daftar", "Javoblar bo‘limi"],
     attachments: [
-      { id: "buy", name: "Buy (Amazon) – ISBN 9788952131188", kind: "link", url: "https://www.amazon.com/SNU-Korean-Students-Book-1B/dp/B0BRMJKWX8" },
+      { id: "buy", name: "Buy (Amazon) – ISBN 9788952131188", kind: "link", url: "https://www.scribd.com/document/513064721/%EC%84%9C%EC%9A%B8%EB%8C%80-%ED%95%9C%EA%B5%AD%EC%96%B4-Student-s-Book-1B" },
       { id: "resources", name: "Official resources (MP3/Video/QR)", kind: "link", url: SNU_RESOURCES },
       { id: "preview", name: "Google Books preview", kind: "link", url: gbooks("9788952131188") },
     ],
@@ -59,7 +59,7 @@ export const BOOKS: BookDetail[] = [
     learnBullets: ["Shart mayli ~(으)면", "Taklif/iltimos", "Suhbatlarni kengaytirish"],
     includes: ["Audio/QR", "Grammar supplement", "Glossariy"],
     attachments: [
-      { id: "buy", name: "Buy (koreanbook.de) – ISBN 9788952131232", kind: "link", url: "https://www.koreanbook.de/en/SNU-Korean-2A-Student-s-Book-QR/9788952131232" },
+      { id: "buy", name: "Buy (koreanbook.de) – ISBN 9788952131232", kind: "link", url: "https://www.scribd.com/document/675200850/%EC%84%9C%EC%9A%B8%EB%8C%80-%ED%95%9C%EA%B5%AD%EC%96%B4-SNU-Korean-2A-Student-s-Book-2" },
       { id: "resources", name: "Official resources (MP3/Video/QR)", kind: "link", url: SNU_RESOURCES },
       { id: "preview", name: "Google Books preview", kind: "link", url: gbooks("9788952131232") },
     ],
@@ -77,7 +77,7 @@ export const BOOKS: BookDetail[] = [
     learnBullets: ["-아서/어서", "-아/어 보다", "-려고 하다"],
     includes: ["Audio/QR", "Ish daftari (alohida)", "Madaniyat bo‘limi"],
     attachments: [
-      { id: "buy", name: "Buy (Amazon) – ISBN 9788952131249", kind: "link", url: "https://www.amazon.com/SNU-Korean-Students-Book-2B/dp/895213124X" },
+      { id: "buy", name: "Buy (Amazon) – ISBN 9788952131249", kind: "link", url: "https://www.scribd.com/document/623136555/%EC%84%9C%EC%9A%B8%EB%8C%80-%ED%95%9C%EA%B5%AD%EC%96%B4-SNU-Korean-2B-Student-s-Book" },
       { id: "resources", name: "Official resources (MP3/Video/QR)", kind: "link", url: SNU_RESOURCES },
       { id: "preview", name: "Google Books preview", kind: "link", url: gbooks("9788952131249") },
     ],
@@ -95,7 +95,7 @@ export const BOOKS: BookDetail[] = [
     learnBullets: ["Qo‘shimcha bog‘lovchilar", "Passiv/Kausativ kirish", "Nutq registrlari"],
     includes: ["Audio/QR", "Grammar supplement", "Javoblar"],
     attachments: [
-      { id: "buy", name: "Buy (UBookstore) – ISBN 9788952131553", kind: "link", url: "https://ubookstore.com/products/3a-snu-korean-text" },
+      { id: "buy", name: "Buy (UBookstore) – ISBN 9788952131553", kind: "link", url: "https://www.scribd.com/document/623135099/%EC%84%9C%EC%9A%B8%EB%8C%80-%ED%95%9C%EA%B5%AD%EC%96%B4-SNU-Korean-3A-Student-s-Book" },
       { id: "resources", name: "Official resources (MP3/Video/QR)", kind: "link", url: SNU_RESOURCES },
       { id: "preview", name: "Google Books preview", kind: "link", url: gbooks("9788952131553") },
     ],
@@ -113,7 +113,7 @@ export const BOOKS: BookDetail[] = [
     learnBullets: ["~게 되다 / ~게 하다", "-아/어 놓다, -아/어 두다", "Murakkab bog‘lovchilar"],
     includes: ["Audio/QR", "Workbook (alohida)", "Madaniyat bo‘limi"],
     attachments: [
-      { id: "buy", name: "Buy (UBookstore) – ISBN 9788952131560", kind: "link", url: "https://ubookstore.com/products/3b-snu-korean-text" },
+      { id: "buy", name: "Buy (UBookstore) – ISBN 9788952131560", kind: "link", url: "https://www.scribd.com/document/623136667/%EC%84%9C%EC%9A%B8%EB%8C%80-%ED%95%9C%EA%B5%AD%EC%96%B4-SNU-Korean-3B-Student-s-Book" },
       { id: "resources", name: "Official resources (MP3/Video/QR)", kind: "link", url: SNU_RESOURCES },
       { id: "preview", name: "Google Books preview", kind: "link", url: gbooks("9788952131560") },
     ],
@@ -131,7 +131,7 @@ export const BOOKS: BookDetail[] = [
     learnBullets: ["Rasmiy uslub", "Qiyos/xulosa/dalillash", "Frazeologizmlar"],
     includes: ["Audio/QR", "Practice units", "Glossariy"],
     attachments: [
-      { id: "buy", name: "Buy (AprendeCoreanoHoy) – ISBN 9788952131775", kind: "link", url: "https://www.aprendecoreanohoy.com/en/textbooks/1979-snu-korean-4a-students-book-includes-qr-code-9788952131775.html" },
+      { id: "buy", name: "Buy (AprendeCoreanoHoy) – ISBN 9788952131775", kind: "link", url: "https://www.scribd.com/document/577716949/Seoul-University-Korean-%EC%84%9C%EC%9A%B8%EB%8C%80-%ED%95%9C%EA%B5%AD%EC%96%B4-4A-Student-s-book" },
       { id: "resources", name: "Official resources (MP3/Video/QR)", kind: "link", url: SNU_RESOURCES },
       { id: "preview", name: "Google Books preview (old ver. 4A)", kind: "link", url: gbooks("9788953948822") },
     ],
@@ -149,7 +149,7 @@ export const BOOKS: BookDetail[] = [
     learnBullets: ["Qo‘shma gaplar", "Pragmatik bo‘yoq", "Nutq etiketi"],
     includes: ["Audio/QR", "Workbook (alohida)", "Yozma topshiriqlar"],
     attachments: [
-      { id: "buy", name: "Buy (Amazon – +4B)", kind: "link", url: "https://www.amazon.com/SNU-Korean-4B-Students-Book/dp/8952131789" },
+      { id: "buy", name: "Buy (Amazon – +4B)", kind: "link", url: "https://www.scribd.com/document/717717727/SNU-4B-new" },
       { id: "resources", name: "Official resources (MP3/Video/QR)", kind: "link", url: SNU_RESOURCES },
       { id: "preview", name: "Google Books preview – 4B", kind: "link", url: gbooks("9788953948839") },
     ],
@@ -167,7 +167,7 @@ export const BOOKS: BookDetail[] = [
     learnBullets: ["Murakkab so‘z yasalishi", "Rasmiy yozishmalar", "Nutq strategiyalari"],
     includes: ["Audio/QR", "Yakuniy review bo‘limlari", "Glossariy"],
     attachments: [
-      { id: "buy", name: "Buy (AprendeCoreanoHoy) – ISBN 9788953949607", kind: "link", url: "https://www.aprendecoreanohoy.com/en/textbooks/1954-seoul-university-korean-5a-students-book-english-version-includes-qr-code-9788953949607.html" },
+      { id: "buy", name: "Buy (AprendeCoreanoHoy) – ISBN 9788953949607", kind: "link", url: "https://www.scribd.com/document/873382751/%EC%84%9C%EC%9A%B8%EB%8C%80-%ED%95%9C%EA%B5%AD%EC%96%B4-5" },
       { id: "resources", name: "Official resources (MP3/Video/QR)", kind: "link", url: SNU_RESOURCES },
       { id: "preview", name: "Google Books preview", kind: "link", url: gbooks("9788953949607") },
     ],
@@ -185,7 +185,7 @@ export const BOOKS: BookDetail[] = [
     learnBullets: ["Nutq uslublari", "Metafora/idiomalar", "Dalillash strukturalari"],
     includes: ["Audio/QR", "Workbook (alohida)", "Writing tasks"],
     attachments: [
-      { id: "buy", name: "Buy (AprendeCoreanoHoy) – ISBN 9788952132017", kind: "link", url: "https://www.aprendecoreanohoy.com/en/textbooks/1984-snu-korean-5b-students-book-includes-qr-code-9788952132017.html" },
+      { id: "buy", name: "Buy (AprendeCoreanoHoy) – ISBN 9788952132017", kind: "link", url: "https://www.scribd.com/document/839147309/SNU-Korean-5B-Workbook" },
       { id: "resources", name: "Official resources (MP3/Video/QR)", kind: "link", url: SNU_RESOURCES },
       { id: "preview", name: "Google Books preview", kind: "link", url: gbooks("9788952132017") },
     ],
@@ -203,7 +203,7 @@ export const BOOKS: BookDetail[] = [
     learnBullets: ["Annotatsiya/xulosa", "Terminologiya", "Rasmiy nutq protokoli"],
     includes: ["Audio/QR", "Advanced reading/listening", "Presentation tasks"],
     attachments: [
-      { id: "buy", name: "Buy (koreanbook.de) – ISBN 9788952132079", kind: "link", url: "https://www.koreanbook.de/en/SNU-Korean-6A-Student-s-Book-QR/9788952132079" },
+      { id: "buy", name: "Buy (koreanbook.de) – ISBN 9788952132079", kind: "link", url: "https://www.scribd.com/document/748298746/49436-50872-45824-54620-44397-50612-SNU-Korean-6A-Workbook" },
       { id: "resources", name: "Official resources (MP3/Video/QR)", kind: "link", url: SNU_RESOURCES },
       { id: "preview", name: "Google Books preview (old ver. 6A)", kind: "link", url: gbooks("9788953949645") },
     ],
@@ -221,7 +221,7 @@ export const BOOKS: BookDetail[] = [
     learnBullets: ["Debat strukturasi", "Kengaytirilgan sintaksis", "Akademik yozuv normasi"],
     includes: ["Audio/QR", "Workbook (alohida)", "Assessment topshiriqlar"],
     attachments: [
-      { id: "buy", name: "Buy (Amazon) – ISBN 9788953949652", kind: "link", url: "https://www.amazon.com/National-University-Students-Downloadable-Resources/dp/8953949653" },
+      { id: "buy", name: "Buy (Amazon) – ISBN 9788953949652", kind: "link", url: "https://www.scribd.com/document/648111348/49436-50872-45824-54620-44397-50612-SNU-Korean-6B-Student-s-Book" },
       { id: "resources", name: "Official resources (MP3/Video/QR)", kind: "link", url: SNU_RESOURCES },
       { id: "preview", name: "Google Books preview", kind: "link", url: gbooks("9788953949652") },
     ],

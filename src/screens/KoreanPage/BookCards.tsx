@@ -1,18 +1,17 @@
 "use client";
 import {
   Box, VStack, Text, HStack, Badge, Image,
-  Button, IconButton, Tooltip, Menu, MenuButton, MenuList, MenuItem
+  Button, IconButton, Tooltip, Menu, MenuButton, MenuList, MenuItem, Avatar
 } from "@chakra-ui/react";
 import { DownloadIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import { FiMoreVertical } from "react-icons/fi";
 import type { BookDetail } from "./BookDetailDrawer";
 
 type Props = {
-  b: BookDetail;
+  b: BookDetail & { authorImg?: string }; // yangi maydon ixtiyoriy
   onOpenDetail: (b: BookDetail) => void;
 };
 
-// Proksi kerak bo'lsa (CORS/filename uchun) true qiling va /api/download route-ni qo'shing
 const USE_PROXY = false;
 const makeDownloadHref = (url: string, filename?: string) =>
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
@@ -20,7 +19,6 @@ const makeDownloadHref = (url: string, filename?: string) =>
 
 export default function BookCards({ b, onOpenDetail }: Props) {
   const attachments = b.attachments ?? [];
-  // Asosiy yuklanadigan fayl: link bo'lmagani 1-chi, bo'lmasa 1-chi element
   const main = attachments.find(a => a.kind !== "link") ?? attachments[0];
 
   const handleMainDownload = (e: React.MouseEvent) => {
@@ -77,13 +75,21 @@ export default function BookCards({ b, onOpenDetail }: Props) {
       transition="all .2s"
       onClick={() => { onOpenDetail(b); }}
     >
+      {/* Asosiy kitob muqovasi */}
       <Image src={b.cover} alt={b.title} w="100%" h="160px" objectFit="cover" />
+
       <VStack align="start" spacing={2} p={3}>
-        <Text fontWeight="bold" noOfLines={2}>{b.title}</Text>
+        <HStack w="full" justify="space-between">
+          <Text fontWeight="bold" noOfLines={2}>{b.title}</Text>
+          {/* Muallif rasmi yoki logotip */}
+          {b.authorImg && <Avatar size="sm" src={b.authorImg} name={b.authors[0]} />}
+        </HStack>
+
         <HStack spacing={2}>
           <Badge>{b.pairLang ?? "KO → UZ"}</Badge>
           <Badge variant="subtle" colorScheme="yellow">{b.rating.toFixed(1)}</Badge>
         </HStack>
+
         <HStack justify="space-between" w="full">
           <Text fontWeight="semibold">${b.price}</Text>
           {b.oldPrice && <Text as="s" color="gray.500">${b.oldPrice}</Text>}
@@ -123,7 +129,6 @@ export default function BookCards({ b, onOpenDetail }: Props) {
                       {a.name}{a.size ? ` — ${a.size}` : ""}
                     </MenuItem>
                   ))}
-                  {/* Faqat link bo'lmaganlar uchun barchasini yuklash */}
                   {attachments.some(a => a.kind !== "link") && (
                     <MenuItem icon={<DownloadIcon />} onClick={handleAll}>
                       Barchasini yuklab olish
