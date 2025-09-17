@@ -41,8 +41,7 @@ type Props = {
 };
 
 export default function BookDetailDrawer({ isOpen, onClose, book }: Props) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { onClose: close } = useDisclosure();
+  useDisclosure();
 
   if (!book) return null;
 
@@ -53,11 +52,11 @@ export default function BookDetailDrawer({ isOpen, onClose, book }: Props) {
   } = book;
 
   return (
-    <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="xl">
+    <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="xl" >
       <DrawerOverlay />
       <DrawerContent bg="gray.900" color="gray.100">
         <DrawerCloseButton />
-        <DrawerHeader borderBottomWidth="1px">
+        <DrawerHeader borderBottomWidth="1px" fontFamily={'inter'}>
           <Text fontSize="xl" fontWeight="bold">{title}</Text>
           <Text mt={1} color="gray.400" fontSize="sm">
             Boshlang‘ich talaffuzdan kundalik nutqqacha — bosqichma-bosqich
@@ -77,7 +76,7 @@ export default function BookDetailDrawer({ isOpen, onClose, book }: Props) {
         </DrawerHeader>
 
         <DrawerBody>
-          <Stack direction={{ base: "column", md: "row" }} spacing={6} align="start">
+          <Stack direction={{ base: "column", md: "row" }} spacing={6} align="start" fontFamily={'inter'}>
             {/* Chap: katta rasm + tabs */}
             <VStack align="stretch" flex="1" spacing={4}>
               <Image
@@ -130,7 +129,7 @@ export default function BookDetailDrawer({ isOpen, onClose, book }: Props) {
             </VStack>
 
             {/* O‘ng: narx kartasi */}
-            <Box w={{ base: "100%", md: "360px" }}>
+            <Box w={{ base: "100%", md: "360px" }} fontFamily={'inter'}>
               <Card bg="gray.800" borderRadius="xl" overflow="hidden">
                 <CardBody>
                   <VStack align="stretch" spacing={3}>
@@ -201,7 +200,7 @@ export default function BookDetailDrawer({ isOpen, onClose, book }: Props) {
           </Stack>
         </DrawerBody>
 
-        <DrawerFooter>
+        <DrawerFooter fontFamily={'inter'}>
           <Text fontSize="xs" color="gray.500">© Seoulte Books</Text>
         </DrawerFooter>
       </DrawerContent>
