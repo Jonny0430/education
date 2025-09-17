@@ -6,6 +6,7 @@ export type Kind = "Textbook" | "Workbook" | "Reference";
 
 /* ====== Attachments ====== */
 export type AttachmentKind = "pdf" | "zip" | "audio" | "video" | "link";
+export type BookFilesIndex = Record<string, Attachment[]>;
 export type Attachment = {
   id: string;
   name: string;
@@ -21,6 +22,8 @@ export type LessonDetail = {
   attachments?: Attachment[];       // dars fayllari
   video?: { url: string; poster?: string }; // dars videosi
 };
+
+
 
 /* ====== Course tuzilmasi ====== */
 export type Lesson = {
@@ -58,6 +61,21 @@ export type Book = {
   cover: string;
   badge?: string;
 } & BookDetail;
+
+export const BOOK_FILES: BookFilesIndex = {
+  // BOOKS dagi id lar bilan moslang:
+  "snu-1a-tb": [
+    { id: "snu1a-pdf",   name: "SNU 1A Textbook (PDF)", kind: "pdf",   size: "23.4 MB", url: "/files/snu-1a-textbook.pdf" },
+    { id: "snu1a-audio", name: "SNU 1A Audio Pack",      kind: "audio", size: "120 MB",  url: "/files/snu-1a-audio.zip"   },
+    { id: "snu1a-wbzip", name: "Workbook ZIP",           kind: "zip",   size: "12.8 MB", url: "/files/snu-1a-workbook.zip"},
+    { id: "snu1a-home",  name: "Rasmiy sahifa",          kind: "link",                 url: "https://language.snu.ac.kr" },
+  ],
+  "topik-voca": [
+    { id: "topik-pdf",  name: "TOPIK Vocabulary (PDF)", kind: "pdf",   size: "8.2 MB",  url: "/files/topik-vocabulary.pdf" },
+    { id: "topik-mp3",  name: "Listening MP3",          kind: "audio", size: "95 MB",   url: "/files/topik-listening.zip"  },
+  ],
+  // ... kerakli kitoblaringizni shu yerga qo‘shing
+};
 
 /* =======================================================================
  *  MA'LUMOTLAR — BOOKS
