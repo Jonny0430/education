@@ -35,7 +35,7 @@ const SOCIALS: Social[] = [
 ];
 
 export default function Footer({
-  brand = "PetStore",
+  brand = "Olayn o'quv platforma",
 }: {
   brand?: string;
 }): JSX.Element {
@@ -73,7 +73,7 @@ export default function Footer({
           flexWrap="wrap"
         >
           <Text fontSize="sm" color={text}>
-            {year} © {brand}. All Rights Reserved.
+            {year} © {brand}. Biz bilan boshlang.
           </Text>
 
           <HStack spacing={3}>

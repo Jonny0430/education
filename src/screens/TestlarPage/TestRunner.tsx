@@ -116,7 +116,7 @@ const saved = useMemo<Record<string, string>>(() => {
   const progress = (Object.keys(answers).length / test.questions.length) * 100;
 
   return (
-    <Card variant="outline" borderRadius="2xl">
+    <Card variant="outline" borderRadius="2xl" fontFamily={'inter'}>
       <CardBody>
         {/* Header */}
         <HStack justify="space-between" align="start" mb={2} flexWrap="wrap" gap={2}>

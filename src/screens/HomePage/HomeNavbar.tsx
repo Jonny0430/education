@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
             <Text color={textColor} fontFamily={'inter'} fontSize={{ base: "sm", md: "md" }}>
               Bizning platformamiz orqali siz o‘zingiz xohlagan tilni juda oson o‘rganasiz.
             </Text>
-
+            <a href="/grammar">
             <Button
               as={Link}
               size="md"
@@ -81,8 +81,9 @@ const Hero: React.FC = () => {
               boxShadow="0 8px 24px rgba(0,0,0,0.18)"
               fontFamily={'inter'}
             >
-              Create Account
+              Kursni boshlash
             </Button>
+            </a>
           </VStack>
 
           {/* O‘ng: rasm kartasi */}

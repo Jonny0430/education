@@ -36,7 +36,7 @@ export default function TestCard({
 
   const total = test.questions.length;
   return (
-    <Card variant="outline" borderRadius="2xl">
+    <Card variant="outline" borderRadius="2xl" fontFamily={'inter'}>
       <CardBody>
         <VStack align="start" spacing={2} mb={2}>
           <Heading as="h3" size="sm">{test.title}</Heading>

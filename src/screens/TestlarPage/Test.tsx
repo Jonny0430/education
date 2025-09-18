@@ -20,7 +20,7 @@ export default function TestFilters({
     onChange(next);
   };
   return (
-    <HStack spacing={3} flexWrap="wrap">
+    <HStack spacing={3} flexWrap="wrap" fontFamily={'inter'}>
       <Select w="200px" value={local.category}
         onChange={(e) => { apply({ category: e.target.value as FilterState["category"] }); }}>
         <option value="HAMMASI">Barcha bo‘limlar</option>
@@ -46,7 +46,7 @@ export default function TestFilters({
       />
 
       <Wrap>
-        <WrapItem>
+        <WrapItem fontFamily={'inter'}> 
           <Tag size="md" variant="subtle" colorScheme="purple">
             <TagLabel>Review rejimi: Natijada</TagLabel>
             <TagCloseButton isDisabled />

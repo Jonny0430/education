@@ -56,7 +56,7 @@ export default function TestsPage() {
   };
 
   return (
-    <Container maxW="7xl" py={6}>
+    <Container maxW="7xl" py={6} fontFamily={'inter'}>
       <VStack align="start" spacing={1} mb={4}>
         <Heading size="lg">Koreys tili — Ilk testlar to‘plami</Heading>
         <Text color="gray.400">TOPIK va Ishchilarga mo‘ljallangan bo‘limlar. Daraja va qidiruv bo‘yicha filtrlash mumkin.</Text>
@@ -102,7 +102,7 @@ export default function TestsPage() {
 
             {/* Natija paneli */}
             {result && (
-              <Card variant="outline" borderRadius="2xl">
+              <Card variant="outline" borderRadius="2xl" fontFamily={'inter'}>
                 <CardBody>
                   <Heading size="sm" mb={2}>Natija</Heading>
                   <HStack mb={2} spacing={4} align="center">

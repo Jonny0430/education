@@ -257,7 +257,7 @@ export default function TopInstructors(): JSX.Element {
           fontSize={{ base: "xl", md: "3xl" }}
           mb={{ base: 4, md: 6 }}
         >
-          Top instructor of the month
+          Eng yaxshi Ustozlar
         </Text>
 
         <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} spacing={4} mt={12}>

@@ -90,7 +90,7 @@ export default function WritingRunner({ pack, onExit }: {
   const ok = isRight(typed, q);
 
   return (
-    <Card variant="outline" borderRadius="2xl">
+    <Card variant="outline" borderRadius="2xl" fontFamily={'inter'}>
       <CardBody>
         {/* Header */}
         <HStack justify="space-between" align="start" mb={2} flexWrap="wrap" gap={2}>
@@ -149,7 +149,7 @@ export default function WritingRunner({ pack, onExit }: {
         <Divider my={4} />
 
         {/* Nav */}
-        <HStack justify="space-between">
+        <HStack justify="space-between" fontFamily={'inter'}>
           <HStack>
             <Button onClick={prev} isDisabled={idx===0}>← Oldingi</Button>
             <Button onClick={next} isDisabled={idx===pack.questions.length-1}>Keyingi →</Button>

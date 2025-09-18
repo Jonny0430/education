@@ -32,7 +32,7 @@ function PackCard({ pack, onStart, onContinue, onClear }:{
   const saved = savedCount(pack);
   const total = pack.questions.length;
   return (
-    <Card variant="outline" borderRadius="2xl">
+    <Card variant="outline" borderRadius="2xl" fontFamily={'inter'}>
       <CardBody>
         <VStack align="start" spacing={2} mb={2}>
           <Heading as="h3" size="sm">{pack.title}</Heading>
@@ -90,7 +90,7 @@ export default function WritingTestsPage() {
   };
 
   return (
-    <Container maxW="7xl" py={6}>
+    <Container maxW="7xl" py={6} fontFamily={'inter'}>
       <VStack align="start" spacing={1} mb={4}>
         <Heading size="lg">쓰기 — yozma testlar</Heading>
         <Text color="gray.400">So‘z/gapni koreyscha yozish, imlo va qoidalar.</Text>

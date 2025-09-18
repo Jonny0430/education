@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import {
-  FiBook, FiBriefcase, FiCode, FiHeadphones, FiActivity,
+  FiBook, FiBriefcase, FiHeadphones, FiActivity,
 } from "react-icons/fi";
 import { MdRocketLaunch, MdOutlineTranslate, MdOutlineBrush } from "react-icons/md";
 import { GiHealthPotion } from "react-icons/gi";
@@ -33,19 +33,20 @@ const RouterNavLink = chakra(NavLink);
 
 
 const CATEGORIES: Category[] = [
-  { id: "hangul",     title: "한글 기초 (Hangul Basics)", subtitle: "자모 학습/쓰기 교본", count: "63,476권", icon: FiBook,              accent: "blue.400"  },
-  { id: "business",   title: "비즈니스 한국어",            subtitle: "회화/이메일/회의 표현", count: "52,822권", icon: FiBriefcase,         accent: "green.400" },
-  { id: "grammar",    title: "문법 (Grammar)",             subtitle: "초·중·고급 문법서",     count: "33,841권", icon: TbPencil,           accent: "teal.400"  },
-  { id: "it",         title: "IT 한국어",                  subtitle: "개발/디자인 용어",       count: "22,649권", icon: FiCode,             accent: "pink.400"  },
-  { id: "personal",   title: "자기계발 (Personal Dev.)",   subtitle: "습관/학습전략",         count: "20,126권", icon: MdRocketLaunch,     accent: "red.400"   },
-  { id: "vocabulary", title: "어휘 (Vocabulary)",          subtitle: "토픽 빈출 단어",         count: "13,932권", icon: MdOutlineTranslate, accent: "purple.400" },
-  { id: "marketing",  title: "마케팅 한국어",               subtitle: "광고/콘텐츠 표현",       count: "12,086권", icon: FiBriefcase,         accent: "orange.400"},
-  { id: "listening",  title: "듣기·말하기",                 subtitle: "회화/발음 훈련",         count: "6,186권",  icon: FiHeadphones,       accent: "cyan.400"  },
-  { id: "lifestyle",  title: "라이프스타일",               subtitle: "여행/요리/일상 회화",    count: "2,736권",  icon: FiBook,             accent: "yellow.400"},
-  { id: "design",     title: "디자인 한국어",               subtitle: "UI/UX 용어",            count: "2,690권",  icon: MdOutlineBrush,     accent: "pink.300"  },
-  { id: "health",     title: "건강 · 피트니스",             subtitle: "운동/식단 한국어",       count: "1,678권",  icon: GiHealthPotion,     accent: "green.300" },
-  { id: "topik",      title: "TOPIK 준비",                 subtitle: "모의고사/학설",          count: "959권",    icon: FiActivity,         accent: "blue.300"  },
+  { id: "hangul",        title: "한글 기초 (Hangul Basics)", subtitle: "자모·받침·쓰기",           count: "48강",    icon: FiBook,              accent: "blue.400"   },
+  { id: "beginner",      title: "초급 과정 (Beginner)",      subtitle: "생존 회화·기본 문형",       count: "72강",    icon: MdRocketLaunch,     accent: "red.400"    },
+  { id: "grammar",       title: "문법 완성 (Grammar)",        subtitle: "초·중·고급 문형 총정리",     count: "120강",   icon: TbPencil,           accent: "teal.400"   },
+  { id: "vocabulary",    title: "어휘·토픽 빈출 (Vocabulary)", subtitle: "주제별·유의어·한자어",      count: "3,000단어", icon: MdOutlineTranslate, accent: "purple.400" },
+  { id: "listening",     title: "듣기 훈련 (Listening)",       subtitle: "쉐도잉·딕테이션",           count: "90세트",   icon: FiHeadphones,       accent: "cyan.400"   },
+  { id: "speaking",      title: "말하기·회화 (Speaking)",      subtitle: "패턴·롤플레이",             count: "85세트",   icon: FiActivity,         accent: "orange.400" },
+  { id: "reading",       title: "읽기 이해 (Reading)",         subtitle: "문해력·속독",               count: "70지문",   icon: FiBook,             accent: "yellow.400" },
+  { id: "writing",       title: "쓰기 (Writing)",             subtitle: "문장·이메일·에세이",         count: "60과제",   icon: MdOutlineBrush,     accent: "pink.300"   },
+  { id: "pronunciation", title: "발음·억양 (Pronunciation)",   subtitle: "연음·받침·억양",             count: "50강",    icon: GiHealthPotion,     accent: "green.300"  },
+  { id: "business",      title: "비즈니스 한국어",             subtitle: "회의·보고·이메일",           count: "40세트",   icon: FiBriefcase,        accent: "green.400"  },
+  { id: "travel",        title: "여행 한국어",                 subtitle: "공항·식당·길묻기",           count: "35세트",   icon: MdRocketLaunch,     accent: "pink.400"   },
+  { id: "topik",         title: "TOPIK 실전",                 subtitle: "모의고사·풀이·채점",         count: "30회",     icon: FiActivity,         accent: "blue.300"   },
 ];
+
 
 // ——— Card ———
 const CategoryCard: React.FC<{ data: Category }> = ({ data }) => {
@@ -140,7 +141,7 @@ export default function CategoryGrid(): JSX.Element {
         </SimpleGrid>
         <Flex justify="center" mt={6}>
           <chakra.a
-            href="#"
+            href="/tests"
             fontWeight="medium"
             color={useColorModeValue("blue.600", "blue.300")}
             _hover={{ textDecoration: "underline" }}
