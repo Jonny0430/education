@@ -78,7 +78,7 @@ const KoreanFAQ: FC = () => {
   const accent   = useColorModeValue("teal.500", "teal.300");
 
   return (
-    <Box bg={pageBg} py={{ base: 8, md: 12 }}>
+    <Box bg={pageBg} py={{ base: 8, md: 12 }} fontFamily={'serif'}>
       <Container maxW="6xl" px={{ base: 4, md: 6 }}>
         <Heading
           as="h2"
@@ -86,6 +86,7 @@ const KoreanFAQ: FC = () => {
           fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
           mb={{ base: 6, md: 8 }}
           color={titleClr}
+          fontFamily={'serif'}
         >
           Tez-tez so‘raladigan savollar
         </Heading>

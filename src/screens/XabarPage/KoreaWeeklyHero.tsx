@@ -48,7 +48,7 @@ const KoreaWeeklyHero: FC<{ article?: HeroArticle }> = ({ article = DEFAULT_ARTI
   const tagScheme = useColorModeValue("blue", "purple");
 
   return (
-    <Box bg={panelBg} borderTop="1px solid" borderColor={border}>
+    <Box bg={panelBg} borderTop="1px solid" borderColor={border} fontFamily={'serif'}>
       <Container maxW="7xl" py={{ base: 6, md: 10 }}>
         <Grid
           templateColumns={{ base: "1fr", md: "1.1fr 0.9fr" }}

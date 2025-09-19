@@ -57,7 +57,7 @@ const FeatureLine: FC<{ text: string }> = ({ text }) => {
   const checkClr = useColorModeValue("green.500", "green.400");
   const metaClr  = useColorModeValue("gray.700", "gray.300");
   return (
-    <HStack align="start" spacing={3}>
+    <HStack align="start" spacing={3} fontFamily={'serif'}>
       <Box as={BsCheckCircleFill} color={checkClr} mt="3px" />
       <Text color={metaClr} fontSize={{ base: "sm", md: "md" }}>{text}</Text>
     </HStack>
@@ -78,6 +78,7 @@ const PlanRow: FC<{ plan: Plan }> = ({ plan }) => {
       justify="space-between"
       py={{ base: 5, md: 6 }}
       spacing={{ base: 4, md: 6 }}
+      fontFamily={'serif'}
     >
       <VStack align="stretch" spacing={3} flex="1">
         <HStack spacing={3}>

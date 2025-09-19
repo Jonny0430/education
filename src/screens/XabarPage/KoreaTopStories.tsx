@@ -56,15 +56,15 @@ const STORIES: Story[] = [
   {
     id: "s3",
     title:
-      "Namhangda vodorod avtobuslari ishga tushdi: yashil transport sari qadam",
+      "Koreya Prezidenti Amerika prezidenti bilan uchrashdi",
     category: "Ekologiya",
     image:
-      "https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=800&auto=format&fit=crop",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1BizaJJupfAAAJTK9OHUinjAaPltvbn6Ydg&s",
     href: "#",
     datetime: "2025-09-15T15:11:00",
     mediaKind: "video",
     videoSrc:
-      "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4", // demo mp4
+      "https://youtu.be/sbMGK8E1sco?t=3", // demo mp4
   },
   {
     id: "s4",
@@ -115,7 +115,7 @@ const VideoModal: FC<{
           {story?.mediaKind === "youtube" && story.youtubeId && (
             <AspectRatio ratio={16 / 9}>
               <iframe
-                src={`https://www.youtube-nocookie.com/embed/${story.youtubeId}?autoplay=1`}
+                src={`https://youtu.be/FLZXRUOAIKE?t=1/${story.youtubeId}?autoplay=1`}
                 title={title}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -222,7 +222,7 @@ const KoreaTopStories: FC = () => {
 
   return (
     <Box>
-      <Container maxW="7xl" py={{ base: 6, md: 8 }}>
+      <Container maxW="7xl" py={{ base: 6, md: 8 }} fontFamily={'serif'}>
         {/* Header */}
         <HStack justify="space-between" mb={4}>
           <HStack spacing={2}>
