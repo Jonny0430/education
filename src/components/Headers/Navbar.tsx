@@ -28,7 +28,7 @@ import { LuNewspaper } from "react-icons/lu";
 import { FaQuestionCircle } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import type { IconType } from "react-icons";
-import ColorModeToggle from "../../libs/ColorModeToggle";
+// import ColorModeToggle from "../../libs/ColorModeToggle";
 
 /* === Sidebar'dagi bo'limlar (Navbar menusi uchun ham ishlatamiz) === */
 type NavItem = { id: string; label: string; icon: IconType; path: string; muted?: boolean };
@@ -143,7 +143,6 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
             display={{ base: "inline-flex", lg: "none" }}
           />
           <a href="/">
-          {/* <Button> */}
           <Text fontWeight="bold" color={titleCl}>
                Education
           </Text>
@@ -188,7 +187,7 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
             <IconButton aria-label="Settings" icon={<SettingsIcon />} size="sm" variant="ghost" />
           </Tooltip>
 
-          <ColorModeToggle />
+          {/* <ColorModeToggle /> */}
         </HStack>
       </Flex>
 

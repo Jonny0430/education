@@ -71,16 +71,36 @@ export const GRAMMAR: GrammarPoint[] = [
     }
   ],
   quiz: [
-    {
-      id: "q1",
-      question: "주말에 영화를 보___ 음악을 들어요.",
-      options: ["거나", "고", "지만"],
-      correctIndex: 0,
-      explain: "Ikkita harakatni tanlashda '거나' ishlatiladi."
-    }
-  ]
+  {
+    id: "q1",
+    question: "주말에 영화를 보___ 음악을 들어요.",
+    options: ["거나", "고", "지만"],
+    correctIndex: 0,
+    explain: "Ikkita harakatni tanlashda '거나' ishlatiladi."
+  },
+  {
+    id: "q2",
+    question: "비가 오___ 눈이 오면 집에 있을 거예요.",
+    options: ["거나", "면", "지만"],
+    correctIndex: 0,
+    explain: "'비가 오거나 눈이 오면' — ikkita ehtimolni bog‘lash uchun '거나' qo‘llanadi."
+  },
+  {
+    id: "q3",
+    question: "집에서 쉬___ 도서관에 갈 거예요.",
+    options: ["거나", "어서", "하고"],
+    correctIndex: 0,
+    explain: "Ikki tanlov (dam olish YOKI kutubxonaga borish) — '거나'. '어서' sabab-oqibat, '하고' esa ko‘proq 'va' ma’nosida."
+  },
+  {
+    id: "q4",
+    question: "주말에 수영하___ 등산할까요?",
+    options: ["거나", "고", "지요"],
+    correctIndex: 0,
+    explain: "Taklif kontekstida ham tanlov bildirilyapti: '수영하거나 등산하다' → '거나'."
+  }
+]
 },
-
 {
   id: "ge-hada",
   title: "-게 하다 (harakat qildirmoq)",
@@ -130,17 +150,37 @@ export const GRAMMAR: GrammarPoint[] = [
       en: "My parents made me study harder."
     }
   ],
-  quiz: [
-    {
-      id: "q2",
-      question: "선생님이 학생들을 열심히 공부하___ 했어요.",
-      options: ["게", "고", "지만"],
-      correctIndex: 0,
-      explain: "'게 하다' — biror ishni qildirmoq ma’nosida."
-    }
-  ]
+quiz: [
+  {
+    id: "q2",
+    question: "선생님이 학생들을 열심히 공부하___ 했어요.",
+    options: ["게", "고", "지만"],
+    correctIndex: 0,
+    explain: "'게 하다' — biror ishni qildirmoq ma’nosida (공부하게 했다)."
+  },
+  {
+    id: "q3",
+    question: "엄마가 아이에게 일찍 자___ 했어요.",
+    options: ["게", "면", "으로"],
+    correctIndex: 0,
+    explain: "A가/이 B에게 V-게 하다 → '일찍 자게 했다' (erta yotqizdi)."
+  },
+  {
+    id: "q4",
+    question: "코치가 선수들을 매일 운동하___ 해요.",
+    options: ["게", "려고", "지만"],
+    correctIndex: 0,
+    explain: "Majbur/yo‘naltirish: '운동하게 해요' — 'Mashq qildiradi'."
+  },
+  {
+    id: "q5",
+    question: "선생님이 교실을 조용하___ 했어요.",
+    options: ["게", "도록", "지요"],
+    correctIndex: 0,
+    explain: "Sifat + 게 하다: '조용하게 하다' — 'xonani tinch qildi'."
+  }
+]
 },
-
 {
   id: "get",
   title: "-겠 (niyat, xohish, taxmin)",
@@ -183,16 +223,36 @@ export const GRAMMAR: GrammarPoint[] = [
     }
   ],
   quiz: [
-    {
-      id: "q3",
-      question: "저는 내일 일찍 일어나___ 합니다.",
-      options: ["겠", "고", "거나"],
-      correctIndex: 0,
-      explain: "'-겠' bu yerda niyatni bildiradi."
-    }
-  ]
+  {
+    id: "q3",
+    question: "저는 내일 일찍 일어나___.",
+    options: ["겠습니다", "거나", "고"],
+    correctIndex: 0,
+    explain: "'-겠습니다' — rasmiy niyat/qat'iylik. '-겠 + 습니다' birga yoziladi: 일어나겠습니다."
+  },
+  {
+    id: "q4",
+    question: "지금 발표를 시작하___.",
+    options: ["겠습니다", "지만", "거나"],
+    correctIndex: 0,
+    explain: "Rasmiy niyat: '시작하겠습니다.'"
+  },
+  {
+    id: "q5",
+    question: "곧 도와주___.",
+    options: ["겠습니다", "고요", "거나"],
+    correctIndex: 0,
+    explain: "'도와주겠습니다' — 'albatta yordam beraman' (volitsiya)."
+  },
+  {
+    id: "q6",
+    question: "하늘이 어두워요. 곧 비가 오___.",
+    options: ["겠어요", "거나", "고요"],
+    correctIndex: 0,
+    explain: "'-겠어요' — mulohaza/taxmin ('Yog‘sa kerak')."
+  }
+]
 },
-
 {
   id: "go-sipta",
   title: "-고 싶다 (xohlamoq, istamoq)",
@@ -312,16 +372,38 @@ export const GRAMMAR: GrammarPoint[] = [
     }
   ],
   quiz: [
-    {
-      id: "q-gosipohada-1",
-      question: "민수는 내년에 유학을 가___ 싶어 해요.",
-      options: ["고", "면", "겠"],
-      correctIndex: 0,
-      explain: "3-shaxs xohishi ‘…고 싶어 하다’ bilan ifodalanadi."
-    }
-  ]
-},
+  {
+    id: "q-gosipohada-1",
+    question: "민수는 내년에 유학을 가___ 싶어 해요.",
+    options: ["고", "면", "겠"],
+    correctIndex: 0,
+    explain: "3-shaxs xohishi ‘…고 싶어 하다’ bilan ifodalanadi."
+  },
 
+  // +3 yangi
+  {
+    id: "q-gosipohada-2",
+    question: "저는 한국에 빨리 돌아가___.",
+    options: ["고 싶어요", "고 싶어 해요", "고 싶어 합니다"],
+    correctIndex: 0,
+    explain: "1-shaxs odatda ‘-고 싶어요’ ishlatadi; ‘-고 싶어 해요’ 3-shaxsga xos."
+  },
+  {
+    id: "q-gosipohada-3",
+    question: "아이들은 밖에서 놀___ 않아요.",
+    options: ["고 싶지", "고 싶어 하지", "고 싶어"],
+    correctIndex: 1,
+    explain: "3-shaxs inkori: ‘-고 싶어 하지 않아요’ (xohlamaydi)."
+  },
+  {
+    id: "q-gosipohada-4",
+    question: "민지 씨는 이번 주말에 쉬___ 합니다.",
+    options: ["고 싶어", "고 싶어요", "겠"],
+    correctIndex: 0,
+    explain: "3-shaxs rasmiy: ‘쉬고 싶어 합니다.’ (‘-고 싶어 합니다’)."
+  }
+]
+},
 {
   id: "go-itda",
   title: "-고 있다 (hozirgi davomiy)",
@@ -366,16 +448,38 @@ export const GRAMMAR: GrammarPoint[] = [
     }
   ],
   quiz: [
-    {
-      id: "q-goitda-1",
-      question: "지금 무엇을 하___ 있습니까?",
-      options: ["고", "면", "거나"],
-      correctIndex: 0,
-      explain: "Davomiylik: ‘…하고 있다’."
-    }
-  ]
-},
+  {
+    id: "q-goitda-1",
+    question: "지금 무엇을 하___ 있습니까?",
+    options: ["고", "면", "거나"],
+    correctIndex: 0,
+    explain: "Davomiylik: ‘…하고 있다’."
+  },
 
+  // +3 yangi
+  {
+    id: "q-goitda-2",
+    question: "저는 지금 책을 읽___ 있어요.",
+    options: ["고", "거나", "면"],
+    correctIndex: 0,
+    explain: "Hozir davom etayotgan harakat: ‘읽고 있어요’."
+  },
+  {
+    id: "q-goitda-3",
+    question: "친구는 카페에서 공부하___ 있습니다.",
+    options: ["고", "거나", "지만"],
+    correctIndex: 0,
+    explain: "Formal uslub: ‘공부하고 있습니다’ ham ‘-고 있다’."
+  },
+  {
+    id: "q-goitda-4",
+    question: "지금은 밥을 먹___ 있지 않아요.",
+    options: ["고", "게", "면"],
+    correctIndex: 0,
+    explain: "Inkorda ham shakl: ‘먹고 있지 않아요’ (davomiylik + inkor)."
+  }
+]
+},
 {
   id: "gi-ttemun-e",
   title: "-기 때문에 (…uchun, …sababli)",
@@ -432,16 +536,38 @@ export const GRAMMAR: GrammarPoint[] = [
     }
   ],
   quiz: [
-    {
-      id: "q-ttemune-1",
-      question: "비가 오___ ___ 집에 있었어요. (yomg‘ir sabab uyda qoldim)",
-      options: ["기", "때문에", "아서"],
-      correctIndex: 1, // to‘liq javob: 오기 때문에
-      explain: "To‘liq shakl: **오기 때문에** — ‘yomg‘ir yog‘gani uchun’."
-    }
-  ]
-},
+  {
+    id: "q-ttemune-1",
+    question: "비가 오___ ___ 집에 있었어요. (yomg‘ir sabab uyda qoldim)",
+    options: ["기", "때문에", "아서"],
+    correctIndex: 1, // to‘liq javob: 오기 때문에
+    explain: "To‘liq shakl: **오기 때문에** — ‘yomg‘ir yog‘gani uchun’."
+  },
 
+  // +3 yangi
+  {
+    id: "q-ttemune-2",
+    question: "감기 ___ 학교에 못 갔어요.",
+    options: ["기", "때문에", "아서"],
+    correctIndex: 1, // to‘liq javob: 감기 때문에
+    explain: "N + **때문에**: ‘kasallik tufayli maktabga bora olmadim’."
+  },
+  {
+    id: "q-ttemune-3",
+    question: "요즘 바쁘___ ___ 친구들을 자주 못 만나요.",
+    options: ["기", "때문에", "아서"],
+    correctIndex: 1, // to‘liq javob: 바쁘기 때문에
+    explain: "Sifat/fe’l + **-기 때문에**: ‘바쁘기 때문에 …’."
+  },
+  {
+    id: "q-ttemune-4",
+    question: "시간이 없___ ___ 요리를 못 했어요.",
+    options: ["기", "때문에", "아서"],
+    correctIndex: 1, // to‘liq javob: 없기 때문에
+    explain: "Fe’l/ot inkori ham shu qolipda: **없기 때문에** ‘… yo‘qligi uchun’."
+  }
+]
+},
 {
   id: "giro-hada",
   title: "-기로 하다 (…qilishka qaror qilmoq)",
@@ -492,14 +618,37 @@ export const GRAMMAR: GrammarPoint[] = [
     }
   ],
   quiz: [
-    {
-      id: "q-giro-1",
-      question: "우리는 이번 주말에 여행을 가___ 했어요.",
-      options: ["거나", "기로", "겠"],
-      correctIndex: 1,
-      explain: "Qaror tuzilmasi: **V + 기로 하다**."
-    }
-  ]
+  {
+    id: "q-giro-1",
+    question: "우리는 이번 주말에 여행을 가___ 했어요.",
+    options: ["거나", "기로", "겠"],
+    correctIndex: 1,
+    explain: "Qaror tuzilmasi: **V + 기로 하다**."
+  },
+
+  // +3 yangi
+  {
+    id: "q-giro-2",
+    question: "친구랑 내일 영화 보___ 했어요.",
+    options: ["거나", "기로", "겠"],
+    correctIndex: 1,
+    explain: "‘보기로 하다’ — film ko‘rishga qaror qilmoq."
+  },
+  {
+    id: "q-giro-3",
+    question: "올해부터 매일 한국어를 공부하___ 했어요.",
+    options: ["거나", "기로", "겠"],
+    correctIndex: 1,
+    explain: "‘공부하기로 하다’ — muntazam o‘qishga qaror qilmoq."
+  },
+  {
+    id: "q-giro-4",
+    question: "우리는 내일부터 늦게 자지 않___ 했어요.",
+    options: ["거나", "기로", "겠"],
+    correctIndex: 1,
+    explain: "Inkorda ham shu qolip: **V-지 않기로 하다** — qilmaslikka qaror qilmoq."
+  }
+]
 },
 {
   id: "gi-jeon-e",
@@ -551,14 +700,37 @@ export const GRAMMAR: GrammarPoint[] = [
     }
   ],
   quiz: [
-    {
-      id: "q-jone-1",
-      question: "자기 ___ ___ 휴대폰을 끄세요. (uxlashdan oldin)",
-      options: ["기", "전에", "후에"],
-      correctIndex: 1, // savol ko‘rinishida ikkita bo‘shliq bor — to‘liq javob: '자기 전에'
-      explain: "To‘liq shakl **자기 전에**: V + 기 전에 — ‘…dan oldin’."
-    }
-  ]
+  {
+    id: "q-jone-1",
+    question: "자기 ___ ___ 휴대폰을 끄세요. (uxlashdan oldin)",
+    options: ["기", "전에", "후에"],
+    correctIndex: 1, // to‘liq javob: '자기 전에'
+    explain: "To‘liq shakl **자기 전에**: V + 기 전에 — ‘…dan oldin’."
+  },
+
+  // +3 yangi
+  {
+    id: "q-jone-2",
+    question: "학교에 가___ ___ 아침을 먹어요.",
+    options: ["기", "전에", "후에"],
+    correctIndex: 1,
+    explain: "To‘liq: **가기 전에** — ‘maktabga borishdan oldin’."
+  },
+  {
+    id: "q-jone-3",
+    question: "수업 시작하___ ___ 핸드폰을 꺼 주세요.",
+    options: ["기", "전에", "후에"],
+    correctIndex: 1,
+    explain: "To‘liq: **시작하기 전에** — ‘dars boshlanishidan oldin’."
+  },
+  {
+    id: "q-jone-4",
+    question: "운동하___ ___ 스트레칭을 하세요.",
+    options: ["기", "전에", "후에"],
+    correctIndex: 1,
+    explain: "To‘liq: **운동하기 전에** — ‘sportdan oldin’."
+  }
+]
 },
 {
   id: "kkaji",
@@ -618,13 +790,17 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "만든 케이크", uz: "tayyorlangan (pishirilgan) tort", ru: "торт, который сделали", en: "a cake that was made" },
     { ko: "살 사람", uz: "sotib oladigan kishi", ru: "человек, который купит", en: "a person who will buy" }
   ],
-  quiz: [
-    { id: "q-adnom-1", question: "어제 ___ 영화 (kecha ko‘rgan film)", options: ["보는", "본", "볼"], correctIndex: 1, explain: "O‘tgan zamon fe’li → -(으)ㄴ: 본 영화." },
-    { id: "q-adnom-2", question: "내일 ___ 사람을 만나겠다. (ertaga uchrashadigan odam)", options: ["만나는", "만난", "만날"], correctIndex: 2, explain: "Kelasi/niyat → -(으)ㄹ: 만날 사람." },
-    { id: "q-adnom-3", question: "___ 아이가 웃고 있어요. (chiroyli bola)", options: ["예쁘는", "예쁜", "예쁠"], correctIndex: 1, explain: "Sifat hozirgi → -(으)ㄴ: 예쁜." }
-  ]
-},
+quiz: [
+  { id: "q-adnom-1", question: "어제 ___ 영화 (kecha ko‘rgan film)", options: ["보는", "본", "볼"], correctIndex: 1, explain: "O‘tgan zamon fe’li → -(으)ㄴ: 본 영화." },
+  { id: "q-adnom-2", question: "내일 ___ 사람을 만나겠다. (ertaga uchrashadigan odam)", options: ["만나는", "만난", "만날"], correctIndex: 2, explain: "Kelasi/niyat → -(으)ㄹ: 만날 사람." },
+  { id: "q-adnom-3", question: "___ 아이가 웃고 있어요. (chiroyli bola)", options: ["예쁘는", "예쁜", "예쁠"], correctIndex: 1, explain: "Sifat hozirgi → -(으)ㄴ: 예쁜." },
 
+  // +3 yangi
+  { id: "q-adnom-4", question: "지금 ___ 음악이 좋아요. (hozir tinglayotgan musiqa)", options: ["듣는", "들은", "들을"], correctIndex: 0, explain: "Fe’l hozirgi → -는: 듣는 음악." },
+  { id: "q-adnom-5", question: "어제 ___ 편지를 보냈어요. (kecha yozgan xat)", options: ["쓰는", "쓴", "쓸"], correctIndex: 1, explain: "O‘tgan zamon → -(으)ㄴ: 쓴 편지." },
+  { id: "q-adnom-6", question: "내년에 ___ 집을 찾고 있어요. (kelasi yili yashaydigan uy)", options: ["사는", "산", "살"], correctIndex: 2, explain: "Kelasi/maqsad → -(으)ㄹ: 살 집." }
+]
+},
 {
   id: "geot-gata",
   title: "-(으)ㄴ/는/(으)ㄹ 것 같다 (…ga o‘xshaydi / taxmin)",
@@ -675,10 +851,38 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "교수님께 질문드려도 될까요?", uz: "Professor janoblariga savol bersam bo‘ladimi?", ru: "Можно задать вопрос профессору?", en: "May I ask the professor a question?" }
   ],
   quiz: [
-    { id: "q-nim-1", question: "회사 ___께서 회의를 시작합니다. (direktor janoblari)", options: ["사장", "사장님", "사장씨"], correctIndex: 1, explain: "Hurmat qo‘shimchasi: 사장님." }
-  ]
-},
+  {
+    id: "q-nim-1",
+    question: "회사 ___께서 회의를 시작합니다. (direktor janoblari)",
+    options: ["사장", "사장님", "사장씨"],
+    correctIndex: 1,
+    explain: "Hurmat qo‘shimchasi: 사장님."
+  },
 
+  // +3 yangi
+  {
+    id: "q-nim-2",
+    question: "오늘 교장___ 학교에 오셨어요.",
+    options: ["님이", "이", "씨가"],
+    correctIndex: 0,
+    explain: "Honorifik shakl: 교장님 + 이 → ‘교장님이’."
+  },
+  {
+    id: "q-nim-3",
+    question: "할아버지___ 점심을 드십니다.",
+    options: ["께서", "가", "에"],
+    correctIndex: 0,
+    explain: "Honorifik subyekt partikli: ‘께서’."
+  },
+  {
+    id: "q-nim-4",
+    question: "선생님은 지금 댁에 ___.",
+    options: ["계세요", "있어요", "가세요"],
+    correctIndex: 0,
+    explain: "Honorifik ‘있어요’ → ‘계세요’; ‘집’ning honorifik varianti ‘댁’."
+  }
+]
+},
 {
   id: "daga",
   title: "-다가 (…yapib turib / …paytda – keyin)",
@@ -702,10 +906,38 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "운전하다가 길을 잘못 들었어요.", uz: "Mashina haydab ketayotib noto‘g‘ri burilib yubordim.", ru: "За рулём свернул(а) не туда.", en: "I took a wrong turn while driving." }
   ],
   quiz: [
-    { id: "q-daga-1", question: "책을 읽___ 잠이 들었어요. (o‘qiy turib uxlab qoldim)", options: ["다가", "으면", "거나"], correctIndex: 0, explain: "A paytida B ro‘y berdi: 읽다가 잠이 들었어요." }
-  ]
-},
+  {
+    id: "q-daga-1",
+    question: "책을 읽___ 잠이 들었어요. (o‘qiy turib uxlab qoldim)",
+    options: ["다가", "으면", "거나"],
+    correctIndex: 0,
+    explain: "A paytida B ro‘y berdi: 읽다가 잠이 들었어요."
+  },
 
+  // +3 yangi
+  {
+    id: "q-daga-2",
+    question: "집에 가___ 친구를 만났어요.",
+    options: ["다가", "면", "러"],
+    correctIndex: 0,
+    explain: "Harakat jarayonida boshqa hodisa yuz berdi: 가다가 친구를 만났어요."
+  },
+  {
+    id: "q-daga-3",
+    question: "요리하___ 손을 베였어요.",
+    options: ["다가", "자", "도록"],
+    correctIndex: 0,
+    explain: "Jarayon ichida kutilmagan hodisa: 요리하다가 손을 베였어요."
+  },
+  {
+    id: "q-daga-4",
+    question: "길을 걷___ 갑자기 비가 왔어요.",
+    options: ["다가", "고", "니까"],
+    correctIndex: 0,
+    explain: "‘… qilyotganimda’ ma’nosi: 걷다가 비가 왔어요."
+  }
+]
+},
 {
   id: "deul-plural",
   title: "-들 (ko‘plik qo‘shimchasi)",
@@ -763,10 +995,15 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "소음 때문에 잠을 못 잤어요.", uz: "Shovqin tufayli uxlolmadim.", ru: "Из-за шума не смог(ла) уснуть.", en: "I couldn’t sleep because of the noise." }
   ],
   quiz: [
-    { id: "q-ttemuneN-1", question: "감기 ___ 학교에 못 갔어요.", options: ["때문에", "기 때문에", "으로"], correctIndex: 0, explain: "Ot bilan: N + 때문에." },
-    { id: "q-ttemuneN-2", question: "비 ___ 행사가 연기됐습니다. (yomg‘ir tufayli tadbir kechiktirildi)", options: ["때문에", "부터", "까지"], correctIndex: 0, explain: "Sabab — ‘비 때문에’." },
-    { id: "q-ttemuneN-3", question: "Ijobiy sababni tanlang: ‘선생님 ___ 한국어가 많이 늘었어요.’", options: ["때문에", "덕분에", "밖에"], correctIndex: 1, explain: "Ijobiy/rahmat ohangi: 덕분에." }
-  ]
+  { id: "q-ttemuneN-1", question: "감기 ___ 학교에 못 갔어요.", options: ["때문에", "기 때문에", "으로"], correctIndex: 0, explain: "Ot bilan: N + 때문에." },
+  { id: "q-ttemuneN-2", question: "비 ___ 행사가 연기됐습니다. (yomg‘ir tufayli tadbir kechiktirildi)", options: ["때문에", "부터", "까지"], correctIndex: 0, explain: "Sabab — ‘비 때문에’." },
+  { id: "q-ttemuneN-3", question: "Ijobiy sababni tanlang: ‘선생님 ___ 한국어가 많이 늘었어요.’", options: ["때문에", "덕분에", "밖에"], correctIndex: 1, explain: "Ijobiy/rahmat ohangi: 덕분에." },
+
+  // +3 yangi
+  { id: "q-ttemuneN-4", question: "숙제 ___ 혼났어요. (uy vazifasi sabab hayiqtirishdi)", options: ["때문에", "덕분에", "처럼"], correctIndex: 0, explain: "Salbiy sabab: N + 때문에." },
+  { id: "q-ttemuneN-5", question: "여러분 ___ 프로젝트가 성공했어요. 감사합니다!", options: ["때문에", "덕분에", "밖에"], correctIndex: 1, explain: "Ijobiy/rahmat konteksti — ‘덕분에’." },
+  { id: "q-ttemuneN-6", question: "코로나 ___ 수업이 온라인으로 바뀌었어요.", options: ["때문에", "까지", "부터"], correctIndex: 0, explain: "Sabab → ‘코로나 때문에’." }
+]
 },
 {
   id: "mada-every",
@@ -792,11 +1029,15 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "시험 때마다 긴장해요.", uz: "Har imtihonda hayajonlanaman.", ru: "Каждый экзамен я волнуюсь.", en: "I get nervous every exam." }
   ],
   quiz: [
-    { id: "q-mada-1", question: "주말___ 한국어를 공부해요. (har hafta oxiri)", options: ["마다", "부터", "까지"], correctIndex: 0, explain: "Takroriylik: 주말마다." },
-    { id: "q-mada-2", question: "‘Har ikki oyda’ iborasini tanlang.", options: ["두 달밖에", "두 달마다", "두 달보다"], correctIndex: 1, explain: "마다 — ‘har/…sayin’." }
-  ]
-},
+  { id: "q-mada-1", question: "주말___ 한국어를 공부해요. (har hafta oxiri)", options: ["마다", "부터", "까지"], correctIndex: 0, explain: "Takroriylik: 주말마다." },
+  { id: "q-mada-2", question: "‘Har ikki oyda’ iborasini tanlang.", options: ["두 달밖에", "두 달마다", "두 달보다"], correctIndex: 1, explain: "마다 — ‘har/…sayin’." },
 
+  // +3 yangi
+  { id: "q-mada-3", question: "버스는 10분___ 와요. (har 10 daqiqada)", options: ["마다", "만", "보다"], correctIndex: 0, explain: "10분마다 — ‘har 10 daqiqada’." },
+  { id: "q-mada-4", question: "사람___ 생각이 달라요. (har bir odamning fikri boshqacha)", options: ["마다", "에서", "으로"], correctIndex: 0, explain: "사람마다 — ‘har bir odamda/har odamning’." },
+  { id: "q-mada-5", question: "하루___ 물을 두 리터 마셔요. (har kuni)", options: ["마다", "전에", "까지"], correctIndex: 0, explain: "하루마다 — ‘har kuni’." }
+]
+},
 {
   id: "bakke-only-neg",
   title: "명사 + 밖에 (faqat/undan boshqa emas — **inkor bilan**)",
@@ -820,11 +1061,30 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "어제는 만 원밖에 못 벌었어요.", uz: "Kecha atigi o‘n ming von topdim xolos.", ru: "Вчера заработал(а) всего 10 000 вон.", en: "I earned only 10,000 won yesterday." }
   ],
   quiz: [
-    { id: "q-bakke-1", question: "시간이 10분___ ___요. (faqat 10 daqiqa bor)", options: ["밖에, 없어요", "만, 있어요", "밖에, 있어요"], correctIndex: 0, explain: "밖에 doimo inkor bilan: 밖에 없어요." },
-    { id: "q-bakke-2", question: "To‘g‘ri variantni tanlang.", options: ["학생밖에 있어요 (✅/❌)", "학생밖에 없어요 (✅/❌)", "학생만 있어요 (✅/❌)"], correctIndex: 1, explain: "‘밖에’ ijobiy fe’l bilan kelmaydi. To‘g‘rilar: 학생밖에 없어요 / 학생만 있어요." }
+    // +3 yangi
+{
+  id: "q-bakke-3",
+  question: "돈이 천 원___ ___요. (faqat ming von bor)",
+  options: ["밖에, 없어요", "만, 있어요", "밖에, 있어요"],
+  correctIndex: 0,
+  explain: "‘밖에’ doimo inkor bilan keladi → **밖에 없어요**."
+},
+{
+  id: "q-bakke-4",
+  question: "저는 물___ 마셔요. (faqat suv ichaman)",
+  options: ["밖에", "만", "까지"],
+  correctIndex: 1,
+  explain: "Ijobiy fe’l bilan ‘faqat’ → **만**. ‘밖에’ uchun inkor kerak bo‘lardi."
+},
+{
+  id: "q-bakke-5",
+  question: "한국어를 조금___ ___.",
+  options: ["밖에, 몰라요", "밖에, 알아요", "만, 몰라요"],
+  correctIndex: 0,
+  explain: "Salbiy mazmunli fe’l bilan **밖에**: **조금밖에 몰라요** (‘faqat biroz bilaman’)."
+}
   ]
 },
-
 {
   id: "boda-than",
   title: "명사 + 보다 (…dan — qiyoslash)",
@@ -848,11 +1108,30 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "저는 동생보다 키가 커요.", uz: "Men ukamdan/bahomdan uzunroqman.", ru: "Я выше младшего брата/сестры.", en: "I’m taller than my younger sibling." }
   ],
   quiz: [
-    { id: "q-boda-1", question: "한국어___ 일본어___ 더 어려워요. (Koreys tili yapon tilidan qiyinroq)", options: ["보다, 가", "보다, 이", "에서, 가"], correctIndex: 1, explain: "Qiyoslash: 일본어가 / 한국어보다 일본어가 더 어려워요." },
-    { id: "q-boda-2", question: "Bo‘shliqni to‘ldiring: ‘지난주___ 이번 주가 더 바빠요.’", options: ["보다", "부터", "까지"], correctIndex: 0, explain: "Qiyos: 지난주보다 이번 주가 더 바빠요." }
+   // +3 yangi
+{
+  id: "q-boda-3",
+  question: "커피는 차___ 더 씁니다.",
+  options: ["보다", "에서", "으로"],
+  correctIndex: 0,
+  explain: "Qiyoslash: **A보다 B(가) 더 ~** → 커피는 차보다 더 씁니다."
+},
+{
+  id: "q-boda-4",
+  question: "오늘은 어제___ 덜 추워요.",
+  options: ["보다", "에서", "마다"],
+  correctIndex: 0,
+  explain: "Kamroq daraja: **덜** ham qiyosda **보다** bilan ishlatiladi."
+},
+{
+  id: "q-boda-5",
+  question: "사과___ 배___ 더 달아요.",
+  options: ["보다, 가", "보다, 이", "에서, 가"],
+  correctIndex: 0,
+  explain: "Namunaviy qolip: **사과보다 배가 더 달아요.** (둘 다 모음 → ‘가’)"
+}
   ]
 },
-
 {
   id: "buteo-from",
   title: "명사 + 부터 (…dan boshlab / …dan beri)",
@@ -877,11 +1156,30 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "서울역에서부터 걸어 갔어요.", uz: "Seul vokzalidan boshlab piyoda bordim.", ru: "Пошёл(шла) пешком прямо от вокзала Сеула.", en: "I walked starting from Seoul Station." }
   ],
   quiz: [
-    { id: "q-buteo-1", question: "수업은 9시___ 12시___ 입니다.", options: ["부터, 까지", "에서, 에", "으로, 부터"], correctIndex: 0, explain: "Boshlanish–tugash: ‘…부터 …까지’." },
-    { id: "q-buteo-2", question: "‘Hozirdan boshlab’ to‘g‘ri varianti:", options: ["지금에서", "지금부터", "지금까지"], correctIndex: 1, explain: "Start nuqtasi — ‘지금부터’." }
+    // +3 yangi
+{
+  id: "q-buteo-3",
+  question: "월요일___ 금요일___ 회사에 가요.",
+  options: ["부터, 까지", "에서, 까지", "에, 부터"],
+  correctIndex: 0,
+  explain: "Kunlar oralig‘i: **월요일부터 금요일까지**."
+},
+{
+  id: "q-buteo-4",
+  question: "방학은 7월 1일___ 8월 31일___이에요.",
+  options: ["부터, 까지", "에서, 에", "에, 까지"],
+  correctIndex: 0,
+  explain: "Boshlanish–tugash sanalari: **7월 1일부터 8월 31일까지**."
+},
+{
+  id: "q-buteo-5",
+  question: "학교___ 집___ 걸어가요.",
+  options: ["부터, 까지", "에서, 에서", "에, 에"],
+  correctIndex: 0,
+  explain: "Harakat yo‘nalish oralig‘i: **학교부터 집까지**."
+}
   ]
 },
-
 {
   id: "seubnikka-formal-q",
   title: "(스)ㅂ니까? — rasmiy savol ohangi",
@@ -906,11 +1204,30 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "회사에 다닙니까?", uz: "Siz kompaniyada ishlaysizmi?", ru: "Вы работаете в компании?", en: "Do you work at a company?" }
   ],
   quiz: [
-    { id: "q-seubnikka-1", question: "빈칸: 어디에 살___?", options: ["습니까", "ㅂ니까", "습니까?"], correctIndex: 2, explain: "Savol tugashi to‘liq yoziladi: 살습니까?" },
-    { id: "q-seubnikka-2", question: "하다 fe’li bilan to‘g‘ri shakl:", options: ["하습니까?", "합니까?", "해습니까?"], correctIndex: 1, explain: "하다 → 합니다/합니까? (ㅂ니다/ㅂ니까 yo‘li bilan)." }
+    // +3 yangi
+{
+  id: "q-seubnikka-3",
+  question: "빈칸: 한국어를 공부하___?",
+  options: ["습니까", "합니까?", "하습니까?"],
+  correctIndex: 1,
+  explain: "하다 → **합니까?** (하 + ㅂ니까? → 합니까?)."
+},
+{
+  id: "q-seubnikka-4",
+  question: "빈칸: 점심을 먹___?",
+  options: ["습니까?", "ㅂ니까?", "읍니까?"],
+  correctIndex: 0,
+  explain: "받침 bor (먹-): **먹습니까?** (받침 → -습니까?)."
+},
+{
+  id: "q-seubnikka-5",
+  question: "빈칸: 주말에 서울에 가___?",
+  options: ["ㅂ니까", "갑니까?", "가습니까?"],
+  correctIndex: 1,
+  explain: "Vokal bilan tugaydi (가-): **갑니까?** (가 + ㅂ니까? → 갑니까?)."
+}
   ]
 },
-
 {
   id: "seubnida-formal-dec",
   title: "(스)ㅂ니다/ㅂ니다 — rasmiy darak ohangi",
@@ -937,11 +1254,30 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "결과를 보고드립니다.", uz: "Natijalarni ma’lum qilamiz.", ru: "Докладываем результаты.", en: "We report the results." }
   ],
   quiz: [
-    { id: "q-seubnida-1", question: "빈칸: 저는 한국어를 공부___ .", options: ["합니다", "합니까", "했습니까"], correctIndex: 0, explain: "Darak: ‘합니다’." },
-    { id: "q-seubnida-2", question: "O‘tgan zamon rasmiy: ‘어제 영화를 보…’.", options: ["봅니다", "보았습니다", "보겠습니다"], correctIndex: 1, explain: "Past formal: 보았습니다." }
+   // +3 yangi
+{
+  id: "q-seubnida-3",
+  question: "빈칸: 저는 내일 부산에 ___ .",
+  options: ["갑니다", "가십니다", "가습니다"],
+  correctIndex: 0,
+  explain: "Vokal bilan tugaydi (가-): **갑니다** (가 + ㅂ니다 → 갑니다)."
+},
+{
+  id: "q-seubnida-4",
+  question: "빈칸: 책을 읽___ .",
+  options: ["습니다", "ㅂ니다", "십니다"],
+  correctIndex: 0,
+  explain: "받침 bor (읽-): **읽습니다** (받침 → -습니다)."
+},
+{
+  id: "q-seubnida-5",
+  question: "빈칸: 저는 서울에 ___ .",
+  options: ["삽니다", "살습니다", "살읍니다"],
+  correctIndex: 0,
+  explain: "ㄹ-irregular: **살다 → 삽니다** (ㄹ ‘ㅂ/ㄴ/ㅅ’dan oldin tushadi)."
+}
   ]
 },
-
 {
   id: "a-eo-boda-try",
   title: "-아/어 보다 (… qilib ko‘rmoq / sinab ko‘rmoq)",
@@ -966,8 +1302,28 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "이번 방학에 혼자 여행을 가 보고 싶어요.", uz: "Bu ta’tilda yolg‘iz sayohat qilib ko‘rmoqchiman.", ru: "В эти каникулы хочу попробовать путешествовать один(а).", en: "I want to try traveling alone this vacation." }
   ],
   quiz: [
-    { id: "q-aeoboda-1", question: "‘Bir marta eshitib ko‘ring’ — to‘g‘ri variant:", options: ["들어 보세요", "듣어 보세요", "들으세요 보다"], correctIndex: 0, explain: "듣다 → 들어 보세요 (불규칙)." },
-    { id: "q-aeoboda-2", question: "Bo‘shliq: 한국 음식을 먹어 ___ 싶어요.", options: ["보는", "보려", "보고"], correctIndex: 2, explain: "V-고 싶다 bilan: 먹어 보고 싶어요." }
+    // +3 yangi
+{
+  id: "q-aeoboda-3",
+  question: "이 옷이 커요. 작은 사이즈를 ___ ___ . (bir sinab ko‘ring)",
+  options: ["입어 보세요", "입어 보겠어요", "입어 볼게요"],
+  correctIndex: 0,
+  explain: "Muloyim taklif: **V-아/어 보세요** → ‘bir sinab ko‘ring’."
+},
+{
+  id: "q-aeoboda-4",
+  question: "저는 김치를 아직 안 먹어 ___ .",
+  options: ["보세요", "봤어요", "볼까요"],
+  correctIndex: 1,
+  explain: "Tajriba (o‘tgan): **V-아/어 봤어요** / ‘hali sinab ko‘rmaganman’ — 아직 안 먹어 봤어요."
+},
+{
+  id: "q-aeoboda-5",
+  question: "새 메뉴가 나왔어요. 같이 먹어 ___ ?",
+  options: ["볼까요", "보세요", "봅니다"],
+  correctIndex: 0,
+  explain: "Birga taklif: **V-아/어 볼까요?**"
+}
   ]
 },{
   id: "aeo-seo",
@@ -1037,11 +1393,30 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "집에 늦게 오면 연락해야 돼요.", uz: "Uyga kech kelsangiz, albatta xabar berishingiz kerak.", ru: "Если опаздываете домой, нужно сообщить.", en: "If you’ll be late home, you must let us know." }
   ],
   quiz: [
-    { id: "q-oya-1", question: "빈칸: 내일까지 숙제를 끝내___ 합니다.", options: ["야", "어야", "아서"], correctIndex: 1, explain: "끝내 + 어야 하다 → ‘끝내어야/끝내야’ (og‘zaki: ‘끝내야’)." },
-    { id: "q-oya-2", question: "Ruxsat (kerak emas): 오늘은 일하지 ___ 돼요.", options: ["않아야", "않아도", "어도"], correctIndex: 1, explain: "‘-지 않아도 되다’ — ‘qilmasa ham bo‘ladi’." }
+   // +3 yangi
+{
+  id: "q-oya-3",
+  question: "빈칸: 약은 식사 후에 먹___ 해요.",
+  options: ["어야", "아도", "지 않아도"],
+  correctIndex: 0,
+  explain: "Majburiyat: **먹어야 해요** — ‘ovqatdan keyin ichish kerak’."
+},
+{
+  id: "q-oya-4",
+  question: "Ruxsat so‘rash: 여기에서 사진을 찍___ ___?",
+  options: ["어도 돼요", "어야 해요", "지 않아도 돼요"],
+  correctIndex: 0,
+  explain: "Ruxsat: **V-아/어도 돼요?** → ‘suratga olsam bo‘ladimi?’ → 찍어도 돼요?"
+},
+{
+  id: "q-oya-5",
+  question: "오늘은 늦게까지 일하지 ___ ___ . (kerak emas)",
+  options: ["않아야 해요", "않아도 돼요", "해야 해요"],
+  correctIndex: 1,
+  explain: "Kerak emas: **-지 않아도 돼요** — ‘qilmasa ham bo‘ladi’."
+}
   ]
 },
-
 {
   id: "aeo-juda-benefactive",
   title: "-아/어 주다 · -아/어 드리다 (… qilib bermoq)",
@@ -1110,11 +1485,30 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "주말에는 일 안 해요.", uz: "Dam olish kunlari ishlamayman.", ru: "По выходным я не работаю.", en: "I don’t work on weekends." }
   ],
   quiz: [
-    { id: "q-an-1", question: "빈칸: 저는 커피를 ___ 마셔요. (ichmayman)", options: ["못", "안", "아니"], correctIndex: 1, explain: "Ixtiyoriy inkor — ‘안’. ‘못’ qila olmaslik ma’nosi." },
-    { id: "q-an-2", question: "To‘g‘ri inkor: 저는 학생___.", options: ["안이에요", "아니에요", "없어요"], correctIndex: 1, explain: "Ot inkori ‘아니다’: ‘학생이 아니에요’." }
+   // +3 yangi (안/못/아니다 farqlari)
+{
+  id: "q-an-3",
+  question: "어제 숙제를 ___ 했어요. (qila olmadim)",
+  options: ["안", "못", "아니"],
+  correctIndex: 1,
+  explain: "‘못’ — imkon yo‘qligi/qo‘ldan kelmaslik: **숙제를 못 했어요**."
+},
+{
+  id: "q-an-4",
+  question: "그 식당 음식이 맛있___ . (mazali emas)",
+  options: ["지 않아요", "아니에요", "못해요"],
+  correctIndex: 0,
+  explain: "Sifat/deskriptiv fe’l inkori: **맛있지 않아요** (‘mazali emas’)."
+},
+{
+  id: "q-an-5",
+  question: "저 사람은 의사___ .",
+  options: ["가 아니에요", "이 아니에요", "안이에요"],
+  correctIndex: 0,
+  explain: "Ot inkori **N이/가 아니에요**. ‘의사’ (받침 yo‘q) → **의사가 아니에요**."
+}
   ]
 },
-
 {
   id: "past-aseo-eoseo",
   title: "-았/었- (o‘tgan zamon)",
@@ -1140,8 +1534,35 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "한국어 수업을 들었어요.", uz: "Koreys tili darsida qatnashdim.", ru: "Посетил(а) занятие по корейскому.", en: "I took a Korean class." }
   ],
   quiz: [
-    { id: "q-past-1", question: "‘먹다’ fe’lini o‘tgan zamonda to‘g‘ri tanlang:", options: ["먹았어요", "먹였어요", "먹했어요"], correctIndex: 0, explain: "Boshqa unlilar → ‘-었-’: 먹었어요." },
-    { id: "q-past-2", question: "Rasmiy: ‘갔어요’ ning formal varianti qaysi?", options: ["갔습니다", "가었습니다", "가했습니디"], correctIndex: 0, explain: "Formal o‘tgan: -았습니다/-었습니다 → 갔습니다." }
+   // +4 yangi (o‘tgan zamon)
+{
+  id: "q-past-3",
+  question: "‘하다’ fe’lini o‘tgan zamonda to‘g‘ri tanlang:",
+  options: ["했어요", "해었어요", "했습니디"],
+  correctIndex: 0,
+  explain: "하다 → **했어요** (하+였 → 했). Qolganlari noto‘g‘ri yozilgan."
+},
+{
+  id: "q-past-4",
+  question: "‘보다’ ning rasmiy o‘tgan zamon shakli qaysi?",
+  options: ["봤습니다", "보았습니다", "보았습니디"],
+  correctIndex: 1,
+  explain: "Formal o‘tgan: **보았습니다** (보+았+습니다)."
+},
+{
+  id: "q-past-5",
+  question: "‘오다’ fe’lining o‘tgan zamonini tanlang:",
+  options: ["왔어요", "오었어요", "와었어요"],
+  correctIndex: 0,
+  explain: "오다 → **왔어요** (오+았 → 왔)."
+},
+{
+  id: "q-past-6",
+  question: "‘마시다’ fe’lining o‘tgan zamonini tanlang:",
+  options: ["마셨어요", "마시였어요", "마셨어요"],
+  correctIndex: 0,
+  explain: "마시었어요 → **마셨어요** (ㅣ+었 → 셔). Qolganlari noto‘g‘ri imlo."
+}
   ]
 },{
   id: "eottaeyo",
@@ -1255,20 +1676,35 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "비가 오는데 우산 있어요?", uz: "Yomg‘ir yog‘ayapti-ku, soyaboningiz bormi?", ru: "Дождь идёт, у вас есть зонт?", en: "It’s raining—do you have an umbrella?" }
   ],
   quiz: [
-    {
-      id: "q-neunde-1",
-      question: "To‘ldiring: 비가 ___ 우산을 가져가세요.",
-      options: ["오는데", "왔는데", "오는 데"],
-      correctIndex: 0,
-      explain: "동사 + 는데: ‘오다 → 오는데’."
-    },
-    {
-      id: "q-neunde-2",
-      question: "Mos variant: ‘저는 회사원___ 오늘 야근이에요.’",
-      options: ["인데", "은데", "는데"],
-      correctIndex: 0,
-      explain: "명사 + -인데: ‘회사원인데’."
-    }
+    // +4 yangi (는데/은데/인데)
+{
+  id: "q-neunde-3",
+  question: "날씨가 ___ 창문을 닫을까요?",
+  options: ["추운데", "추우는데", "추웠는데"],
+  correctIndex: 0,
+  explain: "형용사 + (으)ㄴ데 → 춥다 → **추운데** (hozirgi holat + fon)."
+},
+{
+  id: "q-neunde-4",
+  question: "어제 비가 많이 ___ 길이 미끄러웠어요.",
+  options: ["왔는데", "오는데", "오는 데"],
+  correctIndex: 0,
+  explain: "Past fon: 오다 → **왔는데** … (natija: 길이 미끄러웠어요)."
+},
+{
+  id: "q-neunde-5",
+  question: "여기는 도서관___ 조용히 하세요.",
+  options: ["인데", "은데", "는데"],
+  correctIndex: 0,
+  explain: "명사 + **인데**: ‘여기는 도서관인데…’ (sharoit/fon → iltimos)."
+},
+{
+  id: "q-neunde-6",
+  question: "지금 회의 중___ 나중에 전화 드릴게요.",
+  options: ["인데요", "인데", "는데요"],
+  correctIndex: 0,
+  explain: "명사 + **인데요** — yumshoq xabar/uzr: ‘회의 중인데요…’"
+}
   ]
 },
 
@@ -1299,23 +1735,26 @@ export const GRAMMAR: GrammarPoint[] = [
   ],
   quiz: [
     {
-      id: "q-34-1",
-      question: "비가 오___ 우산을 가져가세요.",
-      options: ["아서", "니까", "는데"],
-      correctIndex: 1,
-      explain: "Sabab + buyruq: ‘비가 오니까 …’."
-    },
-    {
-      id: "q-34-2",
-      question: "‘Dam olsam ko‘nglim yozildi’ — to‘g‘ri variant:",
-      options: [
-        "쉬니까 기분이 좋아졌어요.",
-        "쉬어서 기분이 좋아져요 (buyruq bilan).",
-        "쉬는데 기분이 좋아졌어요."
-      ],
-      correctIndex: 0,
-      explain: "Tajribadan kelib chiqqan sabab: ‘쉬니까 …좋아졌어요’."
-    }
+  id: "q-34-3",
+  question: "배가 고프___ 밥을 먹읍시다.",
+  options: ["니까", "아서", "지만"],
+  correctIndex: 0,
+  explain: "Buyruq/taklif bilan sabab berishda **-(으)니까** tabiiy: ‘배가 고프니까 …’. (-아서/어서 odatda buyruq/taklif bilan kelmaydi.)"
+},
+{
+  id: "q-34-4",
+  question: "시간이 없___ 못 갔어요.",
+  options: ["어서", "니까", "지만"],
+  correctIndex: 0,
+  explain: "Ketma-ket sabab (A ↔ B natija) uchun **-어서/어서** mos: ‘시간이 없어서 못 갔어요.’"
+},
+{
+  id: "q-34-5",
+  question: "집에 가 보___ 알았어요. (borib ko‘rganimdan keyin bildim)",
+  options: ["니까", "면", "아서"],
+  correctIndex: 0,
+  explain: "Kashf/aniqlash sababi: **-아/어 보니까** (‘… qilib ko‘rsam, bildim’)."
+}
   ]
 },
 
@@ -1348,19 +1787,26 @@ export const GRAMMAR: GrammarPoint[] = [
   ],
   quiz: [
     {
-      id: "q-35-1",
-      question: "‘Kitob o‘qish yoqadi’ — qaysi variant to‘g‘ri?",
-      options: ["책 읽는 게 좋아요.", "책 읽을 거예요.", "책 읽은 것 좋아요."],
-      correctIndex: 0,
-      explain: "Sevish/yoqish predmet sifatida → 현재 nominalizatsiya ‘읽는 게’."
-    },
-    {
-      id: "q-35-2",
-      question: "Bo‘shliqni to‘ldiring: ‘Bu mening narsam’ → 제 ___ 입니다.",
-      options: ["것", "게", "거예요"],
-      correctIndex: 0,
-      explain: "Rasmiy egalik: ‘제 것입니다’. (Norasmiysi: ‘제 거예요’)."
-    }
+  id: "q-35-3",
+  question: "‘Koreys tilini o‘rganish qiziq’ — to‘g‘ri variant:",
+  options: ["한국어를 배우는 것이 재미있어요.", "한국어를 배우는 게 재미있어요.", "한국어를 배우는 것을 재미있어요."],
+  correctIndex: 1,
+  explain: "Sifat-fe’l bilan ‘subyekt’ bo‘lganda **-것이 → -게** ko‘proq ishlatiladi: 배우는 게 재미있어요."
+},
+{
+  id: "q-35-4",
+  question: "Bo‘shliqni to‘ldiring: 저는 영화를 보___ 좋아해요.",
+  options: ["는 것을", "는 게를", "기"],
+  correctIndex: 0,
+  explain: "‘좋아하다’ obyekt talab qiladi → **V-는 것을 좋아하다** (yoki V-기를 좋아하다)."
+},
+{
+  id: "q-35-5",
+  question: "‘Bu meniki’ — norasmiy varianti qaysi?",
+  options: ["이것은 제 것입니다.", "이건 제 거예요.", "이건 제 게예요."],
+  correctIndex: 1,
+  explain: "Rasmiy: 제 것입니다. Norasmiy/standart: **제 거예요** (‘것’ → ‘거’)."
+}
   ]
 },
 
@@ -1388,22 +1834,29 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "문은 제가 열게요.", uz: "Eshikni men ochaman.", ru: "Я открою дверь.", en: "I’ll open the door." },
     { ko: "회의 후에 설명드릴게요.", uz: "Yig‘ilishdan keyin tushuntirib beraman.", ru: "Объясню после совещания.", en: "I’ll explain after the meeting." }
   ],
-  quiz: [
-    {
-      id: "q-36-1",
-      question: "문을 제가 열___ .",
-      options: ["게요", "어요", "았어요"],
-      correctIndex: 0,
-      explain: "Darhol niyat/va’da: ‘열게요’."
-    },
-    {
-      id: "q-36-2",
-      question: "Qaysi biri xato? (va’da ohangi kerak)",
-      options: ["지금 확인할게요.", "내가 전화할게요.", "내가 예뻐요."],
-      correctIndex: 2,
-      explain: "‘예뻐요’ sifat; -(으)ㄹ게요 faqat fe’l bilan ishlatiladi."
-    }
-  ]
+quiz: [
+  {
+    id: "q-36-3",
+    question: "빈칸: 제가 답장을 바로 보낼___ .",
+    options: ["게요", "ㄹ게요", "을게요"],
+    correctIndex: 0,
+    explain: "보내다 → 보내+ㄹ게요 → **보낼게요**. Shuning uchun bo‘shliq ‘게요’."
+  },
+  {
+    id: "q-36-4",
+    question: "빈칸: 제가 답을 찾___ .",
+    options: ["을게요", "ㄹ게요", "게요"],
+    correctIndex: 0,
+    explain: "찾다 (받침 bor) → **찾을게요** (‘-을게요’)."
+  },
+  {
+    id: "q-36-5",
+    question: "To‘g‘ri variantni tanlang (ㅂ 불규칙): ‘Men yordam beraman’.",
+    options: ["도울게요", "돕을게요", "도울 거예요"],
+    correctIndex: 0,
+    explain: "돕다 → **도우-** (ㅂ→우) + ㄹ게요 → **도울게요**. (‘-ㄹ 거예요’ va’da ohangidan ko‘ra reja/Taxmin)."
+  }
+]
 },{
   id: "eulkkayo-shallwe",
   title: "-(으)ㄹ까요? (taklif / fikr so‘rash ‘qilaylikmi?’ ‘bo‘ladimikan?’)",
@@ -1429,23 +1882,29 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "내일 다시 만날까요?", uz: "Ertaga yana uchrashaylikmi?", ru: "Встретимся завтра?", en: "Shall we meet again tomorrow?" }
   ],
   quiz: [
-    {
-      id: "q-37-1",
-      question: "영화를 같이 ___?",
-      options: ["보나요", "볼까요", "봤을까요"],
-      correctIndex: 1,
-      explain: "Birgalik taklifi: ‘볼까요?’"
-    },
-    {
-      id: "q-37-2",
-      question: "그분이 지금 집에 계실___?",
-      options: ["까요", "게요", "래요"],
-      correctIndex: 0,
-      explain: "Taxmin/so‘rash: ‘계실까요?’"
-    }
-  ]
+  {
+    id: "q-37-3",
+    question: "저녁에 뭐 먹을___?",
+    options: ["까요", "래요", "게요"],
+    correctIndex: 0,
+    explain: "Birgalik taklifi/so‘rash: **먹을까요?**"
+  },
+  {
+    id: "q-37-4",
+    question: "비가 올___?",
+    options: ["까요", "게요", "래요"],
+    correctIndex: 0,
+    explain: "Taxminni muloyim so‘rash: **올까요?**"
+  },
+  {
+    id: "q-37-5",
+    question: "제가 창문을 열어 드릴___?",
+    options: ["까요", "게요", "ㄹ래요"],
+    correctIndex: 0,
+    explain: "Muloyim taklif/qo‘llab yuborish: **열어 드릴까요?**"
+  }
+]
 },
-
 {
   id: "eul-ddae-when",
   title: "-(으)ㄹ 때 (… paytda / …da)",
@@ -1515,23 +1974,44 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "컴퓨터를 고칠 수 있어요?", uz: "Kompyuterni tuzata olasizmi?", ru: "Вы можете починить компьютер?", en: "Can you fix the computer?" }
   ],
   quiz: [
-    {
-      id: "q-39-1",
-      question: "저는 운전을 할 ___ ___ .",
-      options: ["수 있어요", "게요", "까요"],
-      correctIndex: 0,
-      explain: "Qobiliyat: ‘할 수 있어요’."
-    },
-    {
-      id: "q-39-2",
-      question: "시간이 없어서 오늘은 만날 ___ ___ .",
-      options: ["수 없어요", "까요", "게요"],
-      correctIndex: 0,
-      explain: "Imkon yo‘qligi: ‘만날 수 없어요’."
-    }
-  ]
+  {
+    id: "q-39-1",
+    question: "저는 운전을 할 ___ ___ .",
+    options: ["수 있어요", "게요", "까요"],
+    correctIndex: 0,
+    explain: "Qobiliyat: ‘할 수 있어요’."
+  },
+  {
+    id: "q-39-2",
+    question: "시간이 없어서 오늘은 만날 ___ ___ .",
+    options: ["수 없어요", "까요", "게요"],
+    correctIndex: 0,
+    explain: "Imkon yo‘qligi: ‘만날 수 없어요’."
+  },
+  // +3 qo‘shimcha
+  {
+    id: "q-39-3",
+    question: "한국어를 잘 말할 ___ ___?",
+    options: ["수 있어요", "수 없어요", "ㄹ게요"],
+    correctIndex: 0,
+    explain: "Qobiliyat/iloj: **말할 수 있어요?** — “gapira olasizmi?”"
+  },
+  {
+    id: "q-39-4",
+    question: "회의가 있어서 점심에 밖에 나갈 ___ ___.",
+    options: ["수 없어요", "ㄹ까요", "게요"],
+    correctIndex: 0,
+    explain: "Vaqt yetmasligi sabab chiqa **olmayman** → 나갈 **수 없어요**."
+  },
+  {
+    id: "q-39-5",
+    question: "이 카드로도 결제할 ___ ___?",
+    options: ["수 있어요", "수 없어요", "지요"],
+    correctIndex: 0,
+    explain: "Imkonni so‘rash: **결제할 수 있어요?** — “to‘lov qilsa bo‘ladimi?”"
+  }
+]
 },
-
 {
   id: "eureo-purpose",
   title: "-(으)러 (maqsad: ‘…gani/…ishga’)",
@@ -1556,23 +2036,44 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "한국어 공부하러 학원에 다녀요.", uz: "Koreyscha o‘qishga markazga qatnayman.", ru: "Хожу в учебный центр изучать корейский.", en: "I attend an academy to study Korean." }
   ],
   quiz: [
-    {
-      id: "q-40-1",
-      question: "저는 운동하___ 체육관에 가요.",
-      options: ["러", "려고", "게요"],
-      correctIndex: 0,
-      explain: "Maqsad + harakat fe’li: ‘운동하러 … 가요’."
-    },
-    {
-      id: "q-40-2",
-      question: "도서관에 책을 빌리___ 다녔어요.",
-      options: ["러", "게요", "까요"],
-      correctIndex: 0,
-      explain: "‘다니다’ bilan ham -(으)러 ishlatiladi."
-    }
-  ]
+  {
+    id: "q-40-1",
+    question: "저는 운동하___ 체육관에 가요.",
+    options: ["러", "려고", "게요"],
+    correctIndex: 0,
+    explain: "Maqsad + harakat fe’li: ‘운동하러 … 가요’."
+  },
+  {
+    id: "q-40-2",
+    question: "도서관에 책을 빌리___ 다녔어요.",
+    options: ["러", "게요", "까요"],
+    correctIndex: 0,
+    explain: "‘다니다’ bilan ham -(으)러 ishlatiladi."
+  },
+  // +3 qo‘shimcha
+  {
+    id: "q-40-3",
+    question: "친구를 만나___ 카페에 갔어요.",
+    options: ["러", "려고", "게요"],
+    correctIndex: 0,
+    explain: "Maqsad: ‘만나러 (카페에) 갔어요’."
+  },
+  {
+    id: "q-40-4",
+    question: "집에 쉬___ 왔어요.",
+    options: ["러", "려고", "게요"],
+    correctIndex: 0,
+    explain: "‘쉬러 왔어요’ — ‘dam olish uchun keldim’."
+  },
+  {
+    id: "q-40-5",
+    question: "시장에 과일을 사___ 가요.",
+    options: ["러", "려고", "게요"],
+    correctIndex: 0,
+    explain: "Maqsad + harakat: ‘사러 가요’."
+  }
+]
 },
-
 {
   id: "eureo-gada-oda",
   title: "-(으)러 가다/오다 (…gani bor-/kel-)",
@@ -1596,23 +2097,44 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "놀러 바다에 갔어요.", uz: "Hordiq uchun dengizga bordim.", ru: "Поехал(а) к морю отдохнуть.", en: "I went to the sea to hang out." }
   ],
   quiz: [
-    {
-      id: "q-41-1",
-      question: "친구가 저를 도와주___ 집에 왔어요.",
-      options: ["러", "려고", "게요"],
-      correctIndex: 0,
-      explain: "‘… qilish uchun kelmoq’: ‘도와주러 왔어요’."
-    },
-    {
-      id: "q-41-2",
-      question: "우리는 사진을 찍___ 산에 갔어요.",
-      options: ["으러", "을까요", "겠어요"],
-      correctIndex: 0,
-      explain: "받침 bor (찍-): -으러 → ‘찍으러’."
-    }
-  ]
+  {
+    id: "q-41-1",
+    question: "친구가 저를 도와주___ 집에 왔어요.",
+    options: ["러", "려고", "게요"],
+    correctIndex: 0,
+    explain: "‘… qilish uchun kelmoq’: ‘도와주러 왔어요’."
+  },
+  {
+    id: "q-41-2",
+    question: "우리는 사진을 찍___ 산에 갔어요.",
+    options: ["으러", "을까요", "겠어요"],
+    correctIndex: 0,
+    explain: "받침 bor (찍-): -으러 → ‘찍으러’."
+  },
+  // +3 qo‘shimcha
+  {
+    id: "q-41-3",
+    question: "할머니를 보___ 고향에 내려갔어요.",
+    options: ["러", "려고", "게요"],
+    correctIndex: 0,
+    explain: "Maqsad: ‘보러 내려갔어요’."
+  },
+  {
+    id: "q-41-4",
+    question: "책을 읽___ 도서관에 왔어요.",
+    options: ["으러", "려고", "게요"],
+    correctIndex: 0,
+    explain: "읽- (받침) → ‘읽으러’."
+  },
+  {
+    id: "q-41-5",
+    question: "점심을 먹___ 식당에 가요.",
+    options: ["으러", "려고", "게요"],
+    correctIndex: 0,
+    explain: "먹- (받침) → ‘먹으러’."
+  }
+]
 },
-
 {
   id: "eureogo-purpose-intent",
   title: "-(으)려고 (…moqchi bo‘lib / … uchun)",
@@ -1636,23 +2158,44 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "한국 문화를 이해하려고 드라마를 봐요.", uz: "Koreys madaniyatini tushunish uchun seriallar ko‘raman.", ru: "Смотрю дорамы, чтобы понимать корейскую культуру.", en: "I watch K-dramas to understand Korean culture." }
   ],
   quiz: [
-    {
-      id: "q-42-1",
-      question: "한국에 ___ 이 책을 샀어요.",
-      options: ["가려고", "가면", "가고"],
-      correctIndex: 0,
-      explain: "Maqsad: ‘… uchun’ → 가려고."
-    },
-    {
-      id: "q-42-2",
-      question: "유학을 하___ 준비해요.",
-      options: ["려고", "면", "겠"],
-      correctIndex: 0,
-      explain: "Istak/maqsad: 하려고."
-    }
-  ]
+  {
+    id: "q-42-1",
+    question: "한국에 ___ 이 책을 샀어요.",
+    options: ["가려고", "가면", "가고"],
+    correctIndex: 0,
+    explain: "Maqsad: ‘… uchun’ → 가려고."
+  },
+  {
+    id: "q-42-2",
+    question: "유학을 하___ 준비해요.",
+    options: ["려고", "면", "겠"],
+    correctIndex: 0,
+    explain: "Istak/maqsad: 하려고."
+  },
+  // +3 qo‘shimcha
+  {
+    id: "q-42-3",
+    question: "일찍 일어나___ 알람을 맞췄어요.",
+    options: ["려고", "러", "는데"],
+    correctIndex: 0,
+    explain: "Maqsad: ‘erta turish uchun’ → 일찍 일어나려고."
+  },
+  {
+    id: "q-42-4",
+    question: "그 책을 읽___ 샀어요.",
+    options: ["으려고", "아서", "지만"],
+    correctIndex: 0,
+    explain: "받침 (읽-) → 읽으려고 샀어요 (‘o‘qish uchun oldim’)."
+  },
+  {
+    id: "q-42-5",
+    question: "한국 친구를 만나___ 한국어를 열심히 배우고 있어요.",
+    options: ["려고", "러", "게"],
+    correctIndex: 0,
+    explain: "Maqsad: ‘do‘st bilan uchrashish uchun’ → 만나려고."
+  }
+]
 },
-
 {
   id: "eureogo-hada-plan",
   title: "-(으)려고 하다 (…moqchiman / reja)",
@@ -1677,23 +2220,44 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "지금 전화하려고 했어요.", uz: "Hozir telefon qilmoqchi edim.", ru: "Как раз собирался(лась) позвонить.", en: "I was just about to call." }
   ],
   quiz: [
-    {
-      id: "q-43-1",
-      question: "저는 오늘 운동하___ 합니다.",
-      options: ["려고", "면", "거나"],
-      correctIndex: 0,
-      explain: "Reja/niyat: 운동하려고 합니다."
-    },
-    {
-      id: "q-43-2",
-      question: "어제 영화를 보___ 했어요. (ammo bora olmadim)",
-      options: ["려고", "면", "게"],
-      correctIndex: 0,
-      explain: "O‘tgan zamon niyat: 보려고 했어요."
-    }
-  ]
+  {
+    id: "q-43-1",
+    question: "저는 오늘 운동하___ 합니다.",
+    options: ["려고", "면", "거나"],
+    correctIndex: 0,
+    explain: "Reja/niyat: 운동하려고 합니다."
+  },
+  {
+    id: "q-43-2",
+    question: "어제 영화를 보___ 했어요. (ammo bora olmadim)",
+    options: ["려고", "면", "게"],
+    correctIndex: 0,
+    explain: "O‘tgan zamon niyat: 보려고 했어요."
+  },
+  // +3 qo‘shimcha
+  {
+    id: "q-43-3",
+    question: "한국어를 잘하___ 매일 연습해요.",
+    options: ["려고", "러", "면"],
+    correctIndex: 0,
+    explain: "Maqsad/niyat: ‘yaxshi bilish uchun’ → 잘하려고."
+  },
+  {
+    id: "q-43-4",
+    question: "책을 읽___ 도서관에 갔어요.",
+    options: ["으려고", "려고", "게"],
+    correctIndex: 0,
+    explain: "받침 bor (읽-): 읽으려고."
+  },
+  {
+    id: "q-43-5",
+    question: "회의실을 예약하___ 합니다.",
+    options: ["려고", "게", "고"],
+    correctIndex: 0,
+    explain: "Rasmiy reja: 예약하려고 합니다."
+  }
+]
 },
-
 {
   id: "eumyeon-if",
   title: "-(으)면 (agar/bo‘lsa)",
@@ -1717,24 +2281,45 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "비가 오면 집에 있을 거예요.", uz: "Yomg‘ir yog‘sa, uyda bo‘laman.", ru: "Если пойдёт дождь, останусь дома.", en: "If it rains, I’ll stay home." },
     { ko: "가격이 싸면 살 거예요.", uz: "Narxi arzon bo‘lsa, xarid qilaman.", ru: "Если цена низкая, куплю.", en: "If it’s cheap, I’ll buy it." }
   ],
-  quiz: [
-    {
-      id: "q-44-1",
-      question: "비가 오___ 소풍을 안 가요.",
-      options: ["면", "려고", "거나"],
-      correctIndex: 0,
-      explain: "Shart: 오면."
-    },
-    {
-      id: "q-44-2",
-      question: "시간이 있___ 같이 공부할까요?",
-      options: ["으면", "려고", "겠"],
-      correctIndex: 0,
-      explain: "있다 + -(으)면 → 있으면."
-    }
-  ]
+quiz: [
+  {
+    id: "q-44-1",
+    question: "비가 오___ 소풍을 안 가요.",
+    options: ["면", "려고", "거나"],
+    correctIndex: 0,
+    explain: "Shart: 오면."
+  },
+  {
+    id: "q-44-2",
+    question: "시간이 있___ 같이 공부할까요?",
+    options: ["으면", "려고", "겠"],
+    correctIndex: 0,
+    explain: "있다 + -(으)면 → 있으면."
+  },
+  // +3 qo‘shimcha
+  {
+    id: "q-44-3",
+    question: "맛있___ 더 주문하세요.",
+    options: ["으면", "아서", "거나"],
+    correctIndex: 0,
+    explain: "Shart: 맛있으면 ‘mazali bo‘lsa’."
+  },
+  {
+    id: "q-44-4",
+    question: "내일 시간이 없___ 미리 연락해 주세요.",
+    options: ["으면", "거나", "겠"],
+    correctIndex: 0,
+    explain: "없다 + -(으)면 → 없으면: ‘bo‘lmasa’."
+  },
+  {
+    id: "q-44-5",
+    question: "안 바쁘___ 같이 점심 먹어요.",
+    options: ["면", "으니까", "거나"],
+    correctIndex: 0,
+    explain: "바쁘다 (unli bilan tugaydi) → 바쁘면."
+  }
+]
 },
-
 {
   id: "eumyeon-an-doeda",
   title: "-(으)면 안 되다 (bo‘lsa bo‘lmaydi / mumkin emas)",
@@ -1760,16 +2345,37 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "시험 중에는 떠들면 안 됩니다.", uz: "Imtihon paytida shovqin qilish mumkin emas.", ru: "Во время экзамена нельзя шуметь.", en: "You must not make noise during the exam." }
   ],
   quiz: [
-    {
-      id: "q45-1",
-      question: "시험에서 휴대폰을 사용하___ 안 돼요.",
-      options: ["면", "려고", "거나"],
-      correctIndex: 0,
-      explain: "Taqiq: 사용하면 안 돼요."
-    }
-  ]
+  {
+    id: "q45-1",
+    question: "시험에서 휴대폰을 사용하___ 안 돼요.",
+    options: ["면", "려고", "거나"],
+    correctIndex: 0,
+    explain: "Taqiq: 사용하면 안 돼요."
+  },
+  // +3 qo‘shimcha
+  {
+    id: "q45-2",
+    question: "도서관에서 크게 이야기하___ 안 돼요.",
+    options: ["면", "거나", "겠"],
+    correctIndex: 0,
+    explain: "Qoidaga zid: 이야기하면 안 돼요."
+  },
+  {
+    id: "q45-3",
+    question: "여기에서 사진을 찍___ 안 됩니다. (rasmga olish taqiqlangan)",
+    options: ["으면", "거나", "고"],
+    correctIndex: 0,
+    explain: "받침 (찍-) → **-으면 안 됩니다** (rasmiy uslub)."
+  },
+  {
+    id: "q45-4",
+    question: "쓰레기를 길에 버리___ 안 돼요.",
+    options: ["면", "거나", "세요"],
+    correctIndex: 0,
+    explain: "Taqiq: **버리면 안 돼요** — ‘tashlash mumkin emas’."
+  }
+]
 },
-
 {
   id: "eumyeonseou-while",
   title: "-(으)면서 (…ar ekan / bir vaqtda)",
@@ -1793,16 +2399,37 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "요리하면서 노래를 들어요.", uz: "Ovqat pishirarkanman, qo‘shiq tinglayman.", ru: "Слушаю музыку, пока готовлю.", en: "I listen to music while cooking." }
   ],
   quiz: [
-    {
-      id: "q46-1",
-      question: "친구와 이야기하___ 걸었어요.",
-      options: ["면서", "면", "려고"],
-      correctIndex: 0,
-      explain: "Bir vaqtda: 이야기하면서."
-    }
-  ]
+  {
+    id: "q46-1",
+    question: "친구와 이야기하___ 걸었어요.",
+    options: ["면서", "면", "려고"],
+    correctIndex: 0,
+    explain: "Bir vaqtda: 이야기하면서."
+  },
+  // +3 qo‘shimcha
+  {
+    id: "q46-2",
+    question: "음악을 들으___ 숙제를 해요.",
+    options: ["면서", "면", "거나"],
+    correctIndex: 0,
+    explain: "듣다 → 들으면서 (불규칙). ‘Bir paytda’ ma’nosi."
+  },
+  {
+    id: "q46-3",
+    question: "운전하___ 전화하면 안 돼요.",
+    options: ["면서", "려고", "거나"],
+    correctIndex: 0,
+    explain: "‘…하면서’ — bir ishni qilayotib boshqa ish; bu yerda taqiq bilan."
+  },
+  {
+    id: "q46-4",
+    question: "밥을 먹___ TV를 보면 눈에 좋지 않아요.",
+    options: ["으면서", "면", "고"],
+    correctIndex: 0,
+    explain: "받침 bor (먹-) → **-으면서**: 먹으면서 TV를 보다."
+  }
+]
 },
-
 {
   id: "eubshida-lets",
   title: "-(으)ㅂ시다 (keling, …laylik)",
@@ -1826,16 +2453,37 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "잠깐 쉬었다가 다시 합시다.", uz: "Biroz dam olib, keyin davom etaylik.", ru: "Давайте немного отдохнём и продолжим.", en: "Let’s take a short break and continue." }
   ],
   quiz: [
-    {
-      id: "q47-1",
-      question: "주말에 산에 가___!",
-      options: ["ㅂ시다", "세요", "면"],
-      correctIndex: 0,
-      explain: "Taklif: 갑시다."
-    }
-  ]
+  {
+    id: "q47-1",
+    question: "주말에 산에 가___!",
+    options: ["ㅂ시다", "세요", "면"],
+    correctIndex: 0,
+    explain: "Taklif: 갑시다."
+  },
+  // +3 qo‘shimcha
+  {
+    id: "q47-2",
+    question: "같이 점심을 먹___ .",
+    options: ["읍시다", "세요", "을까요"],
+    correctIndex: 0,
+    explain: "받침 bor (먹-) → **먹읍시다**. ‘Keling, tushlik qilaylik.’"
+  },
+  {
+    id: "q47-3",
+    question: "회의를 오후 세 시에 시작___ .",
+    options: ["합시다", "싶다", "러 가요"],
+    correctIndex: 0,
+    explain: "하다 fe’li → **합시다**: ‘Keling, uchrashuvni 3:00 da boshlaylik.’"
+  },
+  {
+    id: "q47-4",
+    question: "늦지 ___ !",
+    options: ["맙시다", "말자", "않습니다"],
+    correctIndex: 0,
+    explain: "Salbiy taklif: **-지 맙시다** — ‘Keling, kechikmaylik.’"
+  }
+]
 },
-
 {
   id: "euseyo-request",
   title: "-(으)세요 (iltimos/so‘rov, hurmat)",
@@ -1861,17 +2509,38 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "문을 닫아 주세요.", uz: "Iltimos, eshikni yoping.", ru: "Пожалуйста, закройте дверь.", en: "Please close the door." },
     { ko: "도와주세요.", uz: "Yordam bering, iltimos.", ru: "Пожалуйста, помогите.", en: "Please help me." }
   ],
-  quiz: [
-    {
-      id: "q-48-1",
-      question: "여기에서 기다리___.",
-      options: ["세요", "읍시다", "면 안 돼요"],
-      correctIndex: 0,
-      explain: "Muloyim iltimos: 기다리세요."
-    }
-  ]
+quiz: [
+  {
+    id: "q-48-1",
+    question: "여기에서 기다리___.",
+    options: ["세요", "읍시다", "면 안 돼요"],
+    correctIndex: 0,
+    explain: "Muloyim iltimos: 기다리세요."
+  },
+  // +3 qo‘shimcha (-(으)세요)
+  {
+    id: "q-48-2",
+    question: "조용히 하___ .",
+    options: ["세요", "읍시다", "ㅂ시다"],
+    correctIndex: 0,
+    explain: "Muloyim buyruq/iltimos: **하세요**."
+  },
+  {
+    id: "q-48-3",
+    question: "책을 소리 내서 읽___ .",
+    options: ["으세요", "세요", "십시오"],
+    correctIndex: 0,
+    explain: "받침 bor (읽-) → **읽으세요**."
+  },
+  {
+    id: "q-48-4",
+    question: "이 음악을 들으___ .",
+    options: ["세요", "읍시다", "면 안 돼요"],
+    correctIndex: 0,
+    explain: "ㄷ 불규칙: 듣다 → **들으-** + 세요 → **들으세요**."
+  }
+]
 },
-
 {
   id: "nde-yo",
   title: "-(이)ᄂ데요 / -(으)ᄂ데요 / -는데요 (fond ma’lumot / yumshoq ohang)",
@@ -1896,16 +2565,37 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "가격이 조금 비싼데요.", uz: "Narxi biroz qimmat-da.", ru: "Цена немного высоковата.", en: "The price is a bit expensive." }
   ],
   quiz: [
-    {
-      id: "q52-1",
-      question: "저는 한국어 반 새 학생___, 자리 있나요?",
-      options: ["인데요", "는데요", "이에요"],
-      correctIndex: 0,
-      explain: "명사 + (이)ᄂ데요: 학생인데요."
-    }
-  ]
+  {
+    id: "q52-1",
+    question: "저는 한국어 반 새 학생___, 자리 있나요?",
+    options: ["인데요", "는데요", "이에요"],
+    correctIndex: 0,
+    explain: "명사 + (이)ᄂ데요: 학생인데요."
+  },
+  // +3 qo‘shimcha (-(이)ᄂ데요/는데요)
+  {
+    id: "q52-2",
+    question: "지금 밥 먹고 있___, 조금만 기다려 주세요.",
+    options: ["는데요", "인데요", "예요"],
+    correctIndex: 0,
+    explain: "동사 + -는데요: fon ma’lumot/iltimosni yumshatish — 먹고 있는데요…"
+  },
+  {
+    id: "q52-3",
+    question: "이 옷이 조금 작___, 다른 사이즈 있어요?",
+    options: ["은데요", "는데요", "인데요"],
+    correctIndex: 0,
+    explain: "형용사 + -(으)ᄂ데요: 작다 → **작은데요** (yumshoq mulohaza)."
+  },
+  {
+    id: "q52-4",
+    question: "여보세요? 김민수___ .",
+    options: ["인데요", "합니다", "세요"],
+    correctIndex: 0,
+    explain: "명사 + (이)ᄂ데요: o‘zingizni telefonda tanishtirish — 김민수인데요."
+  }
+]
 },
-
 {
   id: "iga-anida",
   title: "N이/가 아니다 (emas)",
@@ -1928,17 +2618,38 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "그건 제 것이 아니에요.", uz: "U mening narsam emas.", ru: "Это не моё.", en: "That’s not mine." },
     { ko: "여기는 도서관이 아니에요.", uz: "Bu yer kutubxona emas.", ru: "Это не библиотека.", en: "This isn’t a library." }
   ],
-  quiz: [
-    {
-      id: "q53-1",
-      question: "저 분은 선생님__ ___. (emas)",
-      options: ["이 아니에요", "가 안 돼요", "을 못 해요"],
-      correctIndex: 0,
-      explain: "Ot + 이/가 아니다 → 선생님이 아니에요."
-    }
-  ]
+quiz: [
+  {
+    id: "q53-1",
+    question: "저 분은 선생님__ ___. (emas)",
+    options: ["이 아니에요", "가 안 돼요", "을 못 해요"],
+    correctIndex: 0,
+    explain: "Ot + 이/가 아니다 → 선생님이 아니에요."
+  },
+  // +3 qo‘shimcha (N이/가 아니에요 · 아닙니다)
+  {
+    id: "q53-2",
+    question: "그분은 의사__ ___. (emas)",
+    options: ["이 아니에요", "가 아니에요", "은 아니에요"],
+    correctIndex: 1,
+    explain: "‘의사’ (받침 yo‘q) → **가 아니에요**."
+  },
+  {
+    id: "q53-3",
+    question: "저는 학생__ ___. (emas)",
+    options: ["이 아니에요", "가 아니에요", "아닙니다"],
+    correctIndex: 0,
+    explain: "‘학생’ (받침 bor) → **이 아니에요**."
+  },
+  {
+    id: "q53-4",
+    question: "이것은 회의__ ___. (rasmiy, ‘yig‘ilish emas’)",
+    options: ["가 아닙니다", "이 아닙니다", "이 아니에요"],
+    correctIndex: 0,
+    explain: "Rasmiy inkor: **N이/가 아닙니다**. ‘회의’ (받침 yo‘q) → 가 아닙니다."
+  }
+]
 },
-
 {
   id: "i-geu-jeo",
   title: "이 / 그 / 저 (ko‘rsatish olmoshlari: bu / u / ana u)",
@@ -1994,16 +2705,37 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "오늘은 금요일이에요.", uz: "Bugun — juma.", ru: "Сегодня пятница.", en: "Today is Friday." }
   ],
   quiz: [
-    {
-      id: "q55-1",
-      question: "이것은 책___?",
-      options: ["이에요", "예요", "입니다"],
-      correctIndex: 0,
-      explain: "‘책’ undosh bilan tugaydi → ‘책이에요’."
-    }
-  ]
+  {
+    id: "q55-1",
+    question: "이것은 책___?",
+    options: ["이에요", "예요", "입니다"],
+    correctIndex: 0,
+    explain: "‘책’ undosh bilan tugaydi → ‘책이에요’."
+  },
+  // +3 qo‘shimcha (이에요/예요/입니다)
+  {
+    id: "q55-2",
+    question: "저분은 의사___ .",
+    options: ["이에요", "예요", "입니다"],
+    correctIndex: 1,
+    explain: "‘의사’ unli bilan tugaydi → **의사예요**."
+  },
+  {
+    id: "q55-3",
+    question: "저는 학생___ .",
+    options: ["이에요", "예요", "입니다"],
+    correctIndex: 0,
+    explain: "‘학생’ (받침 bor) → **학생이에요**."
+  },
+  {
+    id: "q55-4",
+    question: "여기는 도서관___ . (rasmiy)",
+    options: ["이에요", "예요", "입니다"],
+    correctIndex: 2,
+    explain: "Rasmiy uslubda kopula: **도서관입니다**."
+  }
+]
 },
-
 {
   id: "imnida-imnikka",
   title: "N 입니다 / 입니까? (rasmiy)",
@@ -2028,16 +2760,37 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "여기는 회의실입니까?", uz: "Bu yer majlis xonasimi?", ru: "Это переговорная?", en: "Is this the meeting room?" }
   ],
   quiz: [
-    {
-      id: "q56-1",
-      question: "여기는 병원___?",
-      options: ["입니까", "입니다", "아니에요"],
-      correctIndex: 0,
-      explain: "Rasmiy so‘roq: ‘입니까?’."
-    }
-  ]
+  {
+    id: "q56-1",
+    question: "여기는 병원___?",
+    options: ["입니까", "입니다", "아니에요"],
+    correctIndex: 0,
+    explain: "Rasmiy so‘roq: **입니까?**"
+  },
+  // +3 qo‘shimcha (formal copula)
+  {
+    id: "q56-2",
+    question: "저는 회사원___ .",
+    options: ["입니다", "입니까", "아닙니다"],
+    correctIndex: 0,
+    explain: "Rasmiy darak: **회사원입니다**."
+  },
+  {
+    id: "q56-3",
+    question: "그분은 의사___ . (emas, rasmiy)",
+    options: ["이 아닙니다", "가 아닙니다", "아닙니다"],
+    correctIndex: 1,
+    explain: "Ot inkori rasmiy: **N이/가 아닙니다**. ‘의사’ (unli bilan tugaydi) → **의사가 아닙니다**."
+  },
+  {
+    id: "q56-4",
+    question: "저 사람은 한국 사람___?",
+    options: ["입니까", "입니다", "예요"],
+    correctIndex: 0,
+    explain: "Rasmiy so‘roq: **한국 사람입니까?**"
+  }
+]
 },
-
 {
   id: "jiman",
   title: "-지만 (lekin/bo‘lsa-da)",
@@ -2061,16 +2814,37 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "쉬고 싶지만 해야 해요.", uz: "Dam olgim keladi, lekin qilishim kerak.", ru: "Хочу отдыхать, но надо делать.", en: "I want to rest, but I have to do it." }
   ],
   quiz: [
-    {
-      id: "q57-1",
-      question: "바쁘___ 연락할게요. (lekin)",
-      options: ["지만", "인데요", "입니까"],
-      correctIndex: 0,
-      explain: "Qarama-qarshilik: ‘바쁘지만 연락할게요.’"
-    }
-  ]
+  {
+    id: "q57-1",
+    question: "바쁘___ 연락할게요. (lekin)",
+    options: ["지만", "인데요", "입니까"],
+    correctIndex: 0,
+    explain: "Qarama-qarshilik: **바쁘지만 연락할게요.**"
+  },
+  // +3 qo‘shimcha (-지만 / 하지만)
+  {
+    id: "q57-2",
+    question: "음식이 맛있___ 너무 비싸요.",
+    options: ["지만", "어서", "니까"],
+    correctIndex: 0,
+    explain: "Qarama-qarshi holat: **맛있지만 비싸요**."
+  },
+  {
+    id: "q57-3",
+    question: "저는 학생___ 매일 회사에 가요.",
+    options: ["이지만", "지만", "인데요"],
+    correctIndex: 0,
+    explain: "Ot + **(이)지만**. ‘학생’ (받침 bor) → **학생이지만**."
+  },
+  {
+    id: "q57-4",
+    question: "어제 피곤했___ 숙제를 다 했어요.",
+    options: ["지만", "는데", "거나"],
+    correctIndex: 0,
+    explain: "Sifat/fe’l o‘tgan zamon + **-지만**: **피곤했지만**."
+  }
+]
 },
-
 {
   id: "ji-malda",
   title: "V-지 말다 (qilma / qilmaylik)",
@@ -2095,16 +2869,36 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "걱정하지 마세요.", uz: "Xavotir olmang.", ru: "Не переживайте.", en: "Don’t worry." }
   ],
   quiz: [
-    {
-      id: "q58-1",
-      question: "도서관에서 전화___ 마세요. (qilma)",
-      options: ["하지", "하지를", "해"],
-      correctIndex: 0,
-      explain: "Taqiqlash: ‘전화하지 마세요’."
-    }
-  ]
+  {
+    id: "q58-1",
+    question: "도서관에서 전화___ 마세요. (qilma)",
+    options: ["하지", "하지를", "해"],
+    correctIndex: 0,
+    explain: "Taqiqlash: **전화하지 마세요**."
+  },
+  {
+    id: "q58-2",
+    question: "사진을 ___ 마세요. (taqiqlash)",
+    options: ["찍지", "찍어", "찍을"],
+    correctIndex: 0,
+    explain: "V-지 마세요: **찍지 마세요** — “suratga olmang”."
+  },
+  {
+    id: "q58-3",
+    question: "여기서 담배 ___ 마세요.",
+    options: ["피우지", "피워", "피워서"],
+    correctIndex: 0,
+    explain: "V-지 마세요: **담배 피우지 마세요** — “chekmang”."
+  },
+  {
+    id: "q58-4",
+    question: "쓰레기를 길에 ___ 마세요.",
+    options: ["버리지", "버려", "버리니까"],
+    correctIndex: 0,
+    explain: "V-지 마세요: **버리지 마세요** — “axlat tashlamang”."
+  }
+]
 },
-
 {
   id: "ji-motada",
   title: "V-지 못하다 / 못 V (qila olmaslik)",
@@ -2128,16 +2922,36 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "컴퓨터가 고장 나서 일을 하지 못했어요.", uz: "Kompyuter buzilib, ishni qila olmadim.", ru: "Компьютер сломался, поэтому не смог(ла) работать.", en: "My computer broke, so I couldn’t work." }
   ],
   quiz: [
-    {
-      id: "q59-1",
-      question: "감기가 심해서 오늘 수업에 ___ 못했어요.",
-      options: ["오지", "오는", "왔지"],
-      correctIndex: 0,
-      explain: "‘…ga kela olmadim’ → ‘수업에 오지 못했어요’."
-    }
-  ]
+  {
+    id: "q59-1",
+    question: "감기가 심해서 오늘 수업에 ___ 못했어요.",
+    options: ["오지", "오는", "왔지"],
+    correctIndex: 0,
+    explain: "‘…ga kela olmadim’ → **수업에 오지 못했어요**."
+  },
+  {
+    id: "q59-2",
+    question: "시끄러워서 어젯밤에 ___ 못했어요.",
+    options: ["자지", "자는", "잤지"],
+    correctIndex: 0,
+    explain: "Qila olmaslik: **자지 못했어요** — ‘uxaʙ olmadim’."
+  },
+  {
+    id: "q59-3",
+    question: "배가 아파서 점심을 ___ 못했어요.",
+    options: ["먹지", "먹은", "먹을"],
+    correctIndex: 0,
+    explain: "‘…ni yeyolmadim’ → **먹지 못했어요**."
+  },
+  {
+    id: "q59-4",
+    question: "피곤해서 숙제를 ___ 못했어요.",
+    options: ["끝내지", "끝난", "끝낼"],
+    correctIndex: 0,
+    explain: "‘…ni tugata olmadim’ → **끝내지 못했어요**."
+  }
+]
 },
-
 {
   id: "ji-anta",
   title: "V-지 않다 / 안 V (qilmaslik, inkor)",
@@ -2162,17 +2976,37 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "오늘은 피곤하지 않아요.", uz: "Bugun charchamaganman.", ru: "Сегодня я не устал(а).", en: "I’m not tired today." }
   ],
   quiz: [
-    {
-      id: "q60-1",
-      question: "요즘 바빠서 한국어를 자주 공부하___.",
-      options: ["지 않아요", "지 못해요", "지 말아요"],
-      correctIndex: 0,
-      explain:
-        "Ixtiyoriy/odat darajasidagi inkor: ‘공부하지 않아요’. (Imkon yo‘qligi bo‘lsa ‘못해요’)."
-    }
-  ]
+  {
+    id: "q60-1",
+    question: "요즘 바빠서 한국어를 자주 공부하___.",
+    options: ["지 않아요", "지 못해요", "지 말아요"],
+    correctIndex: 0,
+    explain:
+      "Ixtiyoriy/odat darajasidagi inkor: ‘공부하지 않아요’. (Imkon yo‘qligi bo‘lsa ‘못해요’)."
+  },
+  {
+    id: "q60-2",
+    question: "감기에 걸려서 오늘 회사에 가___.",
+    options: ["지 않아요", "지 못해요", "지 말아요"],
+    correctIndex: 1,
+    explain: "Jismoniy sabab tufayli qila olmaslik: ‘가지 못해요’."
+  },
+  {
+    id: "q60-3",
+    question: "수업 시간에는 떠들___.",
+    options: ["지 않아요", "지 못해요", "지 마세요"],
+    correctIndex: 2,
+    explain: "Taqiqlash (buyruq/iltimos): ‘떠들지 마세요’."
+  },
+  {
+    id: "q60-4",
+    question: "저는 매운 음식을 거의 먹___.",
+    options: ["지 않아요", "지 못해요", "지 말아요"],
+    correctIndex: 0,
+    explain: "Odat/afzal ko‘rmaslik: ‘먹지 않아요’. (‘못해요’ — qila olmaslik)."
+  }
+]
 },
-
 {
   id: "geoneul",
   title: "-거늘 (rhetorik sabab/ta’kid)",
@@ -2211,18 +3045,38 @@ export const GRAMMAR: GrammarPoint[] = [
       en: "You’re young only once—would you really waste your time?" }
   ],
   quiz: [
-    {
-      id: "m1q1",
-      question:
-        "동물도 새끼를 돌보아 주___, 어머니가 자식을 사랑하지 않을 수 있겠어요?",
-      options: ["거늘", "거든", "겠거니"],
-      correctIndex: 0,
-      explain:
-        "Ma’lum faktni keltirib, keyingi gapda ritorik savol → -거늘."
-    }
-  ]
+  {
+    id: "m1q1",
+    question:
+      "동물도 새끼를 돌보아 주___, 어머니가 자식을 사랑하지 않을 수 있겠어요?",
+    options: ["거늘", "거든", "겠거니"],
+    correctIndex: 0,
+    explain:
+      "Ma’lum faktni keltirib, keyingi gapda ritorik savol → -거늘."
+  },
+  {
+    id: "m1q2",
+    question: "하늘이 이렇게 맑___, 집에만 있을 수 있겠어요?",
+    options: ["거늘", "거든", "겠거니"],
+    correctIndex: 0,
+    explain: "Aniq holatga suyanib qarama-qarshi fikr/ritorik savol → -거늘."
+  },
+  {
+    id: "m1q3",
+    question: "그렇게 준비를 많이 했___, 왜 결과가 좋지 않죠?",
+    options: ["거늘", "거든", "겠거니"],
+    correctIndex: 0,
+    explain: "‘Shuncha tayyorlanding-ku, ammo…’ ohangi: yozmacha -거늘."
+  },
+  {
+    id: "m1q4",
+    question: "봄이 왔___, 왜 이렇게 춥죠?",
+    options: ["거늘", "거든", "겠거니"],
+    correctIndex: 0,
+    explain: "Ma’lum vaziyat (bahor keldi) ↔ kutilmagan natija: -거늘."
+  }
+]
 },
-
 {
   id: "geotgeotoni",
   title: "-(겠)거니 (deb o‘ylab / taxmin qilib)",
@@ -2265,16 +3119,36 @@ export const GRAMMAR: GrammarPoint[] = [
       en: "Thinking they’d be busy, I didn’t contact them." }
   ],
   quiz: [
-    {
-      id: "m2q1",
-      question: "비가 오__ 하고 우산을 가져왔어요.",
-      options: ["거니", "겠거니", "거든"],
-      correctIndex: 1,
-      explain: "‘… bo‘lsa kerak deb’ → 겠거니 하고."
-    }
-  ]
+  {
+    id: "m2q1",
+    question: "비가 오__ 하고 우산을 가져왔어요.",
+    options: ["거니", "겠거니", "거든"],
+    correctIndex: 1,
+    explain: "‘… bo‘lsa kerak deb’ → **겠거니 하고**."
+  },
+  {
+    id: "m2q2",
+    question: "날씨가 따뜻하__ 하고 얇게 입고 나왔어요.",
+    options: ["겠거니", "거나", "거늘"],
+    correctIndex: 0,
+    explain: "‘Issiq bo‘lsa kerak deb’ → **따뜻하겠거니 하고**."
+  },
+  {
+    id: "m2q3",
+    question: "사람이 별로 없__ 하고 일찍 갔어요.",
+    options: ["겠거니", "거든", "거니"],
+    correctIndex: 0,
+    explain: "‘Odam ko‘p bo‘lmasa kerak deb’ → **없겠거니 하고**."
+  },
+  {
+    id: "m2q4",
+    question: "버스가 곧 오__ 하고 뛰어갔어요.",
+    options: ["겠거니", "거든", "거니"],
+    correctIndex: 0,
+    explain: "‘Avtobus hozir kelar deb’ → **오겠거니 하고**."
+  }
+]
 },
-
 {
   id: "geodeun",
   title: "-거든 (agar/bo‘lsa — shunda)",
@@ -2295,16 +3169,36 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "시간 되거든 같이 갑시다.", uz: "Vaqtingiz bo‘lsa, birga boraylik.", ru: "Если будет время, пойдём вместе.", en: "If you have time, let’s go together." }
   ],
   quiz: [
-    {
-      id: "m3q1",
-      question: "문제가 있__ 바로 알려 주세요.",
-      options: ["거늘", "거든", "겠거니"],
-      correctIndex: 1,
-      explain: "Shart + iltimos (imperativ) — -거든."
-    }
-  ]
+  {
+    id: "m3q1",
+    question: "문제가 있__ 바로 알려 주세요.",
+    options: ["거늘", "거든", "겠거니"],
+    correctIndex: 1,
+    explain: "Shart + iltimos (imperativ) — **-거든**."
+  },
+  {
+    id: "m3q2",
+    question: "시간이 없__ 미리 말씀하세요.",
+    options: ["거든", "거니", "거늘"],
+    correctIndex: 0,
+    explain: "‘Agar vaqt bo‘lmasa, oldindan ayting’ — iltimos bilan **-거든**."
+  },
+  {
+    id: "m3q3",
+    question: "비가 많이 오__ 우산을 챙기세요.",
+    options: ["거든", "겠거니", "거니"],
+    correctIndex: 0,
+    explain: "Shart + buyruq: ‘yomg‘ir ko‘p yog‘sa, soyabron oling’ → **-거든**."
+  },
+  {
+    id: "m3q4",
+    question: "제가 늦게 오__ 먼저 들어가세요.",
+    options: ["거든", "거늘", "겠거니"],
+    correctIndex: 0,
+    explain: "‘Agar men kech kelsam, avval kiravering’ — imperativ bilan **-거든**."
+  }
+]
 },
-
 {
   id: "geodeunyo",
   title: "-거든요 (axir-ku / aslida…)",
@@ -2325,16 +3219,43 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "지금 나가야 하거든요.", uz: "Hozir chiqishim kerak-ku.", ru: "Мне сейчас нужно выходить.", en: "I have to head out now." }
   ],
   quiz: [
-    {
-      id: "m3q2",
-      question: "오늘은 못 가요. 약속이 ___.",
-      options: ["거든요", "거든", "겠거니"],
-      correctIndex: 0,
-      explain: "Tushuntirish ohangi – gap oxiri -거든요."
-    }
-  ]
+  {
+    id: "m3q2",
+    question: "오늘은 못 가요. 약속이 ___.",
+    options: ["거든요", "거든", "겠거니"],
+    correctIndex: 0,
+    explain: "Tushuntirish ohangi – gap oxiri **-거든요**."
+  },
+  {
+    id: "m3q2b",
+    question: "지금은 통화 못 해요. 회의 중이___.",
+    options: ["거든요", "거든", "겠거니"],
+    correctIndex: 0,
+    explain: "Vaziyatni muloyim tushuntirish: **회의 중이거든요**."
+  },
+  {
+    id: "m3q2c",
+    question: "내일 일찍 자야 해요. 아침에 시험이 있___.",
+    options: ["거든요", "거든", "겠거니"],
+    correctIndex: 0,
+    explain: "Sababni bildiradi: **시험이 있거든요**."
+  },
+  {
+    id: "m3q2d",
+    question: "비가 많이 와서 나가기 힘들어요. 우산이 없___.",
+    options: ["거든요", "거든", "겠거니"],
+    correctIndex: 0,
+    explain: "Kutilmagan qo‘shimcha sababni aytish: **없거든요**."
+  },
+  {
+    id: "m3q2e",
+    question: "그분 알아요. 우리 회사 선배___.",
+    options: ["거든요", "거든", "겠거니"],
+    correctIndex: 0,
+    explain: "Ot + 이거든요: **선배거든요** (이ᄀᄋᆞ 탈)."
+  }
+]
 },
-
 {
   id: "geon-geon",
   title: "-건 -건 (…-mi …-mi, baribir)",
@@ -2354,17 +3275,37 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "먹건 마시건 조심하세요.", uz: "Yeysizmi ichasizmi — ehtiyot bo‘ling.", ru: "Едите вы или пьёте — будьте осторожны.", en: "Whether eating or drinking, be careful." },
     { ko: "가건 말건 저는 기다릴게요.", uz: "Borasizmi yo‘qmi — men kutaman.", ru: "Пойдёте вы или нет — я подожду.", en: "Whether you go or not, I’ll wait." }
   ],
-  quiz: [
-    {
-      id: "m3q3",
-      question: "더우__ 추우__ 운동은 할 거예요.",
-      options: ["면 / 면", "건 / 건", "든 / 든"],
-      correctIndex: 1,
-      explain: "Muqobillar: -건 -건."
-    }
-  ]
+quiz: [
+  {
+    id: "m3q3b",
+    question: "비가 오__ 눈이 오__ 경기는 진행됩니다.",
+    options: ["건 / 건", "거나 / 거나", "든 / 든"],
+    correctIndex: 0,
+    explain: "‘…이건 …이건 / …건 …건’ — ‘yomg‘ir bo‘ladimi, qor bo‘ladimi’."
+  },
+  {
+    id: "m3q3c",
+    question: "주말__ 평일__ 이 가게는 항상 열려 있어요.",
+    options: ["이건 / 이건", "건 / 건", "든 / 든"],
+    correctIndex: 0,
+    explain: "Ot bilan: **N(이)건 N(이)건** → ‘주말이건 평일이건’."
+  },
+  {
+    id: "m3q3d",
+    question: "그가 가__ 말__ 저는 상관없어요.",
+    options: ["건 / 건", "거나 / 거나", "면 / 면"],
+    correctIndex: 0,
+    explain: "Fe’l qarama-qarshi juft: **가건 말건** — ‘borsin-bo‘lmasin’."
+  },
+  {
+    id: "m3q3e",
+    question: "학생__ 직장인__ 누구나 신청할 수 있어요.",
+    options: ["이건 / 이건", "건 / 건", "든 / 든"],
+    correctIndex: 0,
+    explain: "Ot: **학생이건 직장인이건** — ‘talabami, xodimmi — hamma’."
+  }
+]
 },
-
 {
   id: "geonmaneun",
   title: "-건만(은)/건만 (… bo‘lsa-da, lekin)",
@@ -2385,16 +3326,36 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "열심히 공부했건만 성적이 오르지 않았다.", uz: "Juda o‘qidi-yu, baholari oshmadi.", ru: "Усердно учился(лась), но оценки не повысились.", en: "Studied hard, but the grades didn’t improve." }
   ],
   quiz: [
-    {
-      id: "m3q4",
-      question: "열심히 했__ 결과가 아쉬웠다.",
-      options: ["거든", "건만", "겠거니"],
-      correctIndex: 1,
-      explain: "Qarshi ma’no (… qildim-u, lekin …) — -건만."
-    }
-  ]
+  {
+    id: "m3q4b",
+    question: "날씨가 좋__ 나갈 수가 없네요.",
+    options: ["건만", "거든", "ㄹ까요"],
+    correctIndex: 0,
+    explain: "Qarama-qarshilik (shunga qaramay) — **좋건만**."
+  },
+  {
+    id: "m3q4c",
+    question: "무료 행사__ 참여율이 낮았습니다.",
+    options: ["이건만", "거든", "거나"],
+    correctIndex: 0,
+    explain: "Ot bilan: **N-이건만** — ‘bepul bo‘lsa-da’."
+  },
+  {
+    id: "m3q4d",
+    question: "도와 달라 했__ 아무도 오지 않았어요.",
+    options: ["건만", "거든요", "는데"],
+    correctIndex: 0,
+    explain: "O‘tgan harakatga qaramay — **했건만**."
+  },
+  {
+    id: "m3q4e",
+    question: "기대가 크__ 결과는 평범했어요.",
+    options: ["건만", "겠거니", "거늘"],
+    correctIndex: 0,
+    explain: "Concessive yozma uslub: **크건만 … 평범했어요**."
+  }
+]
 },
-
 {
   id: "gekkeum",
   title: "-게끔 (… qilishi uchun / shunday bo‘ladigan qilib)",
@@ -2433,13 +3394,35 @@ export const GRAMMAR: GrammarPoint[] = [
       en: "Close the window tightly so that sound doesn’t leak." }
   ],
   quiz: [
-    {
-      id: "gkq1",
-      question: "손님들이 만족하__ 준비해 놓읍시다.",
-      options: ["도록", "게끔", "만큼"],
-      correctIndex: 1,
-      explain: "Kuchli maqsad/natija urg‘usi — ‘만족하게끔’."
-    }
+// +4 yangi
+{
+  id: "gkq2",
+  question: "아이들이 잘 보이__ 반사 조끼를 입혀요.",
+  options: ["게끔", "도록", "만큼"],
+  correctIndex: 0,
+  explain: "Natijani ta’minlash (ko‘rinadigan bo‘lsin): **잘 보이게끔**."
+},
+{
+  id: "gkq3",
+  question: "밖에서 소리가 안 들리__ 문을 닫아 주세요.",
+  options: ["게끔", "도록", "만큼"],
+  correctIndex: 0,
+  explain: "Tovush chiqmasligi uchun → **안 들리게끔**."
+},
+{
+  id: "gkq4",
+  question: "모든 학생이 이해하__ 천천히 설명했습니다.",
+  options: ["게끔", "도록", "만큼"],
+  correctIndex: 1,
+  explain: "Rasmiy/uslubiyroq maqsad: **이해하도록**."
+},
+{
+  id: "gkq5",
+  question: "비밀번호가 유출되지 않__ 주기적으로 변경하세요.",
+  options: ["게끔", "도록", "만큼"],
+  correctIndex: 1,
+  explain: "Salbiy holatning oldini olish: **유출되지 않도록**."
+}
   ]
 },{
   id: "gyeolko-jeoldaero",
@@ -2479,16 +3462,30 @@ export const GRAMMAR: GrammarPoint[] = [
       en: "Please do not be late, no matter what." }
   ],
   quiz: [
-    {
-      id: "kjq1",
-      question: "저는 규칙을 ___ 어기지 않겠습니다.",
-      options: ["절대로", "게끔", "경"],
-      correctIndex: 0,
-      explain: "절대로/결코 faqat inkor bilan: ‘어기지 않겠습니다’."
-    }
+   // +3 yangi
+{
+  id: "kjq2",
+  question: "회의 중에는 휴대폰을 ___ 사용하지 마세요.",
+  options: ["절대로", "전혀", "거의"],
+  correctIndex: 0,
+  explain: "Ta’qiq ohangi: **절대로 …지 마세요** tabiiyroq. (‘전혀’ ko‘proq ‘없다/안/못’ bilan daraja bildiradi.)"
+},
+{
+  id: "kjq3",
+  question: "그는 약속을 ___ 잊지 않겠다고 했어요.",
+  options: ["절대", "전혀", "대부분"],
+  correctIndex: 0,
+  explain: "**절대/절대로** + 부정 (잊지 않다) — ‘hech qachon’ ma’nosi."
+},
+{
+  id: "kjq4",
+  question: "우리는 ___ 포기하지 않을 것입니다. (rasmiy uslub)",
+  options: ["결코", "절대로", "전혀"],
+  correctIndex: 0,
+  explain: "Rasmiy/yozma uslubda **결코** + 부정 juda mos: ‘결코 포기하지 않겠습니다’."
+}
   ]
 },
-
 {
   id: "gyeong-yeo",
   title: "-경 / -여 (taxminiy vaqt ‘…larda’ / ‘…-chalar’)",
@@ -2582,16 +3579,30 @@ export const GRAMMAR: GrammarPoint[] = [
       en: "Once you enter the password, you move to the next step." }
   ],
   quiz: [
-    {
-      id: "gnq1",
-      question: "회의가 끝__ 나면 이야기합시다.",
-      options: ["고", "고 나고", "고 나면"],
-      correctIndex: 2,
-      explain: "Shart ohangi: ‘끝나고 나면 …’ — tugagach keyin gaplashaylik."
-    }
+    // +3 yangi
+{
+  id: "gnq2",
+  question: "숙제를 다 하___ TV를 보세요.",
+  options: ["고 나서", "면", "니까"],
+  correctIndex: 0,
+  explain: "Ketma-ketlik: ‘…하고 나서 …’ — avval bajar, keyin TV ko‘r."
+},
+{
+  id: "gnq3",
+  question: "수업이 끝___ 같이 점심 먹을까요?",
+  options: ["고 나면", "고 나서", "니까"],
+  correctIndex: 0,
+  explain: "Shartiy kelajak: ‘tugagach (agar tugasa) …’ → -고 나면."
+},
+{
+  id: "gnq4",
+  question: "약을 먹___ 머리가 덜 아팠어요.",
+  options: ["고 나니까", "면", "거나"],
+  correctIndex: 0,
+  explain: "Tajriba asosidagi natija/anglash: ‘…고 나니까 …’."
+}
   ]
 },
-
 {
   id: "go-naseo",
   title: "-고 나서 (… qilib bo‘lgach, keyin)",
@@ -2630,16 +3641,30 @@ export const GRAMMAR: GrammarPoint[] = [
       en: "I locked the door and then went to work." }
   ],
   quiz: [
-    {
-      id: "gns1",
-      question: "밥을 먹__ 나서 약을 드세요.",
-      options: ["고", "고 나서", "면"],
-      correctIndex: 1,
-      explain: "Ketma-ketlikni aniq bildiruvchi shakl — ‘먹고 나서’."
-    }
+    // +3 yangi
+{
+  id: "gns2",
+  question: "숙제를 다 하__ 나서 게임합시다.",
+  options: ["고", "고 나서", "다가"],
+  correctIndex: 1,
+  explain: "Ketma-ketlik: ‘…하고 나서 …’ — avval uy vazifasi, keyin o‘yin."
+},
+{
+  id: "gns3",
+  question: "회의가 끝__ 나면 보고서를 제출하세요.",
+  options: ["고", "고 나서", "고 나면"],
+  correctIndex: 2,
+  explain: "Kelajak sharti: ‘tugagach (agar tugasa) …’ → -고 나면."
+},
+{
+  id: "gns4",
+  question: "운동을 하__ 나니까 기분이 좋아졌어요.",
+  options: ["고", "고 나면", "고 나니까"],
+  correctIndex: 2,
+  explain: "Tajriba asosidagi sabab: ‘…고 나니까 …’ — qilganimdan keyin."
+}
   ]
 },
-
 {
   id: "go-naseoya",
   title: "-고 나서야 (faqat … qilib bo‘lgach / shundan keyingina)",
@@ -2678,15 +3703,30 @@ export const GRAMMAR: GrammarPoint[] = [
       en: "I took the medicine only after seeing the doctor." }
   ],
   quiz: [
-    { id: "gnsy1",
-      question: "경험해 보__ 나서야 그 어려움을 알았다.",
-      options: ["고", "고 나서야", "면"],
-      correctIndex: 1,
-      explain: "‘Faqat tajriba qilib ko‘rgachgina’ — ‘해 보고 나서야’."
-    }
+    // +3 yangi (-고 나서야)
+{
+  id: "gnsy2",
+  question: "약을 먹__ 열이 내렸어요.",
+  options: ["고 나서야", "고 나면", "고 나니까"],
+  correctIndex: 0,
+  explain: "‘Faqat dori ichgachgina …’ → 약을 먹고 나서야 열이 내렸어요."
+},
+{
+  id: "gnsy3",
+  question: "졸업을 하__ 비로소 어른이 된 느낌이었어요.",
+  options: ["고 나서야", "면", "거든요"],
+  correctIndex: 0,
+  explain: "‘Faqat bitirgachgina …’ → 졸업을 하고 나서야."
+},
+{
+  id: "gnsy4",
+  question: "그 일을 직접 보__ 이해했습니다.",
+  options: ["고 나서야", "면서", "거나"],
+  correctIndex: 0,
+  explain: "‘Faqat o‘z ko‘zim bilan ko‘rgachgina’ → 보고 나서야 이해했습니다."
+}
   ]
 },
-
 {
   id: "go-boni",
   title: "-고 보니 (… qilib qarasam/ko‘rsam)",
@@ -2725,16 +3765,30 @@ export const GRAMMAR: GrammarPoint[] = [
       en: "After trying, it wasn’t as easy as I thought." }
   ],
   quiz: [
-    {
-      id: "gobn1",
-      question: "한국에 와 __ 보니 생각이 많이 달라졌어요.",
-      options: ["고", "고서", "면"],
-      correctIndex: 0,
-      explain: "‘Kelib ko‘rsam…’ — 와 **고 보니**."
-    }
+   // +3 yangi (-고 보니)
+{
+  id: "gobn2",
+  question: "그분을 만나__ 오해였다는 걸 알았어요.",
+  options: ["고 보니", "면", "니까"],
+  correctIndex: 0,
+  explain: "‘Uchrashib ko‘rsam, aslida tushunmovchilik ekan’ → 만나고 보니."
+},
+{
+  id: "gobn3",
+  question: "도시락을 먹__ 생각보다 맵지 않았어요.",
+  options: ["고 보니", "고 나니", "다 보니"],
+  correctIndex: 0,
+  explain: "‘Yeb ko‘rsam… shunchalik achchiq emas ekan’ → 먹고 보니."
+},
+{
+  id: "gobn4",
+  question: "알__ 그는 한국 사람이 아니라 중국 사람이었어요.",
+  options: ["고 보니", "면서", "거나"],
+  correctIndex: 0,
+  explain: "‘Bilib qarasam…’ → 알고 보니 (natijada anglash)."
+}
   ]
 },
-
 {
   id: "go-seo",
   title: "-고서 (… qilib, shundan keyin / faqat undan keyin)",
@@ -2773,16 +3827,29 @@ export const GRAMMAR: GrammarPoint[] = [
       en: "Let’s eat only after we finish cooking." }
   ],
   quiz: [
-    {
-      id: "goseo1",
-      question: "먼저 손을 씻__ 밥을 준비하세요.",
-      options: ["고서", "고 보니", "면"],
-      correctIndex: 0,
-      explain: "Tartib: ‘avval qo‘lni yuvib, keyin …’ — 씻**고서**."
-    }
+   {
+  id: "goseo2",
+  question: "문을 닫__ 에어컨을 켰어요.",
+  options: ["고서", "면", "고 보니"],
+  correctIndex: 0,
+  explain: "Ketma-ketlikni ta’kidlash: ‘문을 닫고서 에어컨을 켰어요.’"
+},
+{
+  id: "goseo3",
+  question: "숙제를 다 하__ 게임해요.",
+  options: ["고서", "고 보니", "니까"],
+  correctIndex: 0,
+  explain: "‘Avval A, keyin B’ — ‘숙제를 다 하고서 게임해요.’"
+},
+{
+  id: "goseo4",
+  question: "회의가 끝나__ 점심을 먹읍시다.",
+  options: ["고서", "면", "거나"],
+  correctIndex: 0,
+  explain: "Aniq tartib: ‘회의가 끝나고서 점심을 먹읍시다.’"
+}
   ]
 },
-
 {
   id: "go-seorado",
   title: "-고서라도 (hatto … qilishga to‘g‘ri kelsa ham)",
@@ -2821,13 +3888,28 @@ export const GRAMMAR: GrammarPoint[] = [
       en: "I’ll solve the problem, even if I have to ask for help." }
   ],
   quiz: [
-    {
-      id: "gosrd1",
-      question: "시간이 없으면 밤을 새__라도 보고서를 내겠습니다.",
-      options: ["고서", "고서라도", "라도"],
-      correctIndex: 1,
-      explain: "Imtiyoz/qat’iyat: ‘밤을 새**고서라도**’."
-    }
+   // +3 yangi (-고서라도)
+{
+  id: "gosrd2",
+  question: "돈이 부족하면 돈을 빌리__라도 등록금을 내야 해요.",
+  options: ["고서", "고서라도", "더라도"],
+  correctIndex: 1,
+  explain: "Qat’iyat: ‘빌리고서라도 …’ — hatto qarz olib bo‘lsa ham."
+},
+{
+  id: "gosrd3",
+  question: "오늘 마감이에요. 잠을 줄이__라도 끝낼 거예요.",
+  options: ["고서", "고서라도", "라도"],
+  correctIndex: 1,
+  explain: "A-ni qilib bo‘lsa ham B-ni amalga oshirish: ‘줄이고서라도’."
+},
+{
+  id: "gosrd4",
+  question: "실수했으면 직접 찾아가 사과하__라도 용서를 받아야 해요.",
+  options: ["고서라도", "더라도", "라도"],
+  correctIndex: 0,
+  explain: "‘사과하고서라도’ — hatto borib uzr so‘rab bo‘lsa ham."
+}
   ]
 },{
   id: "gunyo",
@@ -2851,13 +3933,28 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "저 선수는 정말 빨리 뛰는군요!", uz: "Anavi sportchi juda tez yugurar ekan-ku!" }
   ],
   quiz: [
-    {
-      id: "gunyo1",
-      question: "한국어를 정말 잘하__! (hayrat)",
-      options: ["는군요", "다니까요", "거든요"],
-      correctIndex: 0,
-      explain: "Hayrat / yangi anglash — **-군요** (hozirgi fe’l: 잘하**는군요**)."
-    }
+   // +3 yangi (-군요)
+{
+  id: "gunyo2",
+  question: "정말 예쁘__! (hayrat)",
+  options: ["군요", "는군요", "거든요"],
+  correctIndex: 0,
+  explain: "Sifat + **-군요**: ‘정말 예쁘군요!’ (‘voh, juda chiroyli-ku!’)."
+},
+{
+  id: "gunyo3",
+  question: "여기가 서울역이__! (endi bildim)",
+  options: ["군요", "네요", "이네요"],
+  correctIndex: 0,
+  explain: "Ot + **-이군요**: ‘서울역이군요!’ (‘bu Seul vokzali ekan!’)."
+},
+{
+  id: "gunyo4",
+  question: "어제 비가 많이 왔__! (endi bildim)",
+  options: ["군요", "네요", "겠어요"],
+  correctIndex: 0,
+  explain: "O‘tgan zamon + **-았/었군요**: ‘왔군요!’."
+}
   ]
 },
 {
@@ -2876,13 +3973,28 @@ export const GRAMMAR: GrammarPoint[] = [
     { ko: "구태여 싸울 필요가 없잖아요.", uz: "Bekorga urishib o‘tirishning keragi yo‘q-ku." }
   ],
   quiz: [
-    {
-      id: "gtp1",
-      question: "이미 다 알잖아. 구태여 다시 말할 ___ 없어.",
-      options: ["필요가", "것이", "생각이"],
-      correctIndex: 0,
-      explain: "Kollokatsiya: **필요가 없다** — ‘kerak/hojat yo‘q’."
-    }
+   // +3 yangi (구태여/굳이 + 필요가 없다)
+{
+  id: "gtp2",
+  question: "이미 설명했으니까 다시 말할 ___ 없어요.",
+  options: ["필요가", "생각이", "장소가"],
+  correctIndex: 0,
+  explain: "Kollokatsiya: **…할 필요가 없다** — ‘qayta aytishning hojati yo‘q’."
+},
+{
+  id: "gtp3",
+  question: "굳이 사과할 ___ 없어요. 이미 용서했어요.",
+  options: ["필요가", "이유가", "시간이"],
+  correctIndex: 0,
+  explain: "**굳이/구태여** ‘bekordan-bekor/ortiqcha ravishda’; **필요가 없다** — ‘kerak emas’."
+},
+{
+  id: "gtp4",
+  question: "시간이 없는데 구태여 지금 갈 ___ 없죠?",
+  options: ["필요가", "가능이", "약속이"],
+  correctIndex: 0,
+  explain: "Urg‘u: ‘hozir borishning **hojati yo‘q**’ → **필요가 없다**."
+}
   ]
 }
 ]
