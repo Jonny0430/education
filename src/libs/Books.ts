@@ -17,11 +17,15 @@ export type Attachment = {
 
 /* ====== Dars darajasidagi qo'shimcha maydonlar ====== */
 export type LessonDetail = {
+  id: string;
+  title: string;
+  dur: string;
+  playing?: boolean;
   description?: string;
-  notes?: string[];                 // darsga xos izohlar/ko‘rsatmalar
-  attachments?: Attachment[];       // dars fayllari
-  video?: { url: string; poster?: string }; // dars videosi
+  video?: { url: string; poster?: string };
+  notes?: string[];
 };
+
 
 
 
@@ -40,7 +44,7 @@ export type BookDetail = {
   description: string;
   lectureNotes: string[];
   attachments: Attachment[];
-  video?: { url: string; poster?: string };
+  video?: { url: string; poster?: string }; // youtu.be yoki watch?v=... ham bo‘ladi
   course: {
     progress: number;      // %
     totalDuration: string; // e.g. "1h 40m"
@@ -60,6 +64,7 @@ export type Book = {
   readers: number;
   cover: string;
   badge?: string;
+  video?: { url: string; poster?: string }; // youtu.be yoki watch?v=... ham bo‘ladi
 } & BookDetail;
 
 export const BOOK_FILES: BookFilesIndex = {
@@ -110,14 +115,14 @@ export const BOOKS: Book[] = [
       name: "SNU_2A_Grammar_CheatSheet.pdf",
       kind: "pdf",
       size: "1.2 MB",
-      url: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+      url: "https://www.scribd.com/document/631641759/%EC%84%9C%EC%9A%B8%EB%8C%80-%ED%95%9C%EA%B5%AD%EC%96%B4-workbook-2A-%EC%B9%BC%EB%9D%BC-pdf"
     },
     {
       id: "s2a2",
       name: "SNU_2A_Audio_Drills.zip",
       kind: "zip",
       size: "7.8 MB",
-      url: "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip"
+      url: "https://www.youtube.com/watch?v=r5vx67rBSu8"
     }
   ],
 
@@ -144,7 +149,7 @@ export const BOOKS: Book[] = [
             description:
               "Sifat/fe’l natijaviy o‘zgarish: issiq→issiqlashmoq, qiyin→qiyinlashmoq.\nMisollar:\n1) 날씨가 추워졌어요.\n2) 한국어가 점점 쉬워져요.\n3) 얼굴이 빨개졌어요.\n4) 문이 저절로 열렸어요.",
             video: {
-              url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+              url: "https://youtu.be/FxTWApXxgII",
               poster:
                 "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg"
             },
@@ -633,7 +638,7 @@ export const BOOKS: Book[] = [
             description:
               "받침 bo‘lsa ‘이에요’, bo‘lmasa ‘예요’. Savol: ‘…이에요/예요?’\nMisollar: 저는 학생이에요. 이분은 의사예요.",
             video: {
-              url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+              url: "https://youtu.be/PRg3IsoLMXs.mp4",
               poster:
                 "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg"
             },
