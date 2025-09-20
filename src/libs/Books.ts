@@ -52,7 +52,7 @@ export type BookDetail = {
 export type Book = {
   id: string;
   title: string;
-  series: string | Section;
+  series: string;
   kind: string;
   level: Level;
   price: number;
