@@ -11,7 +11,7 @@ export default function BooksPage() {
   const [openBook, setOpenBook] = useState<Book | null>(null);
 
   return (
-    <Container maxW="6xl" py={10}>
+    <Container maxW="6xl" py={10} fontFamily="inter">
       <VStack align="start" spacing={2} mb={6}>
         <Heading>Koreys tili kitoblari</Heading>
         <Text color="gray.600">Kartaga bosib, kitob tafsilotlarini ko‘ring.</Text>
