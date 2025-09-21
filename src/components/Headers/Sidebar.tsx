@@ -55,7 +55,7 @@ const sections: readonly NavSection[] = [
 ] as const;
 
 export default function Sidebar({ navH = "56px" }: SidebarProps) {
-  const panel      = useColorModeValue("#f6f8fc", "#0b1220");
+    const panel = useColorModeValue("#f4faff", "#f4faff");
   const border     = useColorModeValue("blackAlpha.300", "whiteAlpha.200");
   const sectionCol = useColorModeValue("gray.600", "gray.400");
   const hoverBg    = useColorModeValue("blackAlpha.50", "whiteAlpha.100");

@@ -8,7 +8,8 @@ import TopInstructors from "./TopInstructors";
 
 export default function HomePage() {
   // Light/Dark fon – theme bilan mos
-  const pageBg = useColorModeValue("#f4faff", "#0b1220");
+  const pageBg = useColorModeValue("#f4faff", "#f4faff");
+  
 
   return (
     <Box bg={pageBg} minH="calc(100vh - 64px)"> 

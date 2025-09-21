@@ -24,7 +24,7 @@ import TranslateAndShare from "./screens/TranslatePage/TranslatePage";
 import EshitishPage from "./screens/EshitishTestPage";
 
 function AppLayout() {
-  const appBg = useColorModeValue("#f4faff", "#0b1220");
+  const appBg = useColorModeValue("#f4faff", "#f4faff");
 
 
   return (
