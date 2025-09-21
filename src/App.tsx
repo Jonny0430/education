@@ -24,8 +24,7 @@ import TranslateAndShare from "./screens/TranslatePage/TranslatePage";
 import EshitishPage from "./screens/EshitishTestPage";
 
 function AppLayout() {
-  const appBg = useColorModeValue("#f4faff", "#f4faff");
-
+  const appBg = useColorModeValue("#f4faff", "#0b1220");
 
   return (
     <Flex direction="column" minH="100vh" bg={appBg}>
