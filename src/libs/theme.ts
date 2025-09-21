@@ -18,7 +18,7 @@ export const theme = extendTheme({
         bg: "#f4faff", // Light mode background
         color: "gray.800",
         _dark: {
-          bg: "#f4faff", // Dark mode background
+          bg: "gray.900", // Dark mode background
           color: "gray.100",
         },
       },
