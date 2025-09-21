@@ -1,14 +1,15 @@
 "use client";
 import {
   Box, Container, Grid, GridItem, Heading, Text, VStack, Stack, Card, CardBody,
-  HStack, Progress, Button, List, ListItem, Badge, Select, Input, InputGroup, InputLeftElement
+  HStack, Progress, Button, List, ListItem, Badge, Select, Input, InputGroup, InputLeftElement,
+  // ⬇️ modal uchun
+  Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { useMemo, useState } from "react";
 import type { WritingPack } from "../../libs/writingTypes";
-import  { WRITING_TESTS } from "../../libs/writingData";
+import { WRITING_TESTS } from "../../libs/writingData";
 import WritingRunner from "./WritingRunner";
-
 
 type Result = {
   correct: number; total: number;
@@ -64,6 +65,9 @@ export default function WritingTestsPage() {
   const [active, setActive] = useState<WritingPack | null>(null);
   const [result, setResult] = useState<Result>(undefined);
 
+  // ⬇️ modal holati
+  const [isRunOpen, setRunOpen] = useState(false);
+
   const filtered = useMemo(() => {
     return WRITING_TESTS.filter(p => {
       if (cat !== "ALL" && p.category !== cat) return false;
@@ -76,17 +80,28 @@ export default function WritingTestsPage() {
     });
   }, [cat, level, q]);
 
+  // ⬇️ Boshlash/Davom ettirish — modalda ochamiz
   const start = (id:string) => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const pack = WRITING_TESTS.find(x=>x.id===id)!;
-    setActive(pack); setResult(undefined);
+    setActive(pack);
+    setResult(undefined);
+    setRunOpen(true);
   };
   const cont = start;
+
   const clear = (id:string) => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const pack = WRITING_TESTS.find(x=>x.id===id)!;
     const key = pack.meta?.savedKey ?? `writing_progress_${pack.id}`;
     localStorage.removeItem(key);
+  };
+
+  // ⬇️ test tugaganda
+  const handleExit = (r: Result) => {
+    setRunOpen(false);
+    setActive(null);
+    setResult(r);
   };
 
   return (
@@ -133,17 +148,14 @@ export default function WritingTestsPage() {
         {/* O‘NG — aktiv test / natija */}
         <GridItem>
           <VStack align="stretch" spacing={4}>
-            {active ? (
-              <WritingRunner
-                pack={active}
-                onExit={(r)=>{ setResult(r); setActive(null); }}
-              />
-            ) : (
+            {/* Ko'rsatma paneli */}
+            {!active && (
               <Card variant="outline" borderRadius="2xl">
-                <CardBody><Text color="gray.400">Yozma testni tanlang yoki davom ettiring.</Text></CardBody>
+                <CardBody><Text color="gray.400">Yozma testni tanlang; “Boshlash” bosilganda test <b>modal oynada</b> ochiladi.</Text></CardBody>
               </Card>
             )}
 
+            {/* Natija paneli */}
             {result && (
               <Card variant="outline" borderRadius="2xl">
                 <CardBody>
@@ -165,7 +177,7 @@ export default function WritingTestsPage() {
                   <Box mt={4}>
                     <Heading size="xs" mb={2}>Xatolar</Heading>
                     {result.wrongList.length===0 ? (
-                      <Text color="green.300">Zo‘r! Xato yo‘q.</Text>
+                      <Text color="green.600">Zo‘r! Xato yo‘q.</Text>
                     ) : (
                       <List spacing={3}>
                         {result.wrongList.map((w,i)=>(
@@ -173,7 +185,7 @@ export default function WritingTestsPage() {
                             <VStack align="start" spacing={1}>
                               <Text><b>{i+1}.</b> {w.q.prompt}</Text>
                               <HStack color="red.300"><Badge colorScheme="red">Siz yozdingiz:</Badge><Text>{w.typed ?? "—"}</Text></HStack>
-                              <HStack color="green.300"><Badge colorScheme="green">To‘g‘ri:</Badge><Text>{w.q.answer}</Text></HStack>
+                              <HStack color="green.600"><Badge colorScheme="green">To‘g‘ri:</Badge><Text>{w.q.answer}</Text></HStack>
                             </VStack>
                           </ListItem>
                         ))}
@@ -191,6 +203,32 @@ export default function WritingTestsPage() {
           </VStack>
         </GridItem>
       </Grid>
+
+      {/* ⬇️ TEST MODALI */}
+      <Modal isOpen={isRunOpen} onClose={()=>{ setRunOpen(false); }} size="6xl" scrollBehavior="inside">
+        <ModalOverlay />
+        <ModalContent borderRadius="2xl" overflow="hidden">
+          <ModalHeader>
+            <HStack justify="space-between" align="center">
+              <Heading size="md">{active?.title ?? "Yozma test"}</Heading>
+              <Badge colorScheme={active?.category === "TOPIK" ? "blue" : (active?.category==="ISHCHI"?"orange":"gray")}>
+                {active?.category}
+              </Badge>
+            </HStack>
+          </ModalHeader>
+          <ModalCloseButton />
+          <ModalBody pb={6}>
+            {active ? (
+              <WritingRunner
+                pack={active}
+                onExit={(r)=>{ handleExit(r); }}
+              />
+            ) : (
+              <Text color="gray.400">Test yuklanmoqda…</Text>
+            )}
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Container>
   );
 }

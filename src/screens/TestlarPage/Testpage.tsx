@@ -3,6 +3,8 @@
 import {
   Box, Container, Grid, GridItem, Heading, Text, VStack, Stack, Card, CardBody,
   HStack, Progress, Button, List, ListItem, Badge,
+  // ⬇️ Modal importlari
+  Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody,
 } from "@chakra-ui/react";
 import { useMemo, useState } from "react";
 import type { FilterState } from "./Test";
@@ -28,6 +30,9 @@ export default function TestsPage() {
   const [active, setActive] = useState<TestPack | null>(null);
   const [result, setResult] = useState<Result>(undefined);
 
+  // ⬇️ MODAL holati
+  const [isRunOpen, setRunOpen] = useState(false);
+
   const filtered = useMemo(() => {
     return TESTS.filter(t => {
       if (filters.category !== "HAMMASI" && t.category !== filters.category) return false;
@@ -41,10 +46,12 @@ export default function TestsPage() {
     });
   }, [filters]);
 
+  // ⬇️ Boshlash/Davom ettirish — modalni ochamiz
   const start = (id: string) => {
     const pack = TESTS.find(x => x.id === id)!;
     setActive(pack);
     setResult(undefined);
+    setRunOpen(true); // modal ochildi
   };
   const cont = start;
 
@@ -52,7 +59,13 @@ export default function TestsPage() {
     const pack = TESTS.find(x => x.id === id)!;
     const key = pack.meta?.savedKey ?? `test_progress_${pack.id}`;
     localStorage.removeItem(key);
-    // force refresh natija/progress ko‘rsatkichlari uchun — hech narsa qilmasak ham (TestCard o‘zi storage eventni tinglaydi)
+  };
+
+  // ⬇️ Test tugaganda (TestRunner.onExit)
+  const handleExit = (r: Result) => {
+    setRunOpen(false);       // modal yopish
+    setActive(null);         // aktiv testni tozalash
+    setResult(r);            // natijani o‘ng panelda ko‘rsatish
   };
 
   return (
@@ -83,24 +96,17 @@ export default function TestsPage() {
           </Stack>
         </GridItem>
 
-        {/* RIGHT — aktiv test / natija */}
+        {/* RIGHT — natija paneli */}
         <GridItem>
           <VStack align="stretch" spacing={4}>
-            {/* Aktiv test paneli */}
-            {active ? (
-              <TestRunner
-                test={active}
-                onExit={(r) => { setResult(r); setActive(null); }}
-              />
-            ) : (
-              <Card variant="outline" borderRadius="2xl">
-                <CardBody>
-                  <Text color="gray.400">Test tanlang yoki davom ettiring.</Text>
-                </CardBody>
-              </Card>
-            )}
+            <Card variant="outline" borderRadius="2xl">
+              <CardBody>
+                <Text color="gray.400">
+                  “Boshlash” bosilganda test <b>modal oynada</b> ochiladi. Yakunda natija shu yerda ko‘rinadi.
+                </Text>
+              </CardBody>
+            </Card>
 
-            {/* Natija paneli */}
             {result && (
               <Card variant="outline" borderRadius="2xl" fontFamily={'inter'}>
                 <CardBody>
@@ -132,17 +138,17 @@ export default function TestsPage() {
                             <ListItem key={w.q.id}>
                               <VStack align="start" spacing={1}>
                                 <Text><b>{i+1}.</b> {w.q.stem}</Text>
-                                <HStack color="red.300">
+                                <HStack color="red.400">
                                   <Badge colorScheme="red">Sizning javobingiz:</Badge>
                                   <Text>{chosenText ?? "—"}</Text>
                                 </HStack>
-                                <HStack color="green.300">
+                                <HStack color="green.400">
                                   <Badge colorScheme="green">To‘g‘ri javob:</Badge>
                                   <Text>{correctText}</Text>
                                 </HStack>
                                 {w.q.explanation && (
-                                  <Box bg="blackAlpha.400" p={2} borderRadius="md">
-                                    <Text fontSize="sm" color="gray.200">
+                                  <Box bg="blackAlpha.800" p={2} borderRadius="md">
+                                    <Text fontSize="sm" color="#fff">
                                       Izoh: {w.q.explanation}
                                     </Text>
                                   </Box>
@@ -165,6 +171,32 @@ export default function TestsPage() {
           </VStack>
         </GridItem>
       </Grid>
+
+      {/* ⬇️ TEST MODALI */}
+      <Modal isOpen={isRunOpen} onClose={() => { setRunOpen(false); }} size="6xl" scrollBehavior="inside">
+        <ModalOverlay />
+        <ModalContent borderRadius="2xl" overflow="hidden">
+          <ModalHeader>
+            <HStack justify="space-between" align="center">
+              <Heading size="md">{active?.title ?? "Test"}</Heading>
+              <Badge colorScheme={active?.category === "TOPIK" ? "blue" : "orange"}>
+                {active?.category ?? ""}
+              </Badge>
+            </HStack>
+          </ModalHeader>
+          <ModalCloseButton />
+          <ModalBody pb={6}>
+            {active ? (
+              <TestRunner
+                test={active}
+                onExit={(r) => { handleExit(r); }}
+              />
+            ) : (
+              <Text color="gray.400">Test yuklanmoqda…</Text>
+            )}
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Container>
   );
 }

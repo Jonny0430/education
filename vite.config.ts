@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [],
 
   server: {
-    open: true,
+     open: true,
   },
 
   test: {

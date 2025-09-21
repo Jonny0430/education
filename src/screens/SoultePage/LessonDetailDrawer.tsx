@@ -40,7 +40,8 @@ export default function LessonDetailDrawer({
   const lessonAttachments = lesson.attachments ?? fallbackAttachments ?? [];
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   const lessonNotes = lesson.notes ?? fallbackNotes ?? [];
-  const hasAnything = Boolean((lessonVideo ?? lessonAttachments.length) || lessonNotes.length || lesson.description);
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  const hasAnything = Boolean((lessonVideo ?? (lessonAttachments.length) ?? lessonNotes.length) ?? lesson.description);
 
   return (
     <Drawer isOpen={isOpen} onClose={onClose} size="xl">

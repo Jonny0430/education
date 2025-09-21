@@ -16,12 +16,14 @@ export type Attachment = {
 };
 
 /* ====== Dars darajasidagi qo'shimcha maydonlar ====== */
+
 export type LessonDetail = {
   id: string;
   title: string;
   dur: string;
   playing?: boolean;
   description?: string;
+  attachments?: Attachment[] | undefined;       // dars fayllari
   video?: { url: string; poster?: string };
   notes?: string[];
 };
