@@ -21,6 +21,7 @@ import WritingTestsPage from "./screens/DiktantPage/WritingTestsPage";
 import GrammarDetailPage from "./screens/KoreanPage/GrammarDetailPage";
 import { HubSpotChat } from "./hooks/HubSpotScript";
 import TranslateAndShare from "./screens/TranslatePage/TranslatePage";
+import EshitishPage from "./screens/EshitishTestPage";
 
 function AppLayout() {
   const appBg = useColorModeValue("#f4faff", "#0b1220");
@@ -63,6 +64,7 @@ function AppLayout() {
             <Route path="/pricing" element={<NarxPage />} />
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/translate" element={<TranslateAndShare />} />
+            <Route path="/lysine" element={<EshitishPage />} />
             <Route path="/courses/:id" element={<CategoryDetailPage />} />
             <Route path="/books/:id" element={<BookDetailModal isOpen={false} onClose={function (): void {
               throw new Error("Function not implemented.");

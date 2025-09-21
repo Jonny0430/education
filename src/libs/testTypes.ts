@@ -16,6 +16,7 @@ export type Question = {
 };
 
 export type TestPack = {
+  savedKey: string;
   id: string;
   title: string;
   category: TestCategory;

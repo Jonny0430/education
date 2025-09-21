@@ -15,6 +15,8 @@ import { IoHomeOutline } from "react-icons/io5";
 import { LuNewspaper } from "react-icons/lu";
 import { FaQuestionCircle } from "react-icons/fa";
 import { BsTranslate } from "react-icons/bs";
+import { VscUnmute } from "react-icons/vsc";
+
 
 
 /* Konstanta: sidebar kengligi */
@@ -38,6 +40,7 @@ const sections: readonly NavSection[] = [
       { id: "tests",   label: "Testlar",            icon: MdOutlineMenuBook,    path: "/tests" },
       { id: "dictant", label: "Diktant Testlar",    icon: MdOutlineMenuBook,    path: "/dictant" },
       { id: "translate", label: "Translate",    icon: BsTranslate ,    path: "/translate" },
+      { id: "translate", label: "lysine",    icon: VscUnmute ,    path: "/lysine" },
     ],
   },
   {
