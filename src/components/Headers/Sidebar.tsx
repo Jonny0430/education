@@ -14,6 +14,8 @@ import { MdOutlineMenuBook, MdOutlinePriceChange } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { LuNewspaper } from "react-icons/lu";
 import { FaQuestionCircle } from "react-icons/fa";
+import { BsTranslate } from "react-icons/bs";
+
 
 /* Konstanta: sidebar kengligi */
 export const SIDEBAR_W = 280;
@@ -35,6 +37,7 @@ const sections: readonly NavSection[] = [
       { id: "dict",    label: "Lo'g'at",            icon: MdOutlineMenuBook,    path: "/lugat" },
       { id: "tests",   label: "Testlar",            icon: MdOutlineMenuBook,    path: "/tests" },
       { id: "dictant", label: "Diktant Testlar",    icon: MdOutlineMenuBook,    path: "/dictant" },
+      { id: "translate", label: "Translate",    icon: BsTranslate ,    path: "/translate" },
     ],
   },
   {

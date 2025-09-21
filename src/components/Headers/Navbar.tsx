@@ -35,6 +35,7 @@ import { LuNewspaper } from "react-icons/lu";
 import { FaQuestionCircle } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import type { IconType } from "react-icons";
+import { useEffect, useState } from "react";
 
 /* === Sidebar bo‘limlari === */
 type NavItem = { id: string; label: string; icon: IconType; path: string; muted?: boolean };
@@ -64,9 +65,17 @@ const sections: readonly NavSection[] = [
   },
 ] as const;
 
-type HeaderProps = {
-  notifCount?: number;
-};
+/* === Til xaritasi va helperlar === */
+const LANG_LABEL: Record<string, string> = { en: "EN", uz: "UZ", ru: "RU", ko: "KO" };
+type LangCode = keyof typeof LANG_LABEL;
+
+function loadLang(): LangCode {
+  if (typeof window === "undefined") return "en";
+  const v = localStorage.getItem("app_lang");
+  return (v === "en" || v === "uz" || v === "ru" || v === "ko") ? v : "en";
+}
+
+type HeaderProps = { notifCount?: number };
 
 export default function Navbar({ notifCount = 1 }: HeaderProps) {
   const barBg   = useColorModeValue("white", "gray.800");
@@ -79,12 +88,34 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
   // Main menu drawer (hamburger)
   const menu = useDisclosure();
 
-  // Extra panels
+  // Panels / Modals
   const settings = useDisclosure();
   const notifications = useDisclosure();
   const media = useDisclosure();
   const language = useDisclosure();
   const help = useDisclosure();
+
+  // === TIL HOLATI ===
+  const [lang, setLang] = useState<LangCode>("en");
+  const [pendingLang, setPendingLang] = useState<LangCode>("en");
+
+  useEffect(() => {
+    const current = loadLang();
+    setLang(current);
+    setPendingLang(current);
+  }, []);
+
+  useEffect(() => {
+    if (language.isOpen) setPendingLang(lang);
+  }, [language.isOpen, lang]);
+
+  const saveLanguage = () => {
+    setLang(pendingLang);
+    localStorage.setItem("app_lang", pendingLang);
+    // Tashqi tinglovchilar uchun event
+    window.dispatchEvent(new CustomEvent("app:languageChanged", { detail: { lang: pendingLang } }));
+    language.onClose();
+  };
 
   // Sidebar ro‘yxati
   const renderNavList = (onItemClick?: () => void) => (
@@ -163,8 +194,9 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
             <IconButton aria-label="Media" icon={<MdImage />} size="sm" variant="ghost" onClick={media.onOpen} />
           </Tooltip>
 
+          {/* Til tugmasi — joriy kod ko‘rinadi */}
           <Button size="sm" variant="ghost" rounded="md" onClick={language.onOpen}>
-            En
+            {LANG_LABEL[lang]}
           </Button>
 
           <Box position="relative">
@@ -274,14 +306,14 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
         </DrawerContent>
       </Drawer>
 
-      {/* LANGUAGE (En) — Modal */}
+      {/* LANGUAGE — Modal (tilar bo‘limi) */}
       <Modal isOpen={language.isOpen} onClose={language.onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Tilni tanlang</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-            <RadioGroup defaultValue="en">
+            <RadioGroup value={pendingLang} onChange={(v) => { setPendingLang(v); }}>
               <VStack align="stretch" spacing={3}>
                 <Radio value="en">English</Radio>
                 <Radio value="uz">O‘zbekcha</Radio>
@@ -290,7 +322,10 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
               </VStack>
             </RadioGroup>
             <Divider my={4} />
-            <Button colorScheme="blue" w="full" onClick={language.onClose}>Saqlash</Button>
+            <HStack>
+              <Button variant="ghost" onClick={language.onClose} flex="1">Bekor qilish</Button>
+              <Button colorScheme="blue" onClick={saveLanguage} flex="1">Saqlash</Button>
+            </HStack>
           </ModalBody>
         </ModalContent>
       </Modal>
