@@ -42,7 +42,7 @@ export default function Footer({
   const year = new Date().getFullYear();
 
   // Light/Dark ranglar
-  const bg       = useColorModeValue("whiteAlpha.900", "#121823");
+  const bg = useColorModeValue("#f4faff", "#f4faff");
   const text     = useColorModeValue("gray.700", "gray.300");
   const iconBase = useColorModeValue("gray.600", "gray.200");
   const border   = useColorModeValue("blackAlpha.200", "whiteAlpha.200");
