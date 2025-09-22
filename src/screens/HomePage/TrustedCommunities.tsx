@@ -120,9 +120,9 @@ export default function TrustedCommunities(): JSX.Element {
             pt={2}
           >
             <Text fontSize="sm" color={textCl}>
-              More networks coming soon.&nbsp;
+              Tez orada boshqa tarmoqlar paydo bo'ladi.&nbsp;
               <chakra.a href="#" color={linkCl} fontWeight="bold" _hover={{ textDecoration: "underline" }}>
-                See all →
+                Hammasini koʻrish →
               </chakra.a>
             </Text>
           </GridItem>

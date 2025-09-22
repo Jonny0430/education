@@ -240,9 +240,10 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Sozlamalar</DrawerHeader>
+          <DrawerHeader fontFamily="inter">Sozlamalar bo'limida...</DrawerHeader>
+          <DrawerHeader fontFamily="inter">Tuzatish Ishlari bormoqda...</DrawerHeader>
           <DrawerBody>
-            <VStack align="stretch" spacing={4}>
+            <VStack align="stretch" spacing={4} fontFamily="inter">
               <FormControl display="flex" alignItems="center" justifyContent="space-between">
                 <FormLabel mb="0">Qorong‘i rejim</FormLabel>
                 <Switch />
@@ -267,9 +268,9 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Xabarnomalar</DrawerHeader>
+          <DrawerHeader fontFamily="inter">Xabarnomalar</DrawerHeader>
           <DrawerBody>
-            <VStack align="stretch" spacing={3}>
+            <VStack align="stretch" spacing={3} fontFamily="inter">
               <Text fontSize="sm" color="gray.500">Bugungi yangiliklar:</Text>
               <Stack spacing={2}>
                 <Box p={3} borderWidth="1px" rounded="md">
@@ -291,12 +292,13 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Media</DrawerHeader>
+          <DrawerHeader fontFamily="inter">Media bo'limida</DrawerHeader>
+          <DrawerHeader fontFamily="inter">Tuzatishlar bo'lmoqda</DrawerHeader>
           <DrawerBody>
             <VStack align="stretch" spacing={4}>
-              <Text color="gray.500" fontSize="sm">Rasmlar va videolarni boshqaring.</Text>
+              <Text color="gray.500" fontSize="sm" fontFamily="inter">Rasmlar va videolarni boshqaring.</Text>
               <Divider />
-              <Stack spacing={2}>
+              <Stack spacing={2} fontFamily="inter">
                 <Button colorScheme="blue" variant="solid">Yangi video qo‘shish</Button>
                 <Button variant="outline">Rasm yuklash</Button>
                 <Button variant="ghost">Galereyani ochish</Button>
@@ -310,9 +312,9 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
       <Modal isOpen={language.isOpen} onClose={language.onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Tilni tanlang</ModalHeader>
+          <ModalHeader fontFamily="inter">Tilni tanlang</ModalHeader>
           <ModalCloseButton />
-          <ModalBody pb={6}>
+          <ModalBody pb={6} fontFamily="inter">
             <RadioGroup value={pendingLang} onChange={(v) => { setPendingLang(v); }}>
               <VStack align="stretch" spacing={3}>
                 <Radio value="en">English</Radio>
@@ -322,7 +324,7 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
               </VStack>
             </RadioGroup>
             <Divider my={4} />
-            <HStack>
+            <HStack fontFamily="inter">
               <Button variant="ghost" onClick={language.onClose} flex="1">Bekor qilish</Button>
               <Button colorScheme="blue" onClick={saveLanguage} flex="1">Saqlash</Button>
             </HStack>
@@ -334,12 +336,12 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
       <Modal isOpen={help.isOpen} onClose={help.onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Yordam</ModalHeader>
+          <ModalHeader fontFamily="inter">Yordam</ModalHeader>
           <ModalCloseButton />
-          <ModalBody pb={6}>
+          <ModalBody pb={6} fontFamily="inter">
             <VStack align="stretch" spacing={3}>
               <Text><b>FAQ</b> bo‘limidan tez-tez so‘raladigan savollarga javob topasiz.</Text>
-              <Text>Muammo bo‘lsa: support@example.com</Text>
+              <Text>Muammo bo‘lsa: jonny89pi@gmail.com ga murojat qiling</Text>
               <Divider />
               <Button onClick={help.onClose} colorScheme="blue">Tushunarli</Button>
             </VStack>

@@ -27,24 +27,24 @@ type Category = {
   count: string;
   icon: React.ElementType;
   accent: string;
+  path: string;
 };
 
-const RouterNavLink = chakra(NavLink);
 
 
 const CATEGORIES: Category[] = [
-  { id: "hangul",        title: "한글 기초 (Hangul Basics)", subtitle: "자모·받침·쓰기",           count: "48강",    icon: FiBook,              accent: "blue.400"   },
-  { id: "beginner",      title: "초급 과정 (Beginner)",      subtitle: "생존 회화·기본 문형",       count: "72강",    icon: MdRocketLaunch,     accent: "red.400"    },
-  { id: "grammar",       title: "문법 완성 (Grammar)",        subtitle: "초·중·고급 문형 총정리",     count: "120강",   icon: TbPencil,           accent: "teal.400"   },
-  { id: "vocabulary",    title: "어휘·토픽 빈출 (Vocabulary)", subtitle: "주제별·유의어·한자어",      count: "3,000단어", icon: MdOutlineTranslate, accent: "purple.400" },
-  { id: "listening",     title: "듣기 훈련 (Listening)",       subtitle: "쉐도잉·딕테이션",           count: "90세트",   icon: FiHeadphones,       accent: "cyan.400"   },
-  { id: "speaking",      title: "말하기·회화 (Speaking)",      subtitle: "패턴·롤플레이",             count: "85세트",   icon: FiActivity,         accent: "orange.400" },
-  { id: "reading",       title: "읽기 이해 (Reading)",         subtitle: "문해력·속독",               count: "70지문",   icon: FiBook,             accent: "yellow.400" },
-  { id: "writing",       title: "쓰기 (Writing)",             subtitle: "문장·이메일·에세이",         count: "60과제",   icon: MdOutlineBrush,     accent: "pink.300"   },
-  { id: "pronunciation", title: "발음·억양 (Pronunciation)",   subtitle: "연음·받침·억양",             count: "50강",    icon: GiHealthPotion,     accent: "green.300"  },
-  { id: "business",      title: "비즈니스 한국어",             subtitle: "회의·보고·이메일",           count: "40세트",   icon: FiBriefcase,        accent: "green.400"  },
-  { id: "travel",        title: "여행 한국어",                 subtitle: "공항·식당·길묻기",           count: "35세트",   icon: MdRocketLaunch,     accent: "pink.400"   },
-  { id: "topik",         title: "TOPIK 실전",                 subtitle: "모의고사·풀이·채점",         count: "30회",     icon: FiActivity,         accent: "blue.300"   },
+  { id: "hangul",        title: "한글 기초 (Hangul Basics)", subtitle: "자모·받침·쓰기",           count: "48강",    icon: FiBook,              accent: "blue.400", path: '/soulte'},
+  { id: "beginner",      title: "초급 과정 (Beginner)",      subtitle: "생존 회화·기본 문형",       count: "72강",    icon: MdRocketLaunch,     accent: "red.400", path: '/grammar' },
+  { id: "grammar",       title: "문법 완성 (Grammar)",        subtitle: "초·중·고급 문형 총정리",     count: "120강",   icon: TbPencil,           accent: "teal.400",path: '/lugat'},
+  { id: "vocabulary",    title: "어휘·토픽 빈출 (Vocabulary)", subtitle: "주제별·유의어·한자어",      count: "3,000단어", icon: MdOutlineTranslate, accent: "purple.400", path: '/translate'},
+  { id: "listening",     title: "듣기 훈련 (Listening)",       subtitle: "쉐도잉·딕테이션",           count: "90세트",   icon: FiHeadphones,       accent: "cyan.400", path: '/lysine' },
+  { id: "speaking",      title: "말하기·회화 (Speaking)",      subtitle: "패턴·롤플레이",             count: "85세트",   icon: FiActivity,         accent: "orange.400", path: '/lysine' },
+  { id: "reading",       title: "읽기 이해 (Reading)",         subtitle: "문해력·속독",               count: "70지문",   icon: FiBook,             accent: "yellow.400", path: '/soulte' },
+  { id: "writing",       title: "쓰기 (Writing)",             subtitle: "문장·이메일·에세이",         count: "60과제",   icon: MdOutlineBrush,     accent: "pink.300", path: '/dictant'   },
+  { id: "pronunciation", title: "발음·억양 (Pronunciation)",   subtitle: "연음·받침·억양",             count: "50강",    icon: GiHealthPotion,     accent: "green.300", path: '/grammar'  },
+  { id: "business",      title: "비즈니스 한국어",             subtitle: "회의·보고·이메일",           count: "40세트",   icon: FiBriefcase,        accent: "green.400", path: '/lugat'  },
+  { id: "travel",        title: "여행 한국어",                 subtitle: "공항·식당·길묻기",           count: "35세트",   icon: MdRocketLaunch,     accent: "pink.400", path: '/news'   },
+  { id: "topik",         title: "TOPIK 실전",                 subtitle: "모의고사·풀이·채점",         count: "30회",     icon: FiActivity,         accent: "blue.300", path: '/tests'   },
 ];
 
 
@@ -112,24 +112,24 @@ const CategoryCard: React.FC<{ data: Category }> = ({ data }) => {
 };
 
 // ——— Grid ———
+
 export default function CategoryGrid(): JSX.Element {
   const pageBg = useColorModeValue(
     "linear-gradient(180deg, #f7fafc 0%, #edf2f7 60%, #e9efff 100%)",
     "radial-gradient(1200px 400px at 20% -10%, rgba(59,130,246,.15), transparent), radial-gradient(800px 300px at 80% -20%, rgba(236,72,153,.16), transparent), linear-gradient(180deg, #0B1220 0%, #0A0F1A 60%, #0A0E18 100%)"
   );
+  const RouterNavLink = chakra(NavLink);
+
 
   return (
-    <Box py={{ base: 8, md: 12 }} bg={pageBg}  fontFamily={'inter'}>
+    <Box py={{ base: 8, md: 12 }} bg={pageBg} fontFamily="inter">
       <Container maxW="7xl" px={{ base: 4, md: 6 }}>
-        <SimpleGrid
-          minChildWidth="260px"
-          spacing={{ base: 4, md: 6 }}
-          justifyItems="center"
-        >
+        <SimpleGrid minChildWidth="260px" spacing={{ base: 4, md: 6 }} justifyItems="center">
           {CATEGORIES.map((c) => (
             <RouterNavLink
               key={c.id}
-              to={`/category/${c.id}`}
+              // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+              to={c.path ?? `/category/${c.id}`}  // use c.path if you added it, fallback to /category/:id
               w="full"
               maxW="320px"
               _hover={{ textDecoration: "none" }}
@@ -139,6 +139,7 @@ export default function CategoryGrid(): JSX.Element {
             </RouterNavLink>
           ))}
         </SimpleGrid>
+
         <Flex justify="center" mt={6}>
           <chakra.a
             href="/tests"

@@ -2,7 +2,7 @@
 
 import {
   Drawer, DrawerOverlay, DrawerContent, DrawerHeader, DrawerBody, DrawerCloseButton,
-  Tabs, TabList, Tab, TabPanels, TabPanel, Card, CardBody, AspectRatio,
+  Tabs, TabList, Tab, TabPanels, TabPanel,
   Text, List, ListItem, Box, HStack, Wrap, WrapItem, Link as ChakraLink, Badge
 } from "@chakra-ui/react";
 import { FiFileText, FiLink, FiMusic, FiVideo, FiArchive } from "react-icons/fi";
@@ -62,7 +62,7 @@ export default function LessonDetailDrawer({
             <Tabs variant="enclosed" colorScheme="blue">
               <TabList>
                 <Tab>Overview</Tab>
-                <Tab>Video</Tab>
+                {/* <Tab>Video</Tab> */}
                 <Tab>Fayllar</Tab>
                 <Tab>Notes</Tab>
               </TabList>
@@ -77,7 +77,7 @@ export default function LessonDetailDrawer({
                 </TabPanel>
 
                 {/* Video */}
-                <TabPanel>
+                {/* <TabPanel>
                   {lessonVideo ? (
                     <Card borderRadius="2xl" overflow="hidden">
                       <CardBody>
@@ -97,7 +97,7 @@ export default function LessonDetailDrawer({
                   ) : (
                     <Text color="gray.500">Video mavjud emas.</Text>
                   )}
-                </TabPanel>
+                </TabPanel> */}
 
                 {/* Files */}
                 <TabPanel>

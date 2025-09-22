@@ -80,7 +80,7 @@ export default function CoursesGridPro(): JSX.Element {
         <Flex justify="center" mt={6}>
           <chakra.a href="#" color={useColorModeValue("blue.600", "blue.300")}
                     fontWeight="semibold" _hover={{ textDecoration: "underline" }}>
-            Browse all courses →
+            Kurslarni ko'rishni boshlash →
           </chakra.a>
         </Flex>
       </Container>

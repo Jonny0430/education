@@ -4,7 +4,7 @@
 import {
   Modal, ModalBody, ModalContent, ModalOverlay, ModalHeader, ModalCloseButton,
   Box, HStack, VStack, Text, Badge, Tag, Tabs, TabList, Tab, TabPanels, TabPanel,
-  Card, CardBody, AspectRatio, Divider, List, ListItem
+  Card, CardBody, Divider, List, ListItem
 } from "@chakra-ui/react";
 import { useState } from "react";
 import CourseSections from "./CourseSections";
@@ -19,103 +19,103 @@ type Props = {
 };
 
 /** YouTube URL -> EMBED URL (shorts/live/playlist/m.youtube.com/no-cookie ni qo‘llab-quvvatlaydi) */
-function toYouTubeEmbed(raw: string) {
-  try {
-    const u = new URL(raw.trim());
-    const host = u.hostname.replace(/^m\./, ""); // m.youtube.com -> youtube.com
-    const path = u.pathname;
+// function toYouTubeEmbed(raw: string) {
+//   try {
+//     const u = new URL(raw.trim());
+//     const host = u.hostname.replace(/^m\./, ""); // m.youtube.com -> youtube.com
+//     const path = u.pathname;
 
-    // youtu.be/<id>
-    if (host.includes("youtu.be")) {
-      const id = path.slice(1);
-      return id ? `https://www.youtube.com/embed/${id}` : null;
-    }
+//     // youtu.be/<id>
+//     if (host.includes("youtu.be")) {
+//       const id = path.slice(1);
+//       return id ? `https://www.youtube.com/embed/${id}` : null;
+//     }
 
-    // youtube.com / youtube-nocookie.com
-    if (host.includes("youtube.com") || host.includes("youtube-nocookie.com")) {
-      // Agar allaqachon /embed/<id> bo‘lsa — to‘g‘ridan ishlatamiz
-      if (path.startsWith("/embed/")) {
-        return `https://www.youtube.com${path}`;
-      }
+//     // youtube.com / youtube-nocookie.com
+//     if (host.includes("youtube.com") || host.includes("youtube-nocookie.com")) {
+//       // Agar allaqachon /embed/<id> bo‘lsa — to‘g‘ridan ishlatamiz
+//       if (path.startsWith("/embed/")) {
+//         return `https://www.youtube.com${path}`;
+//       }
 
-      // /shorts/<id>
-      if (path.startsWith("/shorts/")) {
-        const id = path.split("/")[2];
-        return id ? `https://www.youtube.com/embed/${id}` : null;
-      }
+//       // /shorts/<id>
+//       if (path.startsWith("/shorts/")) {
+//         const id = path.split("/")[2];
+//         return id ? `https://www.youtube.com/embed/${id}` : null;
+//       }
 
-      // /live/<id>
-      if (path.startsWith("/live/")) {
-        const id = path.split("/")[2];
-        return id ? `https://www.youtube.com/embed/${id}` : null;
-      }
+//       // /live/<id>
+//       if (path.startsWith("/live/")) {
+//         const id = path.split("/")[2];
+//         return id ? `https://www.youtube.com/embed/${id}` : null;
+//       }
 
-      // watch?v=<id>
-      const v = u.searchParams.get("v");
-      if (v) return `https://www.youtube.com/embed/${v}`;
+//       // watch?v=<id>
+//       const v = u.searchParams.get("v");
+//       if (v) return `https://www.youtube.com/embed/${v}`;
 
-      // playlist: ?list=<LIST_ID>
-      const list = u.searchParams.get("list");
-      if (list) return `https://www.youtube.com/embed/videoseries?list=${list}`;
-    }
-  } catch {
-    // ignore parse errors
-  }
-  return null;
-}
+//       // playlist: ?list=<LIST_ID>
+//       const list = u.searchParams.get("list");
+//       if (list) return `https://www.youtube.com/embed/videoseries?list=${list}`;
+//     }
+//   } catch {
+//     // ignore parse errors
+//   }
+//   return null;
+// }
 
 /** Bir joyda DRY qilish uchun video renderer */
-function VideoBlock({
-  url,
-  poster,
-  caption = "Kitob darajasidagi demo video",
-}: {
-  url: string;
-  poster?: string;
-  caption?: string;
-}) {
-  const yt = toYouTubeEmbed(url);
+// function VideoBlock({
+//   url,
+//   poster,
+//   caption = "Kitob darajasidagi demo video",
+// }: {
+//   url: string;
+//   poster?: string;
+//   caption?: string;
+// }) {
+//   const yt = toYouTubeEmbed(url);
 
-  return (
-    <Card borderRadius="2xl" overflow="hidden">
-      <CardBody>
-        {yt ? (
-          <AspectRatio ratio={16 / 9} borderRadius="lg" overflow="hidden">
-            <iframe
-              src={`${yt}?rel=0`}
-              title="YouTube video player"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              referrerPolicy="origin-when-cross-origin"
-              style={{ width: "100%", height: "100%", border: 0 }}
-            />
-          </AspectRatio>
-        ) : (
-          <AspectRatio ratio={16 / 9} borderRadius="lg" overflow="hidden">
-            {/* YouTube to‘g‘ridan-to‘g‘ri video emas — <video> bilan ijro etilmaydi.
-                Shuning uchun bu blok faqat .mp4/.webm kabi to‘g‘ridan media URL bo‘lsa ishlaydi. */}
-            <video
-              controls
-              poster={poster}
-              src={url}
-              style={{ width: "100%", height: "100%" }}
-            />
-          </AspectRatio>
-        )}
-        <Text mt={3} color="gray.600" fontSize="sm">
-          {caption}
-        </Text>
+//   return (
+//     <Card borderRadius="2xl" overflow="hidden">
+//       <CardBody>
+//         {yt ? (
+//           <AspectRatio ratio={16 / 9} borderRadius="lg" overflow="hidden">
+//             <iframe
+//               src={`${yt}?rel=0`}
+//               title="YouTube video player"
+//               loading="lazy"
+//               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+//               allowFullScreen
+//               referrerPolicy="origin-when-cross-origin"
+//               style={{ width: "100%", height: "100%", border: 0 }}
+//             />
+//           </AspectRatio>
+//         ) : (
+//           <AspectRatio ratio={16 / 9} borderRadius="lg" overflow="hidden">
+//             {/* YouTube to‘g‘ridan-to‘g‘ri video emas — <video> bilan ijro etilmaydi.
+//                 Shuning uchun bu blok faqat .mp4/.webm kabi to‘g‘ridan media URL bo‘lsa ishlaydi. */}
+//             <video
+//               controls
+//               poster={poster}
+//               src={url}
+//               style={{ width: "100%", height: "100%" }}
+//             />
+//           </AspectRatio>
+//         )}
+//         <Text mt={3} color="gray.600" fontSize="sm">
+//           {caption}
+//         </Text>
 
-        {!yt && url.includes("youtube") && (
-          <Text mt={2} color="red.500" fontSize="sm">
-            YouTube havolasini o‘qiy olmadik. Iltimos, to‘g‘ri link yuboring (watch?v=..., youtu.be/..., shorts/... yoki playlist list=...).
-          </Text>
-        )}
-      </CardBody>
-    </Card>
-  );
-}
+//         {!yt && url.includes("youtube") && (
+//           <Text mt={2} color="red.500" fontSize="sm">
+//             YouTube havolasini o‘qiy olmadik. Iltimos, to‘g‘ri link yuboring (watch?v=..., youtu.be/..., shorts/... yoki playlist list=...).
+//           </Text>
+//         )}
+//       </CardBody>
+//     </Card>
+//   );
+// }
 
 export default function BookDetailModal({ isOpen, onClose, book }: Props) {
   const [openLesson, setOpenLesson] = useState<Lesson | null>(null);
@@ -152,7 +152,7 @@ export default function BookDetailModal({ isOpen, onClose, book }: Props) {
                 <Tab>Overview</Tab>
                 <Tab>Darsliklar</Tab>
                 <Tab>Fayllar</Tab>
-                <Tab>Video</Tab>
+                {/* <Tab>Video</Tab> */}
               </TabList>
 
               <TabPanels>
@@ -203,7 +203,7 @@ export default function BookDetailModal({ isOpen, onClose, book }: Props) {
                 </TabPanel>
 
                 {/* VIDEO */}
-                <TabPanel>
+                {/* <TabPanel>
                   {book.video?.url ? (
                     <VideoBlock
                       url={book.video.url}
@@ -213,7 +213,7 @@ export default function BookDetailModal({ isOpen, onClose, book }: Props) {
                   ) : (
                     <Text color="gray.500">Video mavjud emas.</Text>
                   )}
-                </TabPanel>
+                </TabPanel> */}
               </TabPanels>
             </Tabs>
           </ModalBody>
@@ -226,7 +226,7 @@ export default function BookDetailModal({ isOpen, onClose, book }: Props) {
         onClose={() => { setOpenLesson(null); }}
         lesson={openLesson}
         // ixtiyoriy fallbacklar:
-        fallbackVideo={book.video ?? null}
+        // fallbackVideo={book.video ?? null}
         fallbackAttachments={book.attachments}
         fallbackNotes={book.lectureNotes}
       />

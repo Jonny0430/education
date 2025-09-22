@@ -121,15 +121,15 @@ export const BOOKS: Book[] = [
     },
     {
       id: "s2a2",
-      name: "SNU_2A_Audio_Drills.zip",
+      name: "SNU_2A_Video_Drills.zip",
       kind: "zip",
       size: "7.8 MB",
-      url: "https://www.youtube.com/watch?v=r5vx67rBSu8"
+      url: "https://www.youtube.com/watch?v=r5vx67rBSu8&list=PLdZAe08U2lc-fkGaw63Ik9PaH50BRDtC1"
     }
   ],
 
   video: {
-    url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    url: "https://youtu.be/Q_IbQXaUCUc?t=2",
     poster:
       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg"
   },
@@ -146,14 +146,14 @@ export const BOOKS: Book[] = [
           {
             id: "a2gr1",
             title: "V-아/어지다 — ‘…bo‘lib qolmoq/…ga aylanish’",
-            dur: "08:00",
+            dur: "00:00",
             playing: true,
             description:
               "Sifat/fe’l natijaviy o‘zgarish: issiq→issiqlashmoq, qiyin→qiyinlashmoq.\nMisollar:\n1) 날씨가 추워졌어요.\n2) 한국어가 점점 쉬워져요.\n3) 얼굴이 빨개졌어요.\n4) 문이 저절로 열렸어요.",
             video: {
-              url: "https://youtu.be/FxTWApXxgII",
+              url: "https://youtu.be/Q_IbQXaUCUc?t=2",
               poster:
-                "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg"
+                "https://youtu.be/Q_IbQXaUCUc?t=2"
             },
             notes: [
               "Sifatlar bilan juda keng: 예쁘다→예뻐졌어요.",
@@ -182,11 +182,6 @@ export const BOOKS: Book[] = [
             dur: "08:00",
             description:
               "Tajriba bor-yo‘qligini aytish.\nMisollar:\n1) 한국에 가 본 적이 있어요.\n2) 술을 마셔 본 적이 없어요.\n3) 그 영화를 본 적이 있어요.\n4) 늦게 온 적이 없어요.",
-            video: {
-              url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-              poster:
-                "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg"
-            },
             notes: [
               "Ko‘pincha ‘V-아/어 보다’ bilan: 가 봤어요 / 가 본 적 있어요.",
               "Negativ: …적이 없어요."
@@ -601,20 +596,20 @@ export const BOOKS: Book[] = [
       name: "SNU_1A_Grammar_CheatSheet.pdf",
       kind: "pdf",
       size: "0.8 MB",
-      url: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+      url: "https://www.scribd.com/document/728268607/%EC%84%9C%EC%9A%B8%EB%8C%80-%ED%95%9C%EA%B5%AD%EC%96%B4-SNU-Korean-1A-Workbook"
     },
     {
       id: "g2",
-      name: "SNU_1A_Drills_Audio.zip",
+      name: "SNU_1A_Darslik_Video",
       kind: "zip",
       size: "3.4 MB",
-      url: "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip"
+      url: "https://www.youtube.com/watch?v=9vHbDS9LUyE&list=PLnJUIkVDzctDKdHPUp-EyqmO1DyuR1llQ"
     },
     {
       id: "g3",
       name: "Interactive Quiz (web)",
       kind: "link",
-      url: "https://example.com/quiz/snu-1a-grammar"
+      url: "https://nuri.iksi.or.kr/front/cms/contents/practice/list.do"
     }
   ],
 
@@ -1061,14 +1056,14 @@ export const BOOKS: Book[] = [
       name: "SNU_1B_Grammar_CheatSheet.pdf",
       kind: "pdf",
       size: "1.1 MB",
-      url: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+      url: "https://www.scribd.com/document/728268681/%EC%84%9C%EC%9A%B8%EB%8C%80-%ED%95%9C%EA%B5%AD%EC%96%B4-SNU-Korean-1B-Workbook"
     },
     {
       id: "b1g2",
-      name: "SNU_1B_Audio_Drills.zip",
+      name: "SNU_1B_Video_Darslik",
       kind: "zip",
       size: "6.2 MB",
-      url: "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip"
+      url: "https://www.youtube.com/watch?v=IAKa42Z4Qi8&list=PLIw0ut1cwub-PUhDPQckzlHVLs1geA3pT"
     }
   ],
 
@@ -1515,10 +1510,17 @@ export const BOOKS: Book[] = [
   attachments: [
     {
       id: "s2b1",
-      name: "SNU_2B_Grammar_CheatSheet.pdf",
+      name: "SNU_2B_Grammar.pdf",
       kind: "pdf",
       size: "1.1 MB",
-      url: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+      url: "https://www.scribd.com/document/728268672/%EC%84%9C%EC%9A%B8%EB%8C%80-%ED%95%9C%EA%B5%AD%EC%96%B4-SNU-Korean-2B-Workbook"
+    },
+    {
+      id: "b1g2",
+      name: "SNU_2B_Video_Darslik",
+      kind: "zip",
+      size: "6.2 MB",
+      url: "https://www.youtube.com/watch?v=E2sH4xmtJB8&list=PLdZAe08U2lc8fgb7PdsFLIC5p5a9Ii6Q6"
     }
   ],
 
@@ -1783,10 +1785,17 @@ export const BOOKS: Book[] = [
   attachments: [
     {
       id: "s3a1",
-      name: "SNU_3A_Grammar_Summary.pdf",
+      name: "SNU_3A_Grammar.pdf",
       kind: "pdf",
       size: "1.3 MB",
-      url: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+      url: "https://www.scribd.com/document/623136601/%EC%84%9C%EC%9A%B8%EB%8C%80-%ED%95%9C%EA%B5%AD%EC%96%B4-SNU-Korean-3A-Workbook"
+    },
+     {
+      id: "b1g2",
+      name: "SNU_3A_Video_Darslik",
+      kind: "zip",
+      size: "6.2 MB",
+      url: "https://www.youtube.com/watch?v=pbDH9Va1bnc&list=PLdZAe08U2lc_JIMWO8pVHisFz5C8N2Q9O"
     }
   ],
 
@@ -2050,10 +2059,17 @@ export const BOOKS: Book[] = [
   attachments: [
     {
       id: "s3b1",
-      name: "SNU_3B_Grammar_Summary.pdf",
+      name: "SNU_3B_Grammar.pdf",
       kind: "pdf",
       size: "1.4 MB",
-      url: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+      url: "https://www.scribd.com/document/728268687/%EC%84%9C%EC%9A%B8%EB%8C%80-%ED%95%9C%EA%B5%AD%EC%96%B4-SNU-Korean-3B-Workbook"
+    },
+    {
+      id: "b1g2",
+      name: "SNU_3B_Video_Darslik",
+      kind: "zip",
+      size: "6.2 MB",
+      url: "https://www.youtube.com/watch?v=Io0rSuemSTI&list=PLUH3Zoim4YhxRQ8-YEtpWvm69KQ5bckQ6"
     }
   ],
 
@@ -2320,7 +2336,14 @@ export const BOOKS: Book[] = [
       name: "SNU_4A_Grammar_Summary.pdf",
       kind: "pdf",
       size: "1.6 MB",
-      url: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+      url: "https://www.scribd.com/document/670452598/%EC%84%9C%EC%9A%B8%EB%8C%80-%ED%95%9C%EA%B5%AD%EC%96%B4-Workbook-4A"
+    },
+     {
+      id: "b1g2",
+      name: "SNU_4A_Video_Darslik",
+      kind: "zip",
+      size: "6.2 MB",
+      url: "https://www.youtube.com/watch?v=HHFFxuoYBxk&list=PLIs7HRMLYCKMDNoUNi0rkVhR-lhhRbcEh"
     }
   ],
 
@@ -2584,10 +2607,17 @@ export const BOOKS: Book[] = [
   attachments: [
     {
       id: "s4b1",
-      name: "SNU_4B_Grammar_Summary.pdf",
+      name: "SNU_4B_Grammar.pdf",
       kind: "pdf",
       size: "1.7 MB",
-      url: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+      url: "https://www.scribd.com/document/717717727/SNU-4B-new"
+    },
+     {
+      id: "b1g2",
+      name: "SNU_4B_Video_Darslik",
+      kind: "zip",
+      size: "6.2 MB",
+      url: "https://www.youtube.com/watch?v=1MXCMWH6zlo&list=PLIs7HRMLYCKMP4O-gtcaXe3e6boxuXr1t"
     }
   ],
 
@@ -2835,10 +2865,17 @@ export const BOOKS: Book[] = [
   attachments: [
     {
       id: "s5a1",
-      name: "SNU_5A_Grammar_Summary.pdf",
+      name: "SNU_5A_Grammar.pdf",
       kind: "pdf",
       size: "1.9 MB",
-      url: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+      url: "https://www.scribd.com/document/726146543/49436-50872-45824-54620-44397-50612-SNU-Korean-5A-Workbook"
+    },
+    {
+      id: "b1g2",
+      name: "SNU_5A_Video_Darslik",
+      kind: "zip",
+      size: "6.2 MB",
+      url: "https://www.youtube.com/watch?v=1MXCMWH6zlo&list=PLIs7HRMLYCKMP4O-gtcaXe3e6boxuXr1t"
     }
   ],
 
@@ -3046,10 +3083,17 @@ export const BOOKS: Book[] = [
   attachments: [
     {
       id: "s5b1",
-      name: "SNU_5B_Grammar_Summary.pdf",
+      name: "SNU_5B_Grammar.pdf",
       kind: "pdf",
       size: "2.1 MB",
-      url: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+      url: "https://www.scribd.com/document/839147309/SNU-Korean-5B-Workbook"
+    },
+    {
+      id: "b1g2",
+      name: "SNU_5B_Video_Darslik",
+      kind: "zip",
+      size: "6.2 MB",
+      url: "https://www.youtube.com/watch?v=1MXCMWH6zlo&list=PLIs7HRMLYCKMP4O-gtcaXe3e6boxuXr1t"
     }
   ],
 

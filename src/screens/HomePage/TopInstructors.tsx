@@ -32,8 +32,8 @@ type Instructor = {
 const INSTRUCTORS: Instructor[] = [
   {
     id: "i1",
-    name: "Devon Lane",
-    role: "Senior Developer",
+    name: "Abrorjon",
+    role: "Matematika",
     rating: 4.8,
     students: "854 students",
     avatar:
@@ -43,8 +43,8 @@ const INSTRUCTORS: Instructor[] = [
   },
   {
     id: "i2",
-    name: "Darrell Steward",
-    role: "Digital Product Designer",
+    name: "Alisher",
+    role: "Ona tili",
     rating: 4.9,
     students: "451,444 students",
     avatar:
@@ -55,7 +55,7 @@ const INSTRUCTORS: Instructor[] = [
   {
     id: "i3",
     name: "Jane Cooper",
-    role: "UI/UX Designer",
+    role: "Ingilis tili",
     rating: 4.8,
     students: "435,671 students",
     avatar:
@@ -65,8 +65,8 @@ const INSTRUCTORS: Instructor[] = [
   },
   {
     id: "i4",
-    name: "Albert Flores",
-    role: "Adobe Instructor",
+    name: "Ali",
+    role: "Kores tili",
     rating: 4.7,
     students: "511,123 students",
     avatar:

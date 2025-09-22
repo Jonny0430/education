@@ -1,6 +1,7 @@
 // src/components/KoreaTopStories.tsx
 "use client";
 import type { FC } from "react";
+import React from "react";
 import {
   Box, Container, Grid, GridItem, Heading, Text, Image, AspectRatio,
   HStack, VStack, Badge, useColorModeValue, Link as ChakraLink,
@@ -10,28 +11,28 @@ import {
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { BsPlayFill } from "react-icons/bs";
 import { MdPlayCircleOutline } from "react-icons/md";
-import React from "react";
 
+/* ---------------- Types ---------------- */
 type MediaKind = "image" | "video" | "youtube";
 
-type Story = {
+export type Story = {
   id: string;
   title: string;
   excerpt?: string;
   category: string;
   image: string;        // thumbnail/poster
-  href?: string;        // maqola linki
+  href?: string;        // maqola linki yoki YT link bo‘lishi ham mumkin
   datetime: string;     // ISO
   mediaKind?: MediaKind;
-  videoSrc?: string;    // HTML5 .mp4 manzili (mediaKind="video")
-  youtubeId?: string;   // YouTube ID (mediaKind="youtube")
+  videoSrc?: string;    // HTML5 .mp4/.webm/.ogg yoki YouTube link bo‘lishi ham mumkin
+  youtubeId?: string;   // YouTube ID yoki to‘liq URL (yt.be / watch?v=...)
 };
 
+/* ---------------- Demo data ---------------- */
 const STORIES: Story[] = [
   {
     id: "s1",
-    title:
-      "Seulda AI siyosati: yarimo‘tkazgich va 6G loyihalariga yangi impuls",
+    title: "Seulda AI siyosati: yarimo‘tkazgich va 6G loyihalariga yangi impuls",
     excerpt:
       "Koreyada chiplar, 6G va AI infratuzilmaga qo‘shimcha dasturlar e’lon qilindi. Universitetlar va sanoat o‘rtasida hamkorlik kengaymoqda.",
     category: "Texnologiya",
@@ -40,12 +41,11 @@ const STORIES: Story[] = [
     href: "#",
     datetime: "2025-09-15T18:47:00",
     mediaKind: "youtube",
-    youtubeId: "dQw4w9WgXcQ", // misol uchun
+    youtubeId: "https://youtu.be/eCkuazw-DNU?t=2", // ID yoki to‘liq YT link bo‘lishi mumkin
   },
   {
     id: "s2",
-    title:
-      "Fransiya–Koreya strategik muloqoti: xavfsizlik va zanjirlar muhokamada",
+    title: "Fransiya–Koreya strategik muloqoti: xavfsizlik va zanjirlar muhokamada",
     category: "Diplomatiya",
     image:
       "https://images.unsplash.com/photo-1542541864-4abf21a55761?q=80&w=800&auto=format&fit=crop",
@@ -55,21 +55,18 @@ const STORIES: Story[] = [
   },
   {
     id: "s3",
-    title:
-      "Koreya Prezidenti Amerika prezidenti bilan uchrashdi",
+    title: "Koreyaning yangi prezidenti kim bo’ladi?",
     category: "Ekologiya",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1BizaJJupfAAAJTK9OHUinjAaPltvbn6Ydg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQT33q01U0ziIZXr9cUx0BLy6TZMnneips5rdURZpe0IoO-BPZxcm-mccdJi7-9I1xXd0&usqp=CAU",
     href: "#",
     datetime: "2025-09-15T15:11:00",
     mediaKind: "video",
-    videoSrc:
-      "https://youtu.be/sbMGK8E1sco?t=3", // demo mp4
+    videoSrc: "https://youtu.be/N_zpkUdD-Co?t=4", // bu YT link bo‘lsa ham aniqlab beradi
   },
   {
     id: "s4",
-    title:
-      "Boks bo‘yicha JCh: Koreya sportchilari reytingda yuqoriga ko‘tarildi",
+    title: "Boks bo‘yicha JCh: Koreya sportchilari reytingda yuqoriga ko‘tarildi",
     category: "Sport",
     image:
       "https://images.unsplash.com/photo-1483721310020-03333e577078?q=80&w=800&auto=format&fit=crop",
@@ -79,8 +76,7 @@ const STORIES: Story[] = [
   },
   {
     id: "s5",
-    title:
-      "TOPIK tayyorgarligi: Hangul va akademik yozuv bo‘yicha bepul resurslar",
+    title: "TOPIK tayyorgarligi: Hangul va akademik yozuv bo‘yicha bepul resurslar",
     category: "Ta’lim",
     image:
       "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop",
@@ -90,6 +86,7 @@ const STORIES: Story[] = [
   },
 ];
 
+/* ---------------- Helpers: time meta ---------------- */
 function meta(dateISO: string) {
   const d = new Date(dateISO);
   const time = d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
@@ -97,7 +94,72 @@ function meta(dateISO: string) {
   return { time, date };
 }
 
-/* ——— Video Modal ——— */
+/* ---------------- Helpers: YouTube utils ---------------- */
+// 1) URL yoki 11 belgili ID dan real ID ni topish
+function getYouTubeId(input?: string): string | null {
+  if (!input) return null;
+  // already an ID
+  if (/^[\w-]{11}$/.test(input)) return input;
+
+  try {
+    const u = new URL(input);
+    // youtu.be/<id>
+    if (u.hostname.includes("youtu.be")) {
+      const id = u.pathname.slice(1).split("/")[0];
+      return /^[\w-]{11}$/.test(id) ? id : null;
+    }
+    // youtube.com/watch?v=<id>
+    if (u.hostname.includes("youtube.com")) {
+      const v = u.searchParams.get("v");
+      if (v && /^[\w-]{11}$/.test(v)) return v;
+    }
+  } catch {
+    /* ignore */
+  }
+  return null;
+}
+
+// 2) t= yoki start= dan start sekundni ajratish (90 yoki 1m30s formatlari)
+function getStartSecondsFromUrl(input?: string): number | null {
+  if (!input) return null;
+  try {
+    const u = new URL(input);
+    const t = u.searchParams.get("t") ?? u.searchParams.get("start");
+    if (!t) return null;
+    if (/^\d+$/.test(t)) return parseInt(t, 10);
+    const m = /(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?/i.exec(t);
+    if (!m) return null;
+    const h = parseInt(m[1] || "0", 10);
+    const mm = parseInt(m[2] || "0", 10);
+    const s = parseInt(m[3] || "0", 10);
+    return h * 3600 + mm * 60 + s;
+  } catch {
+    return null;
+  }
+}
+
+// 3) YT embed SRC qurish
+function buildYouTubeEmbedSrc(idOrUrl?: string, opts?: { autoplay?: 0 | 1 }) {
+  const id = getYouTubeId(idOrUrl);
+  if (!id) return null;
+  const start = getStartSecondsFromUrl(idOrUrl ?? "");
+  const params = new URLSearchParams({
+    autoplay: String(opts?.autoplay ?? 1),
+    rel: "0",
+    modestbranding: "1",
+    // controls, playsinline, cc_lang_pref, hl kabi paramlarni xohlasangiz qo‘shishingiz mumkin
+  });
+  if (start) params.set("start", String(start));
+  return `https://www.youtube.com/embed/${id}?${params.toString()}`;
+}
+
+// 4) HTML5 video ekanligini tekshirish (faqat to‘g‘ridan-to‘g‘ri media URL)
+function isHtml5VideoUrl(u?: string): boolean {
+  if (!u) return false;
+  return /\.(mp4|webm|ogg)(\?|#|$)/i.test(u);
+}
+
+/* ---------------- Video Modal ---------------- */
 const VideoModal: FC<{
   story: Story | null;
   isOpen: boolean;
@@ -105,34 +167,52 @@ const VideoModal: FC<{
 }> = ({ story, isOpen, onClose }) => {
   const title = story?.title ?? "Video";
 
+  // YouTube uchun: youtubeId, videoSrc yoki href ichida link bo‘lishi mumkin
+  const ytSrc =
+    (buildYouTubeEmbedSrc(story?.youtubeId) ??
+    buildYouTubeEmbedSrc(story?.videoSrc)) ??
+    buildYouTubeEmbedSrc(story?.href);
+
+  const isYouTube = story?.mediaKind === "youtube" && !!ytSrc;
+  const isHtml5   = story?.mediaKind === "video" && (isHtml5VideoUrl(story.videoSrc) || !(ytSrc));
+
+  // Agar mediaKind "video" bo‘lsa-yu, videoSrc YouTube bo‘lsa, yuqoridagi ytSrc orqali baribir YT ko‘rsatamiz.
+  const forceYT = story?.mediaKind === "video" && !!ytSrc;
+
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="4xl" isCentered>
+    <Modal isOpen={isOpen} onClose={onClose} size="4xl"  isCentered>
       <ModalOverlay />
-      <ModalContent bg="black" color="white">
+      <ModalContent bg="black" color="white" fontFamily={'serif'}>
         <ModalHeader>{title}</ModalHeader>
         <ModalCloseButton />
-        <ModalBody pb={6}>
-          {story?.mediaKind === "youtube" && story.youtubeId && (
+        <ModalBody pb={6} fontFamily={'serif'}>
+          {(isYouTube || forceYT) && ytSrc && (
             <AspectRatio ratio={16 / 9}>
               <iframe
-                src={`https://youtu.be/FLZXRUOAIKE?t=1/${story.youtubeId}?autoplay=1`}
+                src={ytSrc}
                 title={title}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
                 style={{ border: 0 }}
               />
             </AspectRatio>
           )}
 
-          {story?.mediaKind === "video" && story.videoSrc && (
+          {isHtml5 && !forceYT && story.videoSrc && (
             <AspectRatio ratio={16 / 9}>
-              <video src={story.videoSrc} controls autoPlay style={{ width: "100%", height: "100%" }} />
+              <video
+                src={story.videoSrc}
+                controls
+                autoPlay
+                style={{ width: "100%", height: "100%" }}
+              />
             </AspectRatio>
           )}
 
-          {(!story || story.mediaKind === "image") && (
-            <Box textAlign="center" py={8}>
-              <Text>Video mavjud emas.</Text>
+          {!ytSrc && !isHtml5 && (
+            <Box textAlign="center" py={8} fontFamily={'serif'}>
+              <Text>Video mavjud emas yoki YouTube havolasi noto‘g‘ri.</Text>
             </Box>
           )}
         </ModalBody>
@@ -141,7 +221,7 @@ const VideoModal: FC<{
   );
 };
 
-/* ——— O‘ngdagi element ——— */
+/* ---------------- Right list item ---------------- */
 const RightItem: FC<{
   s: Story;
   onPlay: (s: Story) => void;
@@ -150,10 +230,13 @@ const RightItem: FC<{
   const titleClr = useColorModeValue("gray.900", "gray.100");
   const { time, date } = meta(s.datetime);
 
-  const isPlayable = s.mediaKind === "video" || s.mediaKind === "youtube";
+  const isPlayable =
+    s.mediaKind === "video" ||
+    s.mediaKind === "youtube" ||
+    !!getYouTubeId((s.youtubeId ?? (s.videoSrc) ?? s.href) ?? "");
 
   return (
-    <LinkBox as={HStack} spacing={4} align="start">
+    <LinkBox as={HStack} spacing={4} align="start" fontFamily={'serif'}>
       <Box position="relative">
         <AspectRatio ratio={1} w="72px" minW="72px" borderRadius="md" overflow="hidden">
           <Image src={s.image} alt={s.title} objectFit="cover" />
@@ -172,7 +255,7 @@ const RightItem: FC<{
         )}
       </Box>
 
-      <VStack align="start" spacing={1} flex="1">
+      <VStack align="start" spacing={1} flex="1" fontFamily={'serif'}>
         <HStack spacing={2} color={metaClr} fontSize="xs">
           {isPlayable ? <Icon as={BsPlayFill} /> : null}
           <Text>
@@ -198,7 +281,7 @@ const RightItem: FC<{
   );
 };
 
-/* ——— Asosiy blok ——— */
+/* ---------------- Main block ---------------- */
 const KoreaTopStories: FC = () => {
   const titleClr = useColorModeValue("gray.900", "gray.100");
   const leadClr = useColorModeValue("gray.700", "gray.200");
@@ -207,7 +290,6 @@ const KoreaTopStories: FC = () => {
   const badgeScheme = useColorModeValue("blue", "purple");
 
   const [lead, ...rest] = STORIES;
-
   const { time, date } = meta(lead.datetime);
 
   const video = useDisclosure();
@@ -218,7 +300,10 @@ const KoreaTopStories: FC = () => {
     video.onOpen();
   };
 
-  const isLeadPlayable = lead.mediaKind === "video" || lead.mediaKind === "youtube";
+  const isLeadPlayable =
+    lead.mediaKind === "video" ||
+    lead.mediaKind === "youtube" ||
+    !!getYouTubeId((lead.youtubeId ?? (lead.videoSrc) ?? lead.href) ?? "");
 
   return (
     <Box>
@@ -226,7 +311,7 @@ const KoreaTopStories: FC = () => {
         {/* Header */}
         <HStack justify="space-between" mb={4}>
           <HStack spacing={2}>
-            <Heading as="h2" size="xl">
+            <Heading as="h2" size="xl" fontFamily={'serif'}>
               Dolzarb xabarlar
             </Heading>
             <ExternalLinkIcon />
@@ -237,6 +322,7 @@ const KoreaTopStories: FC = () => {
             display={{ base: "none", md: "flex" }}
             color={useColorModeValue("gray.600", "gray.300")}
             fontWeight="medium"
+            fontFamily={'serif'}
           >
             <ChakraLink href="#hayot">hayot</ChakraLink>
             <ChakraLink href="#mulk">mulk</ChakraLink>
@@ -249,7 +335,10 @@ const KoreaTopStories: FC = () => {
           <GridItem>
             <Box as="article" position="relative">
               <AspectRatio ratio={16 / 9} mb={4} borderRadius="xl" overflow="hidden">
-                <Box as={isLeadPlayable ? "button" : "div"} onClick={isLeadPlayable ? () => { openVideo(lead); } : undefined}>
+                <Box
+                  as={isLeadPlayable ? "button" : "div"}
+                  onClick={isLeadPlayable ? () => { openVideo(lead); } : undefined}
+                >
                   <Image src={lead.image} alt={lead.title} objectFit="cover" w="100%" h="100%" />
                 </Box>
               </AspectRatio>
