@@ -45,8 +45,8 @@ const sections: readonly NavSection[] = [
     id: "pages",
     title: "Ma’lumotlar",
     items: [
-       { id: "translate", label: "Translate",    icon: BsTranslate ,    path: "/translate" },
-      { id: "translate", label: "lysine",    icon: VscUnmute ,    path: "/lysine" },
+      { id: "translate", label: "Translate",    icon: BsTranslate ,    path: "/translate" },
+      { id: "lysine", label: "Lysine",    icon: VscUnmute ,    path: "/lysine" },
       { id: "news",    label: "Xabarlar",           icon: LuNewspaper,          path: "/news" },
       { id: "pricing", label: "Narxlar",            icon: MdOutlinePriceChange, path: "/pricing" },
       { id: "faq",     label: "Ko‘p so‘raladigan savollar", icon: FaQuestionCircle, path: "/faq", muted: true },
