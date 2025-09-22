@@ -39,14 +39,14 @@ const sections: readonly NavSection[] = [
       { id: "dict",    label: "Lo'g'at",            icon: MdOutlineMenuBook,    path: "/lugat" },
       { id: "tests",   label: "Testlar",            icon: MdOutlineMenuBook,    path: "/tests" },
       { id: "dictant", label: "Diktant Testlar",    icon: MdOutlineMenuBook,    path: "/dictant" },
-      { id: "translate", label: "Translate",    icon: BsTranslate ,    path: "/translate" },
-      { id: "translate", label: "lysine",    icon: VscUnmute ,    path: "/lysine" },
     ],
   },
   {
     id: "pages",
     title: "Ma’lumotlar",
     items: [
+       { id: "translate", label: "Translate",    icon: BsTranslate ,    path: "/translate" },
+      { id: "translate", label: "lysine",    icon: VscUnmute ,    path: "/lysine" },
       { id: "news",    label: "Xabarlar",           icon: LuNewspaper,          path: "/news" },
       { id: "pricing", label: "Narxlar",            icon: MdOutlinePriceChange, path: "/pricing" },
       { id: "faq",     label: "Ko‘p so‘raladigan savollar", icon: FaQuestionCircle, path: "/faq", muted: true },
