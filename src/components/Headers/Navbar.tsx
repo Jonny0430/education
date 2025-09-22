@@ -27,15 +27,19 @@ import {
   Radio,
   Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody,
 } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { QuestionIcon, SettingsIcon, BellIcon } from "@chakra-ui/icons";
-import { MdImage, MdOutlineMenuBook, MdOutlinePriceChange } from "react-icons/md";
+import {  MdOutlineMenuBook, MdOutlinePriceChange } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { LuNewspaper } from "react-icons/lu";
 import { FaQuestionCircle } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import type { IconType } from "react-icons";
 import { useEffect, useState } from "react";
+import { VscUnmute } from "react-icons/vsc";
+import { SiGoogletranslate } from "react-icons/si";
+
+
 
 /* === Sidebar bo‘limlari === */
 type NavItem = { id: string; label: string; icon: IconType; path: string; muted?: boolean };
@@ -190,9 +194,22 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
             <IconButton aria-label="Help" icon={<QuestionIcon />} size="sm" variant="ghost" onClick={help.onOpen} />
           </Tooltip>
 
+          <Tooltip label="Lysine">
+            <Link to={'/lysine'}>
+            <IconButton aria-label="Lysine" icon={<VscUnmute />} size="sm" variant="ghost"/>
+            </Link>
+          </Tooltip>
+
+          <Tooltip label="Lysine">
+            <Link to={'/translate'}>
+            <IconButton aria-label="Lysine" icon={<SiGoogletranslate />} size="sm" variant="ghost"/>
+            </Link>
+          </Tooltip>
+
+{/* 
           <Tooltip label="Media">
             <IconButton aria-label="Media" icon={<MdImage />} size="sm" variant="ghost" onClick={media.onOpen} />
-          </Tooltip>
+          </Tooltip> */}
 
           {/* Til tugmasi — joriy kod ko‘rinadi */}
           <Button size="sm" variant="ghost" rounded="md" onClick={language.onOpen}>
