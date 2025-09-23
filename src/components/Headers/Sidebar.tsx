@@ -16,6 +16,8 @@ import { LuNewspaper } from "react-icons/lu";
 import { FaQuestionCircle } from "react-icons/fa";
 import { BsTranslate } from "react-icons/bs";
 import { VscUnmute } from "react-icons/vsc";
+import i18n from '../../i18n/index';
+import type { TFunction } from 'i18next';
 
 
 
@@ -60,6 +62,10 @@ export default function Sidebar({ navH = "56px" }: SidebarProps) {
   const sectionCol = useColorModeValue("gray.600", "gray.400");
   const hoverBg    = useColorModeValue("blackAlpha.50", "whiteAlpha.100");
   const activeBg   = useColorModeValue("blackAlpha.100", "whiteAlpha.200");
+  const t: TFunction<'layout'> = i18n.getFixedT(null, 'layout'); // ✅
+
+
+
 
   return (
     <>
@@ -108,7 +114,7 @@ export default function Sidebar({ navH = "56px" }: SidebarProps) {
                       >
                         <ChakraIcon as={item.icon} boxSize={5} />
                         <Text fontSize="sm" fontWeight={isActive ? "bold" : "normal"}>
-                          {item.label}
+                          {t(item.label, { ns: 'layout'})}
                         </Text>
                       </HStack>
                     )}

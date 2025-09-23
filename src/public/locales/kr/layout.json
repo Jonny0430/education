@@ -1,0 +1,18 @@
+{
+  "sidebar": {
+    "sections": { "general": "기본", "pages": "정보" },
+    "items": {
+      "home": "홈",
+      "soulte": "서울테 코리아",
+      "grammar": "한국어 문법",
+      "dict": "어휘",
+      "tests": "시험",
+      "dictant": "쓰기 시험",
+      "translate": "번역",
+      "lysine": "듣기 테스트",
+      "news": "뉴스",
+      "pricing": "가격",
+      "faq": "자주 묻는 질문"
+    }
+  }
+}

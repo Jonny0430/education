@@ -1,0 +1,21 @@
+{
+"sidebar": {
+"sections": {
+"general": "General",
+"pages": "Information"
+},
+"items": {
+"home": "Home",
+"soulte": "Seoulte Korea",
+"grammar": "Korean Grammar",
+"dict": "Dictionary",
+"tests": "Tests",
+"dictant": "Writing test",
+"translate": "Translation",
+"lysine": "Listening test",
+"news": "News",
+"pricing": "Prices",
+"faq": "Frequently Asked Questions"
+}
+}
+}

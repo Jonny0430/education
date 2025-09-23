@@ -1,0 +1,21 @@
+{
+  "sidebar": {
+    "sections": {
+      "general": "Asosiy",
+      "pages": "Ma’lumotlar"
+    },
+    "items": {
+      "home": "Bosh Sahifa",
+      "soulte": "Seoulte Koreya",
+      "grammar": "Koreys tili grammatikasi",
+      "dict": "Lug‘at",
+      "tests": "Testlar",
+      "dictant": "Yozma test",
+      "translate": "Tarjima",
+      "lysine": "Tinglash testi",
+      "news": "Yangiliklar",
+      "pricing": "Narxlar",
+      "faq": "Ko‘p so‘raladigan savollar"
+    }
+  }
+}
