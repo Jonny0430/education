@@ -22,6 +22,9 @@ import GrammarDetailPage from "./screens/KoreanPage/GrammarDetailPage";
 import { HubSpotChat } from "./hooks/HubSpotScript";
 import TranslateAndShare from "./screens/TranslatePage/TranslatePage";
 import EshitishPage from "./screens/EshitishTestPage";
+import { I18nextProvider } from "react-i18next";
+import i18n from "./i18n";
+import { Suspense } from "react";
 
 function AppLayout() {
   const appBg = useColorModeValue("#f4faff", "#f4faff");
@@ -89,9 +92,13 @@ function AppLayout() {
 
 export default function App() {
   return (
-    <ChakraProvider theme={theme}>
-      <AppLayout />
-       <HubSpotChat  />
-    </ChakraProvider>
+    <I18nextProvider i18n={i18n}>
+      <Suspense fallback={<div style={{padding:16}}>Loading…</div>}>
+        <ChakraProvider theme={theme}>
+          <AppLayout />
+          <HubSpotChat />
+        </ChakraProvider>
+      </Suspense>
+    </I18nextProvider>
   );
 }

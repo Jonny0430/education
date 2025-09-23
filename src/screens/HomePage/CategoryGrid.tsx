@@ -33,7 +33,7 @@ type Category = {
 
 
 const CATEGORIES: Category[] = [
-  { id: "hangul",        title: "한글 기초 (Hangul Basics)", subtitle: "자모·받침·쓰기",           count: "48강",    icon: FiBook,              accent: "blue.400", path: '/soulte'},
+  { id: "hangul",        title: "한글 기초 (Korean Basics)", subtitle: "자모·받침·쓰기",           count: "48강",    icon: FiBook,              accent: "blue.400", path: '/soulte'},
   { id: "beginner",      title: "초급 과정 (Beginner)",      subtitle: "생존 회화·기본 문형",       count: "72강",    icon: MdRocketLaunch,     accent: "red.400", path: '/grammar' },
   { id: "grammar",       title: "문법 완성 (Grammar)",        subtitle: "초·중·고급 문형 총정리",     count: "120강",   icon: TbPencil,           accent: "teal.400",path: '/lugat'},
   { id: "vocabulary",    title: "어휘·토픽 빈출 (Vocabulary)", subtitle: "주제별·유의어·한자어",      count: "3,000단어", icon: MdOutlineTranslate, accent: "purple.400", path: '/translate'},

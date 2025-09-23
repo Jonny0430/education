@@ -20,7 +20,7 @@ const FAQS: FaqItem[] = [
   {
     id: "what-included",
     q: "Kurs nimalarni o‘z ichiga oladi?",
-    a: "Hangul (alifbo)dan boshlab A1–B1 grammatika, so‘z boyligini oshirish, talaffuz va tinglab tushunish mashqlari, TOPIK I/II testlari, uy vazifalari va mentor fikr-mulohazasi kiradi.",
+    a: "Korean (alifbo)dan boshlab A1–B1 grammatika, so‘z boyligini oshirish, talaffuz va tinglab tushunish mashqlari, TOPIK I/II testlari, uy vazifalari va mentor fikr-mulohazasi kiradi.",
   },
   {
     id: "level-test",

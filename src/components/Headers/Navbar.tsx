@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 "use client";
 import {
   Box,
@@ -29,7 +33,7 @@ import {
 } from "@chakra-ui/react";
 import { Link, NavLink } from "react-router-dom";
 import { QuestionIcon, SettingsIcon, BellIcon } from "@chakra-ui/icons";
-import {  MdOutlineMenuBook, MdOutlinePriceChange } from "react-icons/md";
+import { MdOutlineMenuBook, MdOutlinePriceChange } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { LuNewspaper } from "react-icons/lu";
 import { FaQuestionCircle } from "react-icons/fa";
@@ -38,8 +42,7 @@ import type { IconType } from "react-icons";
 import { useEffect, useState } from "react";
 import { VscUnmute } from "react-icons/vsc";
 import { SiGoogletranslate } from "react-icons/si";
-
-
+import { useTranslation } from "react-i18next"; // ⬅️ Qo‘shildi
 
 /* === Sidebar bo‘limlari === */
 type NavItem = { id: string; label: string; icon: IconType; path: string; muted?: boolean };
@@ -82,6 +85,8 @@ function loadLang(): LangCode {
 type HeaderProps = { notifCount?: number };
 
 export default function Navbar({ notifCount = 1 }: HeaderProps) {
+  const { i18n } = useTranslation(); // ⬅️ Qo‘shildi
+
   const barBg   = useColorModeValue("white", "gray.800");
   const border  = useColorModeValue("blackAlpha.200", "whiteAlpha.300");
   const titleCl = useColorModeValue("gray.900", "gray.100");
@@ -103,20 +108,33 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
   const [lang, setLang] = useState<LangCode>("en");
   const [pendingLang, setPendingLang] = useState<LangCode>("en");
 
+  // Mount: localStorage dagi tilni o‘qib, i18n ga ham qo‘llash
   useEffect(() => {
     const current = loadLang();
     setLang(current);
     setPendingLang(current);
+    // i18next ichki tilini ham darhol sync qilamiz
+    if (i18n.language !== current) {
+      i18n.changeLanguage(current).catch(() => { /* empty */ });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (language.isOpen) setPendingLang(lang);
   }, [language.isOpen, lang]);
 
-  const saveLanguage = () => {
+  // ⬅️ O'zgartirildi: i18n.changeLanguage bilan darhol UI yangilanadi
+  const saveLanguage = async () => {
+    try {
+      await i18n.changeLanguage(pendingLang);
+    } catch {
+      // ignore
+    }
     setLang(pendingLang);
     localStorage.setItem("app_lang", pendingLang);
-    // Tashqi tinglovchilar uchun event
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+    document.cookie = `app_lang=${pendingLang}; path=/; max-age=${60 * 60 * 24 * 365}`;
     window.dispatchEvent(new CustomEvent("app:languageChanged", { detail: { lang: pendingLang } }));
     language.onClose();
   };
@@ -196,20 +214,15 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
 
           <Tooltip label="Lysine">
             <Link to={'/lysine'}>
-            <IconButton aria-label="Lysine" icon={<VscUnmute />} size="sm" variant="ghost"/>
+              <IconButton aria-label="Lysine" icon={<VscUnmute />} size="sm" variant="ghost"/>
             </Link>
           </Tooltip>
 
-          <Tooltip label="Lysine">
+          <Tooltip label="Translate">
             <Link to={'/translate'}>
-            <IconButton aria-label="Lysine" icon={<SiGoogletranslate />} size="sm" variant="ghost"/>
+              <IconButton aria-label="Translate" icon={<SiGoogletranslate />} size="sm" variant="ghost"/>
             </Link>
           </Tooltip>
-
-{/* 
-          <Tooltip label="Media">
-            <IconButton aria-label="Media" icon={<MdImage />} size="sm" variant="ghost" onClick={media.onOpen} />
-          </Tooltip> */}
 
           {/* Til tugmasi — joriy kod ko‘rinadi */}
           <Button size="sm" variant="ghost" rounded="md" onClick={language.onOpen}>

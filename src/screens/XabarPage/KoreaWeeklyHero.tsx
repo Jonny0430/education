@@ -30,7 +30,7 @@ const DEFAULT_ARTICLE: HeroArticle = {
   title:
     "Koreya yarimoroli: texnologiyalar, K-madaniyat va tarixiy meros – haftalik dayjest",
   excerpt:
-    "Janubiy Koreya bugun yarimo‘tkazgichlar, 5G/6G hamda elektromobil batareyalari bo‘yicha yetakchilardan biridir. K-pop va K-dramalarning global ommalashuvi bilan birga, Hangul yozuvi va koreys tili o‘rganishga bo‘lgan qiziqish ham oshmoqda. Shu bilan birga, qadimiy Silla hamda Joseon sulolalari davridan qolgan me’moriy yodgorliklar zamonaviy Seul manzarasi bilan uyg‘unlashgan.",
+    "Janubiy Koreya bugun yarimo‘tkazgichlar, 5G/6G hamda elektromobil batareyalari bo‘yicha yetakchilardan biridir. K-pop va K-dramalarning global ommalashuvi bilan birga, Korean yozuvi va koreys tili o‘rganishga bo‘lgan qiziqish ham oshmoqda. Shu bilan birga, qadimiy Silla hamda Joseon sulolalari davridan qolgan me’moriy yodgorliklar zamonaviy Seul manzarasi bilan uyg‘unlashgan.",
   image:
     "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=1400&auto=format&fit=crop",
   href: "#",

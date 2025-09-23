@@ -792,7 +792,7 @@ export const WRITING_TESTS: WritingPack[] = [
     questions: [
       {
         id: "q1",
-        prompt: "To‘g‘ri yozing: annyeonghaseyo (Hangul bilan)",
+        prompt: "To‘g‘ri yozing: annyeonghaseyo (Korean bilan)",
         answer: "안녕하세요",
         acceptable: [],
         hint: "안녕 + 하세요",

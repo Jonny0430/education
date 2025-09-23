@@ -1348,7 +1348,7 @@ quiz: [
     // +3
     { ko: "비가 와서 길이 막혔어요.", uz: "Yomg‘ir yog‘gani uchun yo‘l tirband bo‘ldi.", ru: "Из-за дождя образовалась пробка.", en: "Because it rained, the roads were jammed." },
     { ko: "숙제가 많아서 못 만났어요.", uz: "Uy vazifasi ko‘p bo‘lgani uchun uchrasha olmadim.", ru: "Не смог(ла) встретиться из-за большого количества домашки.", en: "I couldn’t meet because I had a lot of homework." },
-    { ko: "한국에 가서 한글을 배웠어요.", uz: "Koreyaga borib Hangulni o‘rgandim.", ru: "Поехал(а) в Корею и выучил(а) хангыль.", en: "I went to Korea and learned Hangul." }
+    { ko: "한국에 가서 한글을 배웠어요.", uz: "Koreyaga borib Koreani o‘rgandim.", ru: "Поехал(а) в Корею и выучил(а) хангыль.", en: "I went to Korea and learned Korean." }
   ],
   quiz: [
     {

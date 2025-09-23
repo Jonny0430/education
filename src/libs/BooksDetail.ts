@@ -19,8 +19,8 @@ export const BOOKS: BookDetail[] = [
     pairLang: "KO → UZ",
     cover: coverByIsbn("9788952131171"),
     price: 23, oldPrice: 28, discountPct: 18,
-    overview: "Hangul, asosiy grammatika va kundalik nutqning birinchi bosqichi.",
-    learnBullets: ["Hangul o‘qish/yozish", "Batchim talaffuz", "은/는/이/가 ko‘makchilari", "Hozirgi zamon -아요/어요"],
+    overview: "Korean, asosiy grammatika va kundalik nutqning birinchi bosqichi.",
+    learnBullets: ["Korean o‘qish/yozish", "Batchim talaffuz", "은/는/이/가 ko‘makchilari", "Hozirgi zamon -아요/어요"],
     includes: ["Audio/QR resurslar", "Ish daftari (alohida)", "Kultura eslatmalari"],
     attachments: [
       { id: "buy", name: "Buy (UBookstore) – ISBN 9788952131171", kind: "link", url: "https://online.fliphtml5.com/xihiu/mtft/#p=1" },

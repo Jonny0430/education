@@ -22,7 +22,7 @@ const PLANS: Plan[] = [
     name: "Standard",
     price: 20,
     features: [
-      "Hangul (alifbo) — yozish/oyalish",
+      "Korean (alifbo) — yozish/oyalish",
       "A1–A2 grammatika darslari (video)",
       "Haftalik uy vazifa",
       "Monthly Updates",
@@ -160,7 +160,7 @@ const KoreanPricing: FC = () => {
 
           <GridItem textAlign={{ base: "center", md: "left" }}>
             <Text color={leadClr} fontSize={{ base: "sm", md: "md" }}>
-              O‘zingizga mos rejani tanlab, <strong>Hangul</strong>dan boshlab
+              O‘zingizga mos rejani tanlab, <strong>Korean</strong>dan boshlab
               <strong> TOPIK</strong>gacha tizimli yo‘l xaritasi bilan o‘qing.
               Rejaga kiradi: video darslar, speaking klublar, testlar,
               uy vazifalariga izohlar va 24/7 qo‘llab-quvvatlash.

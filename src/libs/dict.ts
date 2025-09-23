@@ -4,7 +4,7 @@ export type POS = "noun" | "verb" | "adj" | "adv";
 
 export type LocalizedWord = {
   text: string;
-  script?: string;   // Hangul/Kirill/Latin...
+  script?: string;   // Korean/Kirill/Latin...
 };
 
 export type Sample = {
@@ -31,7 +31,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차", "Common"],
     words: {
       uz: { text: "ishonch, kuchli aqida", script: "Latin" },
-      ko: { text: "소신", script: "Hangul" },
+      ko: { text: "소신", script: "Korean" },
       ru: { text: "убеждение", script: "Кириллица" },
       en: { text: "conviction", script: "Latin" }
     },
@@ -51,7 +51,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "shikoyat, javrash", script: "Latin" },
-      ko: { text: "투정", script: "Hangul" },
+      ko: { text: "투정", script: "Korean" },
       ru: { text: "каприз, хныканье", script: "Кириллица" },
       en: { text: "whining, complaint", script: "Latin" }
     },
@@ -71,7 +71,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "tortishuv, bahs", script: "Latin" },
-      ko: { text: "논쟁", script: "Hangul" },
+      ko: { text: "논쟁", script: "Korean" },
       ru: { text: "спор, дискуссия", script: "Кириллица" },
       en: { text: "debate, argument", script: "Latin" }
     },
@@ -91,7 +91,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "moyillik, tendensiya", script: "Latin" },
-      ko: { text: "경향", script: "Hangul" },
+      ko: { text: "경향", script: "Korean" },
       ru: { text: "тенденция, склонность", script: "Кириллица" },
       en: { text: "tendency, trend", script: "Latin" }
     },
@@ -111,7 +111,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "zo'ravonlik", script: "Latin" },
-      ko: { text: "폭력", script: "Hangul" },
+      ko: { text: "폭력", script: "Korean" },
       ru: { text: "насилие", script: "Кириллица" },
       en: { text: "violence", script: "Latin" }
     },
@@ -131,7 +131,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "asos, fundament", script: "Latin" },
-      ko: { text: "밑바탕", script: "Hangul" },
+      ko: { text: "밑바탕", script: "Korean" },
       ru: { text: "основа, фундамент", script: "Кириллица" },
       en: { text: "basis, foundation", script: "Latin" }
     },
@@ -151,7 +151,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "tarkibiy qism", script: "Latin" },
-      ko: { text: "성분", script: "Hangul" },
+      ko: { text: "성분", script: "Korean" },
       ru: { text: "компонент, ингредиент", script: "Кириллица" },
       en: { text: "component, ingredient", script: "Latin" }
     },
@@ -171,7 +171,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "o‘zgarmas fikr, stereotip", script: "Latin" },
-      ko: { text: "고정관념", script: "Hangul" },
+      ko: { text: "고정관념", script: "Korean" },
       ru: { text: "стереотип", script: "Кириллица" },
       en: { text: "stereotype", script: "Latin" }
     },
@@ -191,7 +191,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "kuch, ruhiy ko‘tarinkilik", script: "Latin" },
-      ko: { text: "기세", script: "Hangul" },
+      ko: { text: "기세", script: "Korean" },
       ru: { text: "напор, подъём духа", script: "Кириллица" },
       en: { text: "vigor, momentum", script: "Latin" }
     },
@@ -211,7 +211,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "strategiya", script: "Latin" },
-      ko: { text: "전략", script: "Hangul" },
+      ko: { text: "전략", script: "Korean" },
       ru: { text: "стратегия", script: "Кириллица" },
       en: { text: "strategy", script: "Latin" }
     },
@@ -231,7 +231,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "asosiy shaxs/agent, subyekt", script: "Latin" },
-      ko: { text: "주체", script: "Hangul" },
+      ko: { text: "주체", script: "Korean" },
       ru: { text: "субъект, действующий субъект", script: "Кириллица" },
       en: { text: "subject, agent", script: "Latin" }
     },
@@ -251,7 +251,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "statistika", script: "Latin" },
-      ko: { text: "통계", script: "Hangul" },
+      ko: { text: "통계", script: "Korean" },
       ru: { text: "статистика", script: "Кириллица" },
       en: { text: "statistics", script: "Latin" }
     },
@@ -271,7 +271,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "o‘rtasi (markaz)", script: "Latin" },
-      ko: { text: "한복판", script: "Hangul" },
+      ko: { text: "한복판", script: "Korean" },
       ru: { text: "самая середина", script: "Кириллица" },
       en: { text: "the very middle", script: "Latin" }
     },
@@ -291,7 +291,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "mehnat qilib tejash, tejamkorlik", script: "Latin" },
-      ko: { text: "근검절약", script: "Hangul" },
+      ko: { text: "근검절약", script: "Korean" },
       ru: { text: "бережливость, экономия", script: "Кириллица" },
       en: { text: "frugality, thrift", script: "Latin" }
     },
@@ -311,7 +311,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "noqulay holat, og‘ir ahvol", script: "Latin" },
-      ko: { text: "곤경", script: "Hangul" },
+      ko: { text: "곤경", script: "Korean" },
       ru: { text: "затруднительное положение", script: "Кириллица" },
       en: { text: "predicament", script: "Latin" }
     },
@@ -331,7 +331,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "kelishmovchilik, to‘qnashuv; ishqalanish", script: "Latin" },
-      ko: { text: "마찰", script: "Hangul" },
+      ko: { text: "마찰", script: "Korean" },
       ru: { text: "конфликт; трение", script: "Кириллица" },
       en: { text: "friction, conflict", script: "Latin" }
     },
@@ -351,7 +351,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "tutgan siyosat, choralar; yo‘l-yo‘riq", script: "Latin" },
-      ko: { text: "방침", script: "Hangul" },
+      ko: { text: "방침", script: "Korean" },
       ru: { text: "курс, политика; директива", script: "Кириллица" },
       en: { text: "policy, guideline", script: "Latin" }
     },
@@ -371,7 +371,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "axlat, chiqindi", script: "Latin" },
-      ko: { text: "폐기물", script: "Hangul" },
+      ko: { text: "폐기물", script: "Korean" },
       ru: { text: "отходы", script: "Кириллица" },
       en: { text: "waste, refuse", script: "Latin" }
     },
@@ -391,7 +391,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "chetlatish, tushish", script: "Latin" },
-      ko: { text: "탈락", script: "Hangul" },
+      ko: { text: "탈락", script: "Korean" },
       ru: { text: "выбывание, исключение", script: "Кириллица" },
       en: { text: "elimination, drop-out", script: "Latin" }
     },
@@ -411,7 +411,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "raqobat", script: "Latin" },
-      ko: { text: "경쟁", script: "Hangul" },
+      ko: { text: "경쟁", script: "Korean" },
       ru: { text: "конкуренция", script: "Кириллица" },
       en: { text: "competition", script: "Latin" }
     },
@@ -431,7 +431,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "markaz", script: "Latin" },
-      ko: { text: "중앙", script: "Hangul" },
+      ko: { text: "중앙", script: "Korean" },
       ru: { text: "центр", script: "Кириллица" },
       en: { text: "center", script: "Latin" }
     },
@@ -451,7 +451,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "tinchlik, murosa, yarash", script: "Latin" },
-      ko: { text: "화해", script: "Hangul" },
+      ko: { text: "화해", script: "Korean" },
       ru: { text: "примирение", script: "Кириллица" },
       en: { text: "reconciliation", script: "Latin" }
     },
@@ -471,7 +471,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "faxr, maqtanish", script: "Latin" },
-      ko: { text: "자랑", script: "Hangul" },
+      ko: { text: "자랑", script: "Korean" },
       ru: { text: "гордость; хвастовство", script: "Кириллица" },
       en: { text: "pride; boasting", script: "Latin" }
     },
@@ -491,7 +491,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "targ‘ibot, saylov kampaniyasi", script: "Latin" },
-      ko: { text: "유세", script: "Hangul" },
+      ko: { text: "유세", script: "Korean" },
       ru: { text: "агитация, предвыборная кампания", script: "Кириллица" },
       en: { text: "campaigning, canvassing", script: "Latin" }
     },
@@ -511,7 +511,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "sivilizatsiya", script: "Latin" },
-      ko: { text: "문명", script: "Hangul" },
+      ko: { text: "문명", script: "Korean" },
       ru: { text: "цивилизация", script: "Кириллица" },
       en: { text: "civilization", script: "Latin" }
     },
@@ -531,7 +531,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "reja, sxema; chora-tadbir", script: "Latin" },
-      ko: { text: "방안", script: "Hangul" },
+      ko: { text: "방안", script: "Korean" },
       ru: { text: "план, вариант решения", script: "Кириллица" },
       en: { text: "plan, measure", script: "Latin" }
     },
@@ -551,7 +551,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "mudd at, palla; on", script: "Latin" },
-      ko: { text: "순간", script: "Hangul" },
+      ko: { text: "순간", script: "Korean" },
       ru: { text: "мгновение, момент", script: "Кириллица" },
       en: { text: "moment, instant", script: "Latin" }
     },
@@ -571,7 +571,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "yetarlicha bor (vaqt, pul va h.k.)", script: "Latin" },
-      ko: { text: "여유가 있다", script: "Hangul" },
+      ko: { text: "여유가 있다", script: "Korean" },
       ru: { text: "иметься в запасе; есть в достатке", script: "Кириллица" },
       en: { text: "to have room/leeway (time, money)", script: "Latin" }
     },
@@ -591,7 +591,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "1차"],
     words: {
       uz: { text: "yo‘qotish, yetishmaslik; defitsit", script: "Latin" },
-      ko: { text: "결손", script: "Hangul" },
+      ko: { text: "결손", script: "Korean" },
       ru: { text: "дефицит, недостача", script: "Кириллица" },
       en: { text: "deficit, loss", script: "Latin" }
     },
@@ -611,7 +611,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차", "Common"],
     words: {
       uz: { text: "moda, udum; yo‘nalish", script: "Latin" },
-      ko: { text: "동향", script: "Hangul" },
+      ko: { text: "동향", script: "Korean" },
       ru: { text: "тенденция, мода", script: "Кириллица" },
       en: { text: "trend, tendency", script: "Latin" }
     },
@@ -626,7 +626,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "bo‘yinning orqa qismi", script: "Latin" },
-      ko: { text: "덜미", script: "Hangul" },
+      ko: { text: "덜미", script: "Korean" },
       ru: { text: "загривок, затылок", script: "Кириллица" },
       en: { text: "nape of the neck", script: "Latin" }
     },
@@ -641,7 +641,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "namuna", script: "Latin" },
-      ko: { text: "견본", script: "Hangul" },
+      ko: { text: "견본", script: "Korean" },
       ru: { text: "образец, пробник", script: "Кириллица" },
       en: { text: "sample", script: "Latin" }
     },
@@ -656,7 +656,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "muvozanat, bir me’yordagi", script: "Latin" },
-      ko: { text: "균형", script: "Hangul" },
+      ko: { text: "균형", script: "Korean" },
       ru: { text: "равновесие, баланс", script: "Кириллица" },
       en: { text: "balance, equilibrium", script: "Latin" }
     },
@@ -671,7 +671,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "maqsad; obyekt, nishon", script: "Latin" },
-      ko: { text: "대상", script: "Hangul" },
+      ko: { text: "대상", script: "Korean" },
       ru: { text: "объект; цель", script: "Кириллица" },
       en: { text: "object; target", script: "Latin" }
     },
@@ -686,7 +686,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "tozalash, poklash", script: "Latin" },
-      ko: { text: "정화", script: "Hangul" },
+      ko: { text: "정화", script: "Korean" },
       ru: { text: "очищение", script: "Кириллица" },
       en: { text: "purification", script: "Latin" }
     },
@@ -701,7 +701,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "asos; ...ga yo‘naltirilganlik", script: "Latin" },
-      ko: { text: "위주", script: "Hangul" },
+      ko: { text: "위주", script: "Korean" },
       ru: { text: "ориентированность на ...", script: "Кириллица" },
       en: { text: "centered around; oriented", script: "Latin" }
     },
@@ -716,7 +716,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "yo‘ldan ozdirish, vasvasa", script: "Latin" },
-      ko: { text: "유혹", script: "Hangul" },
+      ko: { text: "유혹", script: "Korean" },
       ru: { text: "искушение, соблазн", script: "Кириллица" },
       en: { text: "temptation, lure", script: "Latin" }
     },
@@ -731,7 +731,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "xato hisoblash, noto‘g‘ri baho", script: "Latin" },
-      ko: { text: "오산", script: "Hangul" },
+      ko: { text: "오산", script: "Korean" },
       ru: { text: "просчет, ошибка", script: "Кириллица" },
       en: { text: "miscalculation", script: "Latin" }
     },
@@ -746,7 +746,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "mos, munosib (darajada)", script: "Latin" },
-      ko: { text: "제격", script: "Hangul" },
+      ko: { text: "제격", script: "Korean" },
       ru: { text: "подходящий, впору", script: "Кириллица" },
       en: { text: "befitting, suitable", script: "Latin" }
     },
@@ -761,7 +761,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "zukkolik, aql-idrok", script: "Latin" },
-      ko: { text: "지능", script: "Hangul" },
+      ko: { text: "지능", script: "Korean" },
       ru: { text: "интеллект", script: "Кириллица" },
       en: { text: "intelligence", script: "Latin" }
     },
@@ -776,7 +776,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "nashr", script: "Latin" },
-      ko: { text: "출판", script: "Hangul" },
+      ko: { text: "출판", script: "Korean" },
       ru: { text: "издательство; публикация", script: "Кириллица" },
       en: { text: "publication", script: "Latin" }
     },
@@ -791,7 +791,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "holat, vaziyat", script: "Latin" },
-      ko: { text: "정황", script: "Hangul" },
+      ko: { text: "정황", script: "Korean" },
       ru: { text: "обстоятельства", script: "Кириллица" },
       en: { text: "circumstances, context", script: "Latin" }
     },
@@ -806,7 +806,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "kelajak yo‘li/yo‘nalishi", script: "Latin" },
-      ko: { text: "진로", script: "Hangul" },
+      ko: { text: "진로", script: "Korean" },
       ru: { text: "карьерный путь", script: "Кириллица" },
       en: { text: "career path", script: "Latin" }
     },
@@ -821,7 +821,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "siyosat", script: "Latin" },
-      ko: { text: "정책", script: "Hangul" },
+      ko: { text: "정책", script: "Korean" },
       ru: { text: "политика (меры)", script: "Кириллица" },
       en: { text: "policy", script: "Latin" }
     },
@@ -836,7 +836,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "oxirgi sana, muddat", script: "Latin" },
-      ko: { text: "마감", script: "Hangul" },
+      ko: { text: "마감", script: "Korean" },
       ru: { text: "дедлайн, срок", script: "Кириллица" },
       en: { text: "deadline", script: "Latin" }
     },
@@ -851,7 +851,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "donolik", script: "Latin" },
-      ko: { text: "지혜", script: "Hangul" },
+      ko: { text: "지혜", script: "Korean" },
       ru: { text: "мудрость", script: "Кириллица" },
       en: { text: "wisdom", script: "Latin" }
     },
@@ -866,7 +866,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "qadr-qimmat; salobat", script: "Latin" },
-      ko: { text: "위용", script: "Hangul" },
+      ko: { text: "위용", script: "Korean" },
       ru: { text: "величественный вид", script: "Кириллица" },
       en: { text: "dignified appearance", script: "Latin" }
     },
@@ -881,7 +881,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "ichki holat, tuyg‘u", script: "Latin" },
-      ko: { text: "심정", script: "Hangul" },
+      ko: { text: "심정", script: "Korean" },
       ru: { text: "чувства, переживания", script: "Кириллица" },
       en: { text: "feelings, state of mind", script: "Latin" }
     },
@@ -896,7 +896,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "foyda, yaxshi natija; yutuq", script: "Latin" },
-      ko: { text: "성과", script: "Hangul" },
+      ko: { text: "성과", script: "Korean" },
       ru: { text: "результат, достижение", script: "Кириллица" },
       en: { text: "outcome, achievement", script: "Latin" }
     },
@@ -911,7 +911,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "qidirish, izlash", script: "Latin" },
-      ko: { text: "수색", script: "Hangul" },
+      ko: { text: "수색", script: "Korean" },
       ru: { text: "поиск, прочёсывание", script: "Кириллица" },
       en: { text: "search", script: "Latin" }
     },
@@ -926,7 +926,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "o‘ziga xos tarzda; ...ga qarab", script: "Latin" },
-      ko: { text: "나름", script: "Hangul" },
+      ko: { text: "나름", script: "Korean" },
       ru: { text: "в своём роде; в зависимости", script: "Кириллица" },
       en: { text: "in one’s own way; depending on", script: "Latin" }
     },
@@ -941,7 +941,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "modda, band (qonunda)", script: "Latin" },
-      ko: { text: "항목", script: "Hangul" },
+      ko: { text: "항목", script: "Korean" },
       ru: { text: "пункт, статья", script: "Кириллица" },
       en: { text: "item, clause", script: "Latin" }
     },
@@ -956,7 +956,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "asli, originali", script: "Latin" },
-      ko: { text: "원본", script: "Hangul" },
+      ko: { text: "원본", script: "Korean" },
       ru: { text: "оригинал", script: "Кириллица" },
       en: { text: "original", script: "Latin" }
     },
@@ -971,7 +971,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "muvaffaqiyat (kassada), ommaboplik", script: "Latin" },
-      ko: { text: "흥행", script: "Hangul" },
+      ko: { text: "흥행", script: "Korean" },
       ru: { text: "кассовый успех", script: "Кириллица" },
       en: { text: "box-office success", script: "Latin" }
     },
@@ -986,7 +986,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "qiyinchilik, tashvish", script: "Latin" },
-      ko: { text: "고충", script: "Hangul" },
+      ko: { text: "고충", script: "Korean" },
       ru: { text: "трудности, тяготы", script: "Кириллица" },
       en: { text: "hardship, difficulty", script: "Latin" }
     },
@@ -1001,7 +1001,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "iltifot, ko‘ngilini olish", script: "Latin" },
-      ko: { text: "환심", script: "Hangul" },
+      ko: { text: "환심", script: "Korean" },
       ru: { text: "расположение, благосклонность", script: "Кириллица" },
       en: { text: "favor, goodwill", script: "Latin" }
     },
@@ -1016,7 +1016,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "holat, ahvol; mavqe", script: "Latin" },
-      ko: { text: "처지", script: "Hangul" },
+      ko: { text: "처지", script: "Korean" },
       ru: { text: "положение, обстоятельства", script: "Кириллица" },
       en: { text: "situation, position", script: "Latin" }
     },
@@ -1031,7 +1031,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "2차"],
     words: {
       uz: { text: "soha", script: "Latin" },
-      ko: { text: "분야", script: "Hangul" },
+      ko: { text: "분야", script: "Korean" },
       ru: { text: "сфера, область", script: "Кириллица" },
       en: { text: "field, area", script: "Latin" }
     },
@@ -1046,7 +1046,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차", "Common"],
     words: {
       uz: { text: "xolat, vaziyat", script: "Latin" },
-      ko: { text: "상황", script: "Hangul" },
+      ko: { text: "상황", script: "Korean" },
       ru: { text: "ситуация", script: "Кириллица" },
       en: { text: "situation", script: "Latin" }
     },
@@ -1061,7 +1061,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "kechiktirish, orqaga surish", script: "Latin" },
-      ko: { text: "뒷전", script: "Hangul" },
+      ko: { text: "뒷전", script: "Korean" },
       ru: { text: "на задний план", script: "Кириллица" },
       en: { text: "back burner, put off", script: "Latin" }
     },
@@ -1076,7 +1076,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "ta’minlash, kafolatlash", script: "Latin" },
-      ko: { text: "확보", script: "Hangul" },
+      ko: { text: "확보", script: "Korean" },
       ru: { text: "обеспечение", script: "Кириллица" },
       en: { text: "securing, ensuring", script: "Latin" }
     },
@@ -1091,7 +1091,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "hamkorlik, ko‘maklashish", script: "Latin" },
-      ko: { text: "협조", script: "Hangul" },
+      ko: { text: "협조", script: "Korean" },
       ru: { text: "сотрудничество", script: "Кириллица" },
       en: { text: "cooperation, assistance", script: "Latin" }
     },
@@ -1106,7 +1106,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "ruhlantirmoq, dalda bermoq", script: "Latin" },
-      ko: { text: "격려하다", script: "Hangul" },
+      ko: { text: "격려하다", script: "Korean" },
       ru: { text: "воодушевлять", script: "Кириллица" },
       en: { text: "to encourage", script: "Latin" }
     },
@@ -1121,7 +1121,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "sir-sinoat, nou-xau", script: "Latin" },
-      ko: { text: "비결", script: "Hangul" },
+      ko: { text: "비결", script: "Korean" },
       ru: { text: "секрет, ноу-хау", script: "Кириллица" },
       en: { text: "secret, know-how", script: "Latin" }
     },
@@ -1136,7 +1136,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "olijanoblik, martaba", script: "Latin" },
-      ko: { text: "기품", script: "Hangul" },
+      ko: { text: "기품", script: "Korean" },
       ru: { text: "благородство, достоинство", script: "Кириллица" },
       en: { text: "dignity, elegance", script: "Latin" }
     },
@@ -1151,7 +1151,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "gapirish usuli", script: "Latin" },
-      ko: { text: "화법", script: "Hangul" },
+      ko: { text: "화법", script: "Korean" },
       ru: { text: "манера речи, риторика", script: "Кириллица" },
       en: { text: "speech style, rhetoric", script: "Latin" }
     },
@@ -1166,7 +1166,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "og‘riqni bo‘rttirish, vahima solish", script: "Latin" },
-      ko: { text: "엄살", script: "Hangul" },
+      ko: { text: "엄살", script: "Korean" },
       ru: { text: "преувеличивание боли", script: "Кириллица" },
       en: { text: "exaggerated complaint", script: "Latin" }
     },
@@ -1181,7 +1181,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "xalaqit, g‘ov", script: "Latin" },
-      ko: { text: "지장", script: "Hangul" },
+      ko: { text: "지장", script: "Korean" },
       ru: { text: "препятствие, помеха", script: "Кириллица" },
       en: { text: "hindrance, obstacle", script: "Latin" }
     },
@@ -1196,7 +1196,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "maqsad, reja; niyat", script: "Latin" },
-      ko: { text: "의도", script: "Hangul" },
+      ko: { text: "의도", script: "Korean" },
       ru: { text: "намерение", script: "Кириллица" },
       en: { text: "intention", script: "Latin" }
     },
@@ -1211,7 +1211,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "asl ko‘rinish, haqiqat", script: "Latin" },
-      ko: { text: "참모습", script: "Hangul" },
+      ko: { text: "참모습", script: "Korean" },
       ru: { text: "истинный облик", script: "Кириллица" },
       en: { text: "true self, real appearance", script: "Latin" }
     },
@@ -1226,7 +1226,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "asl holat, real ahvol", script: "Latin" },
-      ko: { text: "실태", script: "Hangul" },
+      ko: { text: "실태", script: "Korean" },
       ru: { text: "реальное положение дел", script: "Кириллица" },
       en: { text: "actual condition", script: "Latin" }
     },
@@ -1241,7 +1241,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "tasavvur, tushuncha", script: "Latin" },
-      ko: { text: "관념", script: "Hangul" },
+      ko: { text: "관념", script: "Korean" },
       ru: { text: "понятие, идея", script: "Кириллица" },
       en: { text: "notion, concept", script: "Latin" }
     },
@@ -1256,7 +1256,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "o‘ziga yarasha; o‘zicha", script: "Latin" },
-      ko: { text: "그 나름대로", script: "Hangul" },
+      ko: { text: "그 나름대로", script: "Korean" },
       ru: { text: "по-своему", script: "Кириллица" },
       en: { text: "in one’s own way", script: "Latin" }
     },
@@ -1271,7 +1271,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "bag‘rikenglik, olijanoblik", script: "Latin" },
-      ko: { text: "포용", script: "Hangul" },
+      ko: { text: "포용", script: "Korean" },
       ru: { text: "великодушие, терпимость", script: "Кириллица" },
       en: { text: "tolerance, embrace", script: "Latin" }
     },
@@ -1286,7 +1286,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "vaziyatni ag‘darib yubormoq (teskari yo‘nalishga o‘zgartirmoq)", script: "Latin" },
-      ko: { text: "역전(시키다)", script: "Hangul" },
+      ko: { text: "역전(시키다)", script: "Korean" },
       ru: { text: "переломить ход (ситуацию)", script: "Кириллица" },
       en: { text: "to reverse the situation", script: "Latin" }
     },
@@ -1301,7 +1301,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "e’tiqod, ishonch", script: "Latin" },
-      ko: { text: "신앙", script: "Hangul" },
+      ko: { text: "신앙", script: "Korean" },
       ru: { text: "вера (религиозная)", script: "Кириллица" },
       en: { text: "faith, belief", script: "Latin" }
     },
@@ -1316,7 +1316,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "qarshi turish, qarshilik", script: "Latin" },
-      ko: { text: "저항", script: "Hangul" },
+      ko: { text: "저항", script: "Korean" },
       ru: { text: "сопротивление", script: "Кириллица" },
       en: { text: "resistance", script: "Latin" }
     },
@@ -1331,7 +1331,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "umid, xohish; orzu", script: "Latin" },
-      ko: { text: "포부", script: "Hangul" },
+      ko: { text: "포부", script: "Korean" },
       ru: { text: "чаяния, устремления", script: "Кириллица" },
       en: { text: "aspiration, ambition", script: "Latin" }
     },
@@ -1346,7 +1346,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "yo‘q bo‘lib ketish (yo‘qolib ketish)", script: "Latin" },
-      ko: { text: "멸종", script: "Hangul" },
+      ko: { text: "멸종", script: "Korean" },
       ru: { text: "вымирание", script: "Кириллица" },
       en: { text: "extinction", script: "Latin" }
     },
@@ -1361,7 +1361,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "adolat uchun kurashmoq", script: "Latin" },
-      ko: { text: "정의를 위해 싸우다", script: "Hangul" },
+      ko: { text: "정의를 위해 싸우다", script: "Korean" },
       ru: { text: "бороться за справедливость", script: "Кириллица" },
       en: { text: "to fight for justice", script: "Latin" }
     },
@@ -1376,7 +1376,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "tamoyil, qoida", script: "Latin" },
-      ko: { text: "원칙", script: "Hangul" },
+      ko: { text: "원칙", script: "Korean" },
       ru: { text: "принцип", script: "Кириллица" },
       en: { text: "principle", script: "Latin" }
     },
@@ -1391,7 +1391,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "namoyish (qilish), ekspozitsiya", script: "Latin" },
-      ko: { text: "진열", script: "Hangul" },
+      ko: { text: "진열", script: "Korean" },
       ru: { text: "выкладка, экспозиция", script: "Кириллица" },
       en: { text: "display, arrangement", script: "Latin" }
     },
@@ -1406,7 +1406,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "qobiliyat, salohiyat", script: "Latin" },
-      ko: { text: "역량", script: "Hangul" },
+      ko: { text: "역량", script: "Korean" },
       ru: { text: "компетенция, потенциал", script: "Кириллица" },
       en: { text: "capability, competence", script: "Latin" }
     },
@@ -1421,7 +1421,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "misol, namuna", script: "Latin" },
-      ko: { text: "사례", script: "Hangul" },
+      ko: { text: "사례", script: "Korean" },
       ru: { text: "пример, кейс", script: "Кириллица" },
       en: { text: "example, case", script: "Latin" }
     },
@@ -1436,7 +1436,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "xavotir, tashvish", script: "Latin" },
-      ko: { text: "염려", script: "Hangul" },
+      ko: { text: "염려", script: "Korean" },
       ru: { text: "беспокойство", script: "Кириллица" },
       en: { text: "worry, concern", script: "Latin" }
     },
@@ -1451,7 +1451,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "3차"],
     words: {
       uz: { text: "1) tugun; 2) xulosa, yakun", script: "Latin" },
-      ko: { text: "매듭", script: "Hangul" },
+      ko: { text: "매듭", script: "Korean" },
       ru: { text: "узел; итог", script: "Кириллица" },
       en: { text: "knot; conclusion", script: "Latin" }
     },
@@ -1466,7 +1466,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차", "Common"],
     words: {
       uz: { text: "kelib chiqishi, asl nasabi", script: "Latin" },
-      ko: { text: "출신", script: "Hangul" },
+      ko: { text: "출신", script: "Korean" },
       ru: { text: "происхождение", script: "Кириллица" },
       en: { text: "origin, background", script: "Latin" },
     },
@@ -1481,7 +1481,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "har lahza (har soat)", script: "Latin" },
-      ko: { text: "시시각각", script: "Hangul" },
+      ko: { text: "시시각각", script: "Korean" },
       ru: { text: "ежечасно, ежеминутно", script: "Кириллица" },
       en: { text: "from moment to moment", script: "Latin" },
     },
@@ -1496,7 +1496,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "olib kirish", script: "Latin" },
-      ko: { text: "반입", script: "Hangul" },
+      ko: { text: "반입", script: "Korean" },
       ru: { text: "ввоз, внесение", script: "Кириллица" },
       en: { text: "bringing in, carry-in", script: "Latin" },
     },
@@ -1511,7 +1511,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "semizlik", script: "Latin" },
-      ko: { text: "비만", script: "Hangul" },
+      ko: { text: "비만", script: "Korean" },
       ru: { text: "ожирение", script: "Кириллица" },
       en: { text: "obesity", script: "Latin" },
     },
@@ -1526,7 +1526,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "tasodif, o‘ylamasdan (indiskriminatsiya)", script: "Latin" },
-      ko: { text: "마구잡이", script: "Hangul" },
+      ko: { text: "마구잡이", script: "Korean" },
       ru: { text: "без разбору, наугад", script: "Кириллица" },
       en: { text: "indiscriminately, at random", script: "Latin" },
     },
@@ -1541,7 +1541,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "achinish, rahm", script: "Latin" },
-      ko: { text: "연민", script: "Hangul" },
+      ko: { text: "연민", script: "Korean" },
       ru: { text: "сострадание", script: "Кириллица" },
       en: { text: "compassion, pity", script: "Latin" },
     },
@@ -1556,7 +1556,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "jamoat manfaati", script: "Latin" },
-      ko: { text: "공익", script: "Hangul" },
+      ko: { text: "공익", script: "Korean" },
       ru: { text: "общественное благо", script: "Кириллица" },
       en: { text: "public interest", script: "Latin" },
     },
@@ -1571,7 +1571,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "maqom, ijtimoiy holat", script: "Latin" },
-      ko: { text: "신분", script: "Hangul" },
+      ko: { text: "신분", script: "Korean" },
       ru: { text: "социальный статус", script: "Кириллица" },
       en: { text: "social status, identity", script: "Latin" },
     },
@@ -1586,7 +1586,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "gigiyena", script: "Latin" },
-      ko: { text: "위생", script: "Hangul" },
+      ko: { text: "위생", script: "Korean" },
       ru: { text: "гигиена", script: "Кириллица" },
       en: { text: "hygiene", script: "Latin" },
     },
@@ -1601,7 +1601,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "daraja; o‘lcham (matematikada burchak)", script: "Latin" },
-      ko: { text: "차원", script: "Hangul" },
+      ko: { text: "차원", script: "Korean" },
       ru: { text: "измерение, уровень", script: "Кириллица" },
       en: { text: "dimension, level", script: "Latin" },
     },
@@ -1616,7 +1616,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "asos, fundament", script: "Latin" },
-      ko: { text: "기틀", script: "Hangul" },
+      ko: { text: "기틀", script: "Korean" },
       ru: { text: "основа, фундамент", script: "Кириллица" },
       en: { text: "framework, foundation", script: "Latin" },
     },
@@ -1631,7 +1631,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "jamoat tartib-intizomi", script: "Latin" },
-      ko: { text: "치안", script: "Hangul" },
+      ko: { text: "치안", script: "Korean" },
       ru: { text: "общественный порядок", script: "Кириллица" },
       en: { text: "public order, security", script: "Latin" },
     },
@@ -1646,7 +1646,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "odat, amaliyot (konventsiya)", script: "Latin" },
-      ko: { text: "관행", script: "Hangul" },
+      ko: { text: "관행", script: "Korean" },
       ru: { text: "практика, устой", script: "Кириллица" },
       en: { text: "custom, practice", script: "Latin" },
     },
@@ -1661,7 +1661,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "do‘stlik", script: "Latin" },
-      ko: { text: "우호", script: "Hangul" },
+      ko: { text: "우호", script: "Korean" },
       ru: { text: "дружба, дружественность", script: "Кириллица" },
       en: { text: "friendliness, amity", script: "Latin" },
     },
@@ -1676,7 +1676,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "nomlash, unvon", script: "Latin" },
-      ko: { text: "호칭", script: "Hangul" },
+      ko: { text: "호칭", script: "Korean" },
       ru: { text: "наименование, обращение", script: "Кириллица" },
       en: { text: "title, form of address", script: "Latin" },
     },
@@ -1691,7 +1691,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "sir-sinoat, yo‘riq", script: "Latin" },
-      ko: { text: "비법", script: "Hangul" },
+      ko: { text: "비법", script: "Korean" },
       ru: { text: "секретный способ", script: "Кириллица" },
       en: { text: "secret method", script: "Latin" },
     },
@@ -1706,7 +1706,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "ahamiyat, muhimlilik", script: "Latin" },
-      ko: { text: "비중", script: "Hangul" },
+      ko: { text: "비중", script: "Korean" },
       ru: { text: "удельный вес, значимость", script: "Кириллица" },
       en: { text: "weight, importance", script: "Latin" },
     },
@@ -1721,7 +1721,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "bakteriya", script: "Latin" },
-      ko: { text: "세균", script: "Hangul" },
+      ko: { text: "세균", script: "Korean" },
       ru: { text: "бактерии", script: "Кириллица" },
       en: { text: "bacteria", script: "Latin" },
     },
@@ -1736,7 +1736,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "samaradorlik", script: "Latin" },
-      ko: { text: "효율", script: "Hangul" },
+      ko: { text: "효율", script: "Korean" },
       ru: { text: "эффективность", script: "Кириллица" },
       en: { text: "efficiency", script: "Latin" },
     },
@@ -1751,7 +1751,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "jabr-zulm, zolimlik", script: "Latin" },
-      ko: { text: "형포", script: "Hangul" },
+      ko: { text: "형포", script: "Korean" },
       ru: { text: "гнёt, деспотизм", script: "Кириллица" },
       en: { text: "oppression, tyranny", script: "Latin" },
     },
@@ -1766,7 +1766,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "tartib-qoida", script: "Latin" },
-      ko: { text: "수칙", script: "Hangul" },
+      ko: { text: "수칙", script: "Korean" },
       ru: { text: "правила, регламент", script: "Кириллица" },
       en: { text: "rules, code", script: "Latin" },
     },
@@ -1781,7 +1781,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "ustunlik, ajralib turish", script: "Latin" },
-      ko: { text: "두각", script: "Hangul" },
+      ko: { text: "두각", script: "Korean" },
       ru: { text: "выделение, преимущество", script: "Кириллица" },
       en: { text: "prominence, distinction", script: "Latin" },
     },
@@ -1796,7 +1796,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "firibgarlik", script: "Latin" },
-      ko: { text: "사기", script: "Hangul" },
+      ko: { text: "사기", script: "Korean" },
       ru: { text: "мошенничество", script: "Кириллица" },
       en: { text: "fraud", script: "Latin" },
     },
@@ -1811,7 +1811,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "turg‘unlik", script: "Latin" },
-      ko: { text: "침체", script: "Hangul" },
+      ko: { text: "침체", script: "Korean" },
       ru: { text: "застой, стагнация", script: "Кириллица" },
       en: { text: "stagnation, slump", script: "Latin" },
     },
@@ -1826,7 +1826,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "zarba; zarar ko‘rish", script: "Latin" },
-      ko: { text: "타격", script: "Hangul" },
+      ko: { text: "타격", script: "Korean" },
       ru: { text: "удар, урон", script: "Кириллица" },
       en: { text: "blow, damage", script: "Latin" },
     },
@@ -1841,7 +1841,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "umid, xohish; ambitsiya", script: "Latin" },
-      ko: { text: "야심", script: "Hangul" },
+      ko: { text: "야심", script: "Korean" },
       ru: { text: "амбиция, стремление", script: "Кириллица" },
       en: { text: "ambition", script: "Latin" },
     },
@@ -1856,7 +1856,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "o‘ylab ko‘rish; tahlil", script: "Latin" },
-      ko: { text: "고찰(하다)", script: "Hangul" },
+      ko: { text: "고찰(하다)", script: "Korean" },
       ru: { text: "рассмотрение, анализ", script: "Кириллица" },
       en: { text: "consideration, examine", script: "Latin" },
     },
@@ -1871,7 +1871,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "4차"],
     words: {
       uz: { text: "qaror, xulosa; hukm", script: "Latin" },
-      ko: { text: "판단", script: "Hangul" },
+      ko: { text: "판단", script: "Korean" },
       ru: { text: "суждение, решение", script: "Кириллица" },
       en: { text: "judgment, decision", script: "Latin" },
     },
@@ -1886,7 +1886,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차", "Common"],
     words: {
       uz: { text: "davo, davolash", script: "Latin" },
-      ko: { text: "치유", script: "Hangul" },
+      ko: { text: "치유", script: "Korean" },
       ru: { text: "исцеление", script: "Кириллица" },
       en: { text: "healing", script: "Latin" },
     },
@@ -1901,7 +1901,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "holat, vaziyat", script: "Latin" },
-      ko: { text: "사태", script: "Hangul" },
+      ko: { text: "사태", script: "Korean" },
       ru: { text: "положение дел", script: "Кириллица" },
       en: { text: "state of affairs", script: "Latin" },
     },
@@ -1916,7 +1916,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "uyat, isnod", script: "Latin" },
-      ko: { text: "망신", script: "Hangul" },
+      ko: { text: "망신", script: "Korean" },
       ru: { text: "позор", script: "Кириллица" },
       en: { text: "humiliation, disgrace", script: "Latin" },
     },
@@ -1931,7 +1931,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "ta’rif", script: "Latin" },
-      ko: { text: "정의(뜻)", script: "Hangul" },
+      ko: { text: "정의(뜻)", script: "Korean" },
       ru: { text: "определение", script: "Кириллица" },
       en: { text: "definition", script: "Latin" },
     },
@@ -1946,7 +1946,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "ayb topish, bahona", script: "Latin" },
-      ko: { text: "꼬투리", script: "Hangul" },
+      ko: { text: "꼬투리", script: "Korean" },
       ru: { text: "зацепка, придирка", script: "Кириллица" },
       en: { text: "pretext, fault-finding", script: "Latin" },
     },
@@ -1961,7 +1961,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "xavotir, tashvish", script: "Latin" },
-      ko: { text: "시름", script: "Hangul" },
+      ko: { text: "시름", script: "Korean" },
       ru: { text: "тоска, заботы", script: "Кириллица" },
       en: { text: "worry, sorrow", script: "Latin" },
     },
@@ -1976,7 +1976,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "o‘ziga xos", script: "Latin" },
-      ko: { text: "특유", script: "Hangul" },
+      ko: { text: "특유", script: "Korean" },
       ru: { text: "свойственный, характерный", script: "Кириллица" },
       en: { text: "peculiar to, unique", script: "Latin" },
     },
@@ -1991,7 +1991,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "erkak va ayol miqdori (nisbati)", script: "Latin" },
-      ko: { text: "성비", script: "Hangul" },
+      ko: { text: "성비", script: "Korean" },
       ru: { text: "соотношение полов", script: "Кириллица" },
       en: { text: "gender ratio", script: "Latin" },
     },
@@ -2006,7 +2006,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "imkoniyat, turtki, sabab", script: "Latin" },
-      ko: { text: "계기", script: "Hangul" },
+      ko: { text: "계기", script: "Korean" },
       ru: { text: "повод, стимул", script: "Кириллица" },
       en: { text: "opportunity, trigger", script: "Latin" },
     },
@@ -2021,7 +2021,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "o‘zib ketish, bosib tashlash", script: "Latin" },
-      ko: { text: "압도", script: "Hangul" },
+      ko: { text: "압도", script: "Korean" },
       ru: { text: "подавление, доминирование", script: "Кириллица" },
       en: { text: "overwhelm, dominate", script: "Latin" },
     },
@@ -2036,7 +2036,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "tejash", script: "Latin" },
-      ko: { text: "절약", script: "Hangul" },
+      ko: { text: "절약", script: "Korean" },
       ru: { text: "экономия", script: "Кириллица" },
       en: { text: "saving, thrift", script: "Latin" },
     },
@@ -2051,7 +2051,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "namuna, misol (ibrat)", script: "Latin" },
-      ko: { text: "본보기", script: "Hangul" },
+      ko: { text: "본보기", script: "Korean" },
       ru: { text: "пример, образец", script: "Кириллица" },
       en: { text: "model, example", script: "Latin" },
     },
@@ -2066,7 +2066,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "boshqa xayollar, chalg‘ituvchi fikrlar", script: "Latin" },
-      ko: { text: "잡념", script: "Hangul" },
+      ko: { text: "잡념", script: "Korean" },
       ru: { text: "посторонние мысли", script: "Кириллица" },
       en: { text: "idle thoughts", script: "Latin" },
     },
@@ -2081,7 +2081,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "oq bulut parchasi; o‘tkinchi dunyo", script: "Latin" },
-      ko: { text: "뜬구름", script: "Hangul" },
+      ko: { text: "뜬구름", script: "Korean" },
       ru: { text: "облачок; эфемерность", script: "Кириллица" },
       en: { text: "fleeting cloud; something transient", script: "Latin" },
     },
@@ -2096,7 +2096,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "hayolot, fantaziya", script: "Latin" },
-      ko: { text: "환상", script: "Hangul" },
+      ko: { text: "환상", script: "Korean" },
       ru: { text: "фантазия, иллюзия", script: "Кириллица" },
       en: { text: "fantasy, illusion", script: "Latin" },
     },
@@ -2111,7 +2111,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "maftunkorlik, zavqli tomon", script: "Latin" },
-      ko: { text: "묘미", script: "Hangul" },
+      ko: { text: "묘미", script: "Korean" },
       ru: { text: "изюминка, прелесть", script: "Кириллица" },
       en: { text: "charm, appeal", script: "Latin" },
     },
@@ -2126,7 +2126,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "uyni sog‘inish kasalligi", script: "Latin" },
-      ko: { text: "향수병", script: "Hangul" },
+      ko: { text: "향수병", script: "Korean" },
       ru: { text: "тоска по дому", script: "Кириллица" },
       en: { text: "homesickness", script: "Latin" },
     },
@@ -2141,7 +2141,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "qobiliyat, mahorat", script: "Latin" },
-      ko: { text: "기량", script: "Hangul" },
+      ko: { text: "기량", script: "Korean" },
       ru: { text: "мастерство, навык", script: "Кириллица" },
       en: { text: "skill, ability", script: "Latin" },
     },
@@ -2156,7 +2156,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "ip uchi, kalit dalil", script: "Latin" },
-      ko: { text: "실마리", script: "Hangul" },
+      ko: { text: "실마리", script: "Korean" },
       ru: { text: "зацепка, ниточка", script: "Кириллица" },
       en: { text: "clue, lead", script: "Latin" },
     },
@@ -2171,7 +2171,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "o‘zini anglash, xabardor bo‘lish", script: "Latin" },
-      ko: { text: "자각", script: "Hangul" },
+      ko: { text: "자각", script: "Korean" },
       ru: { text: "осознание", script: "Кириллица" },
       en: { text: "self-awareness", script: "Latin" },
     },
@@ -2186,7 +2186,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "jins va yoshdan qat’i nazar (hamma)", script: "Latin" },
-      ko: { text: "남녀노소", script: "Hangul" },
+      ko: { text: "남녀노소", script: "Korean" },
       ru: { text: "и мужчины и женщины, и стар и млад", script: "Кириллица" },
       en: { text: "men and women of all ages", script: "Latin" },
     },
@@ -2201,7 +2201,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "so‘nggi lahza", script: "Latin" },
-      ko: { text: "막판", script: "Hangul" },
+      ko: { text: "막판", script: "Korean" },
       ru: { text: "последний момент", script: "Кириллица" },
       en: { text: "the last minute", script: "Latin" },
     },
@@ -2216,7 +2216,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "asosiy masala, bahs nuqtasi", script: "Latin" },
-      ko: { text: "논점", script: "Hangul" },
+      ko: { text: "논점", script: "Korean" },
       ru: { text: "предмет спора, тезис", script: "Кириллица" },
       en: { text: "point at issue", script: "Latin" },
     },
@@ -2231,7 +2231,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "ko‘rinish, qiyofa", script: "Latin" },
-      ko: { text: "풍모", script: "Hangul" },
+      ko: { text: "풍모", script: "Korean" },
       ru: { text: "внешний облик", script: "Кириллица" },
       en: { text: "appearance, looks", script: "Latin" },
     },
@@ -2246,7 +2246,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "qiyinchilik, ko‘rgulik", script: "Latin" },
-      ko: { text: "시련", script: "Hangul" },
+      ko: { text: "시련", script: "Korean" },
       ru: { text: "испытание, невзгоды", script: "Кириллица" },
       en: { text: "ordeal, trial", script: "Latin" },
     },
@@ -2261,7 +2261,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "bosqich, jarayon", script: "Latin" },
-      ko: { text: "절차", script: "Hangul" },
+      ko: { text: "절차", script: "Korean" },
       ru: { text: "процедура", script: "Кириллица" },
       en: { text: "procedure", script: "Latin" },
     },
@@ -2276,7 +2276,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "zaruriyat, xojat (qadimiy)", script: "Latin" },
-      ko: { text: "나위", script: "Hangul" },
+      ko: { text: "나위", script: "Korean" },
       ru: { text: "необходимость (уст.)", script: "Кириллица" },
       en: { text: "need, necessity (archaic)", script: "Latin" },
     },
@@ -2291,7 +2291,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "5차"],
     words: {
       uz: { text: "1) ochiq tanlov 2) til biriktirish", script: "Latin" },
-      ko: { text: "공모", script: "Hangul" },
+      ko: { text: "공모", script: "Korean" },
       ru: { text: "1) конкурс 2) сговор", script: "Кириллица" },
       en: { text: "1) open call/contest 2) collusion", script: "Latin" },
     },
@@ -2306,7 +2306,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "o‘rganib qolish; ajrala olmaslik", script: "Latin" },
-      ko: { text: "미련", script: "Hangul" },
+      ko: { text: "미련", script: "Korean" },
       ru: { text: "привязанность; сожаление", script: "Кириллица" },
       en: { text: "lingering attachment; regret", script: "Latin" },
     },
@@ -2319,7 +2319,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "shubha", script: "Latin" },
-      ko: { text: "의문", script: "Hangul" },
+      ko: { text: "의문", script: "Korean" },
       ru: { text: "сомнение", script: "Кириллица" },
       en: { text: "doubt", script: "Latin" },
     },
@@ -2332,7 +2332,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "qaror, qat’iy niyat", script: "Latin" },
-      ko: { text: "결의", script: "Hangul" },
+      ko: { text: "결의", script: "Korean" },
       ru: { text: "решимость", script: "Кириллица" },
       en: { text: "resolution, determination", script: "Latin" },
     },
@@ -2345,7 +2345,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "nihol, novda", script: "Latin" },
-      ko: { text: "새싹", script: "Hangul" },
+      ko: { text: "새싹", script: "Korean" },
       ru: { text: "росток", script: "Кириллица" },
       en: { text: "sprout, shoot", script: "Latin" },
     },
@@ -2358,7 +2358,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "noqulay vaziyat (go‘yoki igna yostiq)", script: "Latin" },
-      ko: { text: "바늘방석", script: "Hangul" },
+      ko: { text: "바늘방석", script: "Korean" },
       ru: { text: "как на иголках; неловкость", script: "Кириллица" },
       en: { text: "a bed of nails; awkward spot", script: "Latin" },
     },
@@ -2371,7 +2371,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "yo‘riqnoma, ko‘rsatma", script: "Latin" },
-      ko: { text: "지침", script: "Hangul" },
+      ko: { text: "지침", script: "Korean" },
       ru: { text: "инструкция, руководство", script: "Кириллица" },
       en: { text: "guideline", script: "Latin" },
     },
@@ -2384,7 +2384,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "ko‘rinish, manzara", script: "Latin" },
-      ko: { text: "조망", script: "Hangul" },
+      ko: { text: "조망", script: "Korean" },
       ru: { text: "вид, перспектива", script: "Кириллица" },
       en: { text: "view, prospect", script: "Latin" },
     },
@@ -2397,7 +2397,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "ism, nom", script: "Latin" },
-      ko: { text: "명칭", script: "Hangul" },
+      ko: { text: "명칭", script: "Korean" },
       ru: { text: "наименование", script: "Кириллица" },
       en: { text: "name, designation", script: "Latin" },
     },
@@ -2410,7 +2410,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "belgi, simptom", script: "Latin" },
-      ko: { text: "낌새", script: "Hangul" },
+      ko: { text: "낌새", script: "Korean" },
       ru: { text: "признак, намёк", script: "Кириллица" },
       en: { text: "sign, inkling", script: "Latin" },
     },
@@ -2423,7 +2423,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "tuzish, tuzatish; tex. xizmat", script: "Latin" },
-      ko: { text: "정비", script: "Hangul" },
+      ko: { text: "정비", script: "Korean" },
       ru: { text: "обслуживание, ремонт", script: "Кириллица" },
       en: { text: "maintenance, overhaul", script: "Latin" },
     },
@@ -2436,7 +2436,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "… ish odat bo‘ladi (ko‘p sodir bo‘ladi)", script: "Latin" },
-      ko: { text: "…기 일쑤이다", script: "Hangul" },
+      ko: { text: "…기 일쑤이다", script: "Korean" },
       ru: { text: "часто случается …", script: "Кириллица" },
       en: { text: "to tend to do … often", script: "Latin" },
     },
@@ -2449,7 +2449,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "mavzu", script: "Latin" },
-      ko: { text: "화제", script: "Hangul" },
+      ko: { text: "화제", script: "Korean" },
       ru: { text: "тема (разговора)", script: "Кириллица" },
       en: { text: "topic", script: "Latin" },
     },
@@ -2462,7 +2462,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "chigal, tartibsizlik", script: "Latin" },
-      ko: { text: "혼돈", script: "Hangul" },
+      ko: { text: "혼돈", script: "Korean" },
       ru: { text: "хаос", script: "Кириллица" },
       en: { text: "chaos", script: "Latin" },
     },
@@ -2475,7 +2475,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "shaxsiy fikr/xis­si­yot", script: "Latin" },
-      ko: { text: "소감", script: "Hangul" },
+      ko: { text: "소감", script: "Korean" },
       ru: { text: "впечатление", script: "Кириллица" },
       en: { text: "impression, thoughts", script: "Latin" },
     },
@@ -2488,7 +2488,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "o‘sish (narx va h.k.)", script: "Latin" },
-      ko: { text: "인상", script: "Hangul" },
+      ko: { text: "인상", script: "Korean" },
       ru: { text: "повышение", script: "Кириллица" },
       en: { text: "raise, increase", script: "Latin" },
     },
@@ -2501,7 +2501,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "o‘sish, yaxshilanish", script: "Latin" },
-      ko: { text: "증진", script: "Hangul" },
+      ko: { text: "증진", script: "Korean" },
       ru: { text: "повышение, улучшение", script: "Кириллица" },
       en: { text: "enhancement, promotion", script: "Latin" },
     },
@@ -2514,7 +2514,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "taraf, qiyofa", script: "Latin" },
-      ko: { text: "면모", script: "Hangul" },
+      ko: { text: "면모", script: "Korean" },
       ru: { text: "облик, аспект", script: "Кириллица" },
       en: { text: "aspect, features", script: "Latin" },
     },
@@ -2527,7 +2527,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "ma’lumot, bilim; ko‘rib eshitganlar", script: "Latin" },
-      ko: { text: "견문", script: "Hangul" },
+      ko: { text: "견문", script: "Korean" },
       ru: { text: "кругозор, осведомлённость", script: "Кириллица" },
       en: { text: "knowledge (seen/heard)", script: "Latin" },
     },
@@ -2540,7 +2540,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "kuchli xohish, ambitsiya", script: "Latin" },
-      ko: { text: "패기", script: "Hangul" },
+      ko: { text: "패기", script: "Korean" },
       ru: { text: "задор, амбиция", script: "Кириллица" },
       en: { text: "spirit, ambition", script: "Latin" },
     },
@@ -2553,7 +2553,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "yer usti; asos, poydevor", script: "Latin" },
-      ko: { text: "지반", script: "Hangul" },
+      ko: { text: "지반", script: "Korean" },
       ru: { text: "грунт; основание", script: "Кириллица" },
       en: { text: "ground; foundation", script: "Latin" },
     },
@@ -2566,7 +2566,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "o‘ziga xos xususiyat", script: "Latin" },
-      ko: { text: "속성", script: "Hangul" },
+      ko: { text: "속성", script: "Korean" },
       ru: { text: "свойство, атрибут", script: "Кириллица" },
       en: { text: "attribute, property", script: "Latin" },
     },
@@ -2579,7 +2579,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "tengdosh", script: "Latin" },
-      ko: { text: "또래", script: "Hangul" },
+      ko: { text: "또래", script: "Korean" },
       ru: { text: "ровесник", script: "Кириллица" },
       en: { text: "peer", script: "Latin" },
     },
@@ -2592,7 +2592,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "tayanch, tramplin", script: "Latin" },
-      ko: { text: "디딤돌", script: "Hangul" },
+      ko: { text: "디딤돌", script: "Korean" },
       ru: { text: "ступень; трамплин", script: "Кириллица" },
       en: { text: "stepping stone", script: "Latin" },
     },
@@ -2605,7 +2605,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "moyillik, tendensiya", script: "Latin" },
-      ko: { text: "성향", script: "Hangul" },
+      ko: { text: "성향", script: "Korean" },
       ru: { text: "склонность", script: "Кириллица" },
       en: { text: "tendency, inclination", script: "Latin" },
     },
@@ -2618,7 +2618,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "tirbandlik; hazm bo‘lmaslik", script: "Latin" },
-      ko: { text: "체증", script: "Hangul" },
+      ko: { text: "체증", script: "Korean" },
       ru: { text: "пробка; несварение", script: "Кириллица" },
       en: { text: "traffic jam; indigestion", script: "Latin" },
     },
@@ -2631,7 +2631,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "meva; samara (bermoq)", script: "Latin" },
-      ko: { text: "결실(하다)", script: "Hangul" },
+      ko: { text: "결실(하다)", script: "Korean" },
       ru: { text: "плоды; приносить плоды", script: "Кириллица" },
       en: { text: "fruition; bear fruit", script: "Latin" },
     },
@@ -2644,7 +2644,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "gap ochmoq", script: "Latin" },
-      ko: { text: "말문을 열다", script: "Hangul" },
+      ko: { text: "말문을 열다", script: "Korean" },
       ru: { text: "заговорить (открыть рот)", script: "Кириллица" },
       en: { text: "to break the ice; start talking", script: "Latin" },
     },
@@ -2657,7 +2657,7 @@ export const VOCABS: Vocab[] = [
     tags: ["TOPIK", "6차"],
     words: {
       uz: { text: "sir-sinoat", script: "Latin" },
-      ko: { text: "신비", script: "Hangul" },
+      ko: { text: "신비", script: "Korean" },
       ru: { text: "тайна, мистика", script: "Кириллица" },
       en: { text: "mystery", script: "Latin" },
     },

@@ -9,6 +9,7 @@ import "./index.css"
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react"
 import { BrowserRouter as Route } from "react-router"
 import { theme } from "./libs/theme";
+import './i18n'
 // import { HubSpotChat } from "./hooks/HubSpotScript";
 
  const root = ReactDOM.createRoot(
