@@ -38,6 +38,7 @@ import type { IconType } from "react-icons";
 import { useEffect, useState } from "react";
 import { VscUnmute } from "react-icons/vsc";
 import { SiGoogletranslate } from "react-icons/si";
+import { Image } from "@chakra-ui/react";
 
 
 
@@ -88,6 +89,11 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
   const badgeBg = useColorModeValue("red.500", "red.400");
   const hoverBg = useColorModeValue("blackAlpha.50", "whiteAlpha.100");
   const activeBg= useColorModeValue("blackAlpha.100", "whiteAlpha.200");
+
+
+
+  const authMember= null; // TODO: haqiqiy autentifikatsiya holatini shu yerda oling
+  const avatarSize = { base: "30px", md: "36px" };
 
   // Main menu drawer (hamburger)
   const menu = useDisclosure();
@@ -206,15 +212,10 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
             </Link>
           </Tooltip>
 
-{/* 
-          <Tooltip label="Media">
-            <IconButton aria-label="Media" icon={<MdImage />} size="sm" variant="ghost" onClick={media.onOpen} />
-          </Tooltip> */}
-
-          {/* Til tugmasi — joriy kod ko‘rinadi */}
           <Button size="sm" variant="ghost" rounded="md" onClick={language.onOpen}>
             {LANG_LABEL[lang]}
           </Button>
+            
 
           <Box position="relative">
             <Tooltip label="Notifications">
@@ -239,6 +240,20 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
           <Tooltip label="Settings">
             <IconButton aria-label="Settings" icon={<SettingsIcon />} size="sm" variant="ghost" onClick={settings.onOpen} />
           </Tooltip>
+          { !authMember ? (
+             <Button size="sm" width={"20"} variant="solid" rounded="md">
+              <Link to={'/login'}>Kirish</Link>
+          </Button>
+          ) : (
+            <Image
+                  src="https://png.pngtree.com/png-vector/20250408/ourmid/pngtree-global-education-logo-with-graduation-cap-and-book-png-image_15929049.png"
+                  alt="User Avatar"
+                  boxSize={avatarSize}
+                  borderRadius="full"
+                  mx="auto"
+                />
+          )}
+           
         </HStack>
       </Flex>
 
@@ -366,5 +381,6 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
         </ModalContent>
       </Modal>
     </Box>
+    
   );
 }
