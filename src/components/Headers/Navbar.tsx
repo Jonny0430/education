@@ -26,10 +26,16 @@ import {
   RadioGroup,
   Radio,
   Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody,
+  Spinner,
+  Menu,
+  MenuButton,
+  Avatar,
+  MenuList,
+  MenuItem,
 } from "@chakra-ui/react";
 import { Link, NavLink } from "react-router-dom";
 import { QuestionIcon, SettingsIcon, BellIcon } from "@chakra-ui/icons";
-import {  MdOutlineMenuBook, MdOutlinePriceChange } from "react-icons/md";
+import { MdOutlineMenuBook, MdOutlinePriceChange } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { LuNewspaper } from "react-icons/lu";
 import { FaQuestionCircle } from "react-icons/fa";
@@ -38,7 +44,12 @@ import type { IconType } from "react-icons";
 import { useEffect, useState } from "react";
 import { VscUnmute } from "react-icons/vsc";
 import { SiGoogletranslate } from "react-icons/si";
-import { Image } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store/store";
+import { logout } from "../../store/auth/auth.slice";
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
+
+
 
 
 
@@ -89,12 +100,13 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
   const badgeBg = useColorModeValue("red.500", "red.400");
   const hoverBg = useColorModeValue("blackAlpha.50", "whiteAlpha.100");
   const activeBg= useColorModeValue("blackAlpha.100", "whiteAlpha.200");
+  // select the auth/member slice from the store; adjust to match your RootState shape
+  const { status, data } = useSelector((s: RootState) => s.reducer);
+  const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
 
-
-
-  const authMember= null; // TODO: haqiqiy autentifikatsiya holatini shu yerda oling
-  const avatarSize = { base: "30px", md: "36px" };
-
+  const isLoading = status === 'loading';
+  const isAuthed = !!data;
   // Main menu drawer (hamburger)
   const menu = useDisclosure();
 
@@ -240,19 +252,38 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
           <Tooltip label="Settings">
             <IconButton aria-label="Settings" icon={<SettingsIcon />} size="sm" variant="ghost" onClick={settings.onOpen} />
           </Tooltip>
-          { !authMember ? (
-             <Button size="sm" width={"20"} variant="solid" rounded="md">
-              <Link to={'/login'}>Kirish</Link>
-          </Button>
-          ) : (
-            <Image
-                  src="https://png.pngtree.com/png-vector/20250408/ourmid/pngtree-global-education-logo-with-graduation-cap-and-book-png-image_15929049.png"
-                  alt="User Avatar"
-                  boxSize={avatarSize}
-                  borderRadius="full"
-                  mx="auto"
-                />
-          )}
+        {isLoading ? (
+          <Spinner size={'sm'} />
+        ) : isAuthed ? (
+          <Menu>
+            <MenuButton>
+              <Avatar
+                size='sm'
+                name={data?.memberNick}
+                src={data.memberImage}/>
+            </MenuButton>
+            <MenuList>
+              <MenuItem onClick={() => navigate('/profile')}>
+               Profile
+              </MenuItem>
+              <MenuItem
+                  onClick={() => {
+                    dispatch(logout());
+                    navigate('/login')
+                  }}
+                  bgColor={'red.300'}
+                  >
+                    Logout
+                  </MenuItem>
+            </MenuList>
+          </Menu>
+        ) : (
+           <HStack>
+            <Button as={RouterLink} to="/login" colorScheme="blue" variant="solid" size="sm">
+              Kirish
+            </Button>
+          </HStack>
+        )}
            
         </HStack>
       </Flex>
@@ -384,3 +415,6 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
     
   );
 }
+
+
+

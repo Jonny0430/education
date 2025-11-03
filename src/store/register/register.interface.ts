@@ -22,6 +22,11 @@ export interface InitialStateProduce {
 
 export type LoginResponse = {
   token: string;
+   id: string;
+    memberNick: string;
+    memberImage?: string;
+    memberPassword: string;
+    avatarUrl: string;
   member: {
     id: number;
     memberNick: string;
@@ -40,6 +45,11 @@ export type RegisterResponse = {
     memberPhone: string;
   };
 };
+
+export interface AuthMember {
+  memberNick: string;
+  memberImage?: string;
+}
 
 export type ApiError = { message: string; code?: number };
 
