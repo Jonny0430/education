@@ -1,72 +1,56 @@
-// src/components/RegisterPage/page.tsx
 import {
-  Box,
-  Button,
-  Container,
-  Flex,
-  FormControl,
-  FormLabel,
-  Heading,
-  IconButton,
-  Input,
-  InputGroup,
-  InputLeftElement,
-  InputRightElement,
-  Link,
-  Stack,
-  Text,
-  useColorModeValue,
-  Image,
-  useToast,
+  Box, Button, Container, Flex, FormControl, FormLabel, Heading, IconButton,
+  Input, InputGroup, InputLeftElement, InputRightElement, Link, Stack, Text,
+  useColorModeValue, Image, useToast
 } from "@chakra-ui/react";
-import { EmailIcon, LockIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { LockIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { HiUser } from "react-icons/hi";
 import { useState, type FormEvent } from "react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../hooks/hooks";
+import { postRegister } from "../../store/register/register.action";
 
 export default function RegisterPage() {
   const toast = useToast();
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const pageBg = useColorModeValue("linear-gradient(180deg,#f7fbff,#eef6ff)", "gray.900");
   const cardBg = useColorModeValue("white", "gray.800");
   const bluePane = useColorModeValue("blue.600", "blue.500");
   const muted = useColorModeValue("gray.500", "gray.400");
 
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [pw, setPw] = useState("");
+  const [memberNick, setMemberNick] = useState("");
+  const [memberPhone, setMemberPhone] = useState("");
+  const [memberPassword, setMemberPassword] = useState("");
   const [showPw, setShowPw] = useState(false);
-
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!name.trim() || !phone.trim() || !pw.trim()) {
+    if (!memberNick.trim() || !memberPhone.trim() || !memberPassword.trim()) {
       toast({ title: "Iltimos, barcha maydonlarni to'ldiring", status: "warning" });
       return;
     }
-
-    // oddiy phone format tekshiruvi (ustiga kerak bo'lsa kuchaytiring)
     const phoneRe = /^[0-9+\-()\s]{7,20}$/;
-    if (!phoneRe.test(phone.trim())) {
-      toast({ title: "Iltimos, telefon raqamni to'g'ri kiriting", status: "error" });
+    if (!phoneRe.test(memberPhone.trim())) {
+      toast({ title: "Telefon raqam noto‘g‘ri formatda", status: "error" });
       return;
     }
 
     setIsSubmitting(true);
     try {
-      // TODO: real API chaqiruvi shu yerda bo'ladi, masalan:
-      // await api.post('/auth/register', { name, phone, password: pw });
+      await dispatch(
+        postRegister({ memberNick, memberPhone, memberPassword })
+      ).unwrap();
 
-      // Simulyatsiya — muvaffaqiyat
       toast({ title: "Muvaffaqiyatli ro'yxatdan o'tdingiz!", status: "success" });
-
-      // agar kerak bo'lsa, redirect yoki form reset:
-      // setName(''); setPhone(''); setPw('');
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // ✅ kerakli sahifaga yo'naltiring
+      void navigate("/"); // masalan, login sahifasi
     } catch (err) {
-      toast({ title: "Ro'yxatdan o'tishda xatolik", status: "error" });
+      const error = err as { message?: string };
+      toast({ title: error?.message ?? "Ro'yxatdan o'tishda xatolik", status: "error" });
     } finally {
       setIsSubmitting(false);
     }
@@ -75,25 +59,12 @@ export default function RegisterPage() {
   return (
     <Box minH="100vh" bg={pageBg} py={{ base: 6, md: 10 }}>
       <Container maxW="7xl" px={{ base: 4, md: 6 }}>
-        <Flex
-          direction={{ base: "column", md: "row" }}
-          w="100%"
-          minH={{ base: "auto", md: "80vh" }}
-          overflow="hidden"
-          borderRadius={{ md: "3xl" }}
-          boxShadow={{ md: "lg" }}
-        >
-          {/* LEFT — Illustration */}
-          <Flex
-            flex="1"
-            align="center"
-            justify="center"
-            bg={useColorModeValue("white", "gray.900")}
-            px={{ base: 6, md: 10 }}
-            py={{ base: 10, md: 0 }}
-            borderTopLeftRadius={{ md: "3xl" }}
-            borderBottomLeftRadius={{ md: "3xl" }}
-          >
+        <Flex direction={{ base: "column", md: "row" }} minH={{ base: "auto", md: "80vh" }}
+              borderRadius={{ md: "3xl" }} boxShadow={{ md: "lg" }} overflow="hidden">
+          {/* LEFT */}
+          <Flex flex="1" align="center" justify="center" bg={useColorModeValue("white", "gray.900")}
+                px={{ base: 6, md: 10 }} py={{ base: 10, md: 0 }}
+                borderTopLeftRadius={{ md: "3xl" }} borderBottomLeftRadius={{ md: "3xl" }}>
             <Box maxW="sm" w="full">
               <Image
                 src="https://www.pngplay.com/wp-content/uploads/6/Education-Icon-Background-PNG-Image.png"
@@ -104,68 +75,31 @@ export default function RegisterPage() {
             </Box>
           </Flex>
 
-          {/* RIGHT — Blue panel */}
-          <Box
-            flex="1"
-            bg={bluePane}
-            position="relative"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            px={{ base: 6, md: 10 }}
-            py={{ base: 12, md: 0 }}
-            borderTopRightRadius={{ md: "3xl" }}
-            borderBottomRightRadius={{ md: "3xl" }}
-          >
-            {/* Decorative rings */}
-            <Box
-              position="absolute"
-              right={{ base: "-80px", md: "-120px" }}
-              bottom={{ base: "-80px", md: "-120px" }}
-              w={{ base: "240px", md: "360px" }}
-              h={{ base: "240px", md: "360px" }}
-              borderRadius="50%"
-              border="2px solid rgba(255,255,255,0.25)"
-            />
-            <Box
-              position="absolute"
-              right={{ base: "-40px", md: "-60px" }}
-              bottom={{ base: "-40px", md: "-60px" }}
-              w={{ base: "160px", md: "240px" }}
-              h={{ base: "160px", md: "240px" }}
-              borderRadius="50%"
-              border="2px solid rgba(255,255,255,0.25)"
-            />
-
+          {/* RIGHT */}
+          <Box flex="1" bg={bluePane} position="relative" display="flex" alignItems="center" justifyContent="center"
+               px={{ base: 6, md: 10 }} py={{ base: 12, md: 0 }}
+               borderTopRightRadius={{ md: "3xl" }} borderBottomRightRadius={{ md: "3xl" }}>
             {/* Card */}
-            <Box
-              as="form"
-              onSubmit={onSubmit}
-              w="full"
-              maxW="sm"
-              bg={cardBg}
-              p={{ base: 6, md: 8 }}
-              borderRadius="xl"
-              boxShadow="xl"
-            >
+            <Box as="form" onSubmit={onSubmit} w="full" maxW="sm" bg={cardBg}
+                 p={{ base: 6, md: 8 }} borderRadius="xl" boxShadow="xl">
               <Stack spacing={6}>
                 <Box>
-                  <Heading size="lg" mb={1}>
-                    Create Account
-                  </Heading>
+                  <Heading size="lg" mb={1}>Create Account</Heading>
                   <Text color={useColorModeValue("gray.600", "gray.300")} fontSize="sm">
                     Join us to get started
                   </Text>
                 </Box>
 
-                {/* Full Name */}
-                <FormControl id="name" isRequired>
-                  <FormLabel srOnly>Full Name</FormLabel>
+                {/* Nickname */}
+                <FormControl id="memberNick" isRequired>
+                  <FormLabel srOnly>User Name</FormLabel>
                   <InputGroup>
-                    <InputLeftElement pointerEvents="none" children={<Box as={HiUser} color="gray.400" />} />
+                    <InputLeftElement pointerEvents="none">
+                      <Box as={HiUser} color="gray.400" />
+                    </InputLeftElement>
                     <Input
-                      value={name}
-                      onChange={(e) => { setName(e.target.value); }}
+                      value={memberNick}
+                      onChange={(e) => { setMemberNick(e.target.value); }}
                       placeholder="Full Name"
                       autoComplete="name"
                     />
@@ -173,16 +107,17 @@ export default function RegisterPage() {
                 </FormControl>
 
                 {/* Phone */}
-                <FormControl id="phone" isRequired>
+                <FormControl id="memberPhone" isRequired>
                   <FormLabel srOnly>Phone</FormLabel>
                   <InputGroup>
                     <InputLeftElement pointerEvents="none">
-                      <EmailIcon color="gray.400" />
+                      {/* Telefon ikonka qo‘yishingiz mumkin */}
+                      <Box as={HiUser} color="gray.400" />
                     </InputLeftElement>
                     <Input
                       type="tel"
-                      value={phone}
-                      onChange={(e) => { setPhone(e.target.value); }}
+                      value={memberPhone}
+                      onChange={(e) => { setMemberPhone(e.target.value); }}
                       placeholder="Phone Number"
                       autoComplete="tel"
                     />
@@ -190,7 +125,7 @@ export default function RegisterPage() {
                 </FormControl>
 
                 {/* Password */}
-                <FormControl id="password" isRequired>
+                <FormControl id="memberPassword" isRequired>
                   <FormLabel srOnly>Password</FormLabel>
                   <InputGroup>
                     <InputLeftElement pointerEvents="none">
@@ -198,8 +133,8 @@ export default function RegisterPage() {
                     </InputLeftElement>
                     <Input
                       type={showPw ? "text" : "password"}
-                      value={pw}
-                      onChange={(e) => { setPw(e.target.value); }}
+                      value={memberPassword}
+                      onChange={(e) => { setMemberPassword(e.target.value); }}
                       placeholder="Password"
                       autoComplete="new-password"
                     />
@@ -224,8 +159,10 @@ export default function RegisterPage() {
                   _hover={{ bg: "blue.700" }}
                   color="white"
                   isLoading={isSubmitting}
+                  loadingText="Signing up..."
+                  isDisabled={isSubmitting}
                 >
-                  Sign Up
+                  Create account
                 </Button>
 
                 <Text color={muted} fontSize="sm" textAlign="center">

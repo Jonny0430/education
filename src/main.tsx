@@ -4,13 +4,13 @@ import React from "react"
 import { Provider } from "react-redux"
 import  App  from "./App"
 import ReactDOM from 'react-dom/client';
-import { store } from "./app/store"
 import "./index.css"
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react"
 import { BrowserRouter as Route } from "react-router"
 import { theme } from "./libs/theme";
 import './i18n'
 import { HubSpotChat } from "./hooks/HubSpotScript";
+import { store } from "./store/store";
 
  const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement | DocumentFragment
