@@ -1,3 +1,5 @@
+import { MemberType } from "../../lib/enum.member";
+
 export type Status = 'idle' | 'loading' | 'success' | 'error';
 
 
@@ -8,6 +10,7 @@ export type Member = {
     memberPhone?: string;
     memberImage?: string;
     avatarUrl: string;
+    memberType: MemberType.ADMIN
 };
 
 

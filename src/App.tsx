@@ -28,14 +28,17 @@ import i18n from "./i18n";
 import { Suspense } from "react";
 import LoginPage from "./components/LoginPage/page";
 import RegisterPage from "./components/RegisterPage/page";
+import { UserPage } from "./components/UserPage/page";
+import { AdminPage } from "./components/AdminPage/page";
 
 function AppShell() {
   const appBg = useColorModeValue("#f4faff", "#f4faff");
   const { pathname } = useLocation();
 
   // Qaysi yo‘llarda layout (Navbar/Sidebar/Footer) yashiriladi
-  const HIDE_LAYOUT = ["/login", "/register"];
+  const HIDE_LAYOUT = ["/login", "/register", "/admin", "/profile"];
   const hide = HIDE_LAYOUT.includes(pathname);
+
 
   return (
     <Flex direction="column" minH="100vh" bg={appBg}>
@@ -65,10 +68,14 @@ function AppShell() {
           px={{ base: 4, md: 6 }}
           py={{ base: 4, md: 6 }}
         >
-          <Routes>
+          <Routes>  
+            <Route path="/profile" element={<UserPage />} />
+            <Route path="/admin" element={<AdminPage />} />
+
             {/* Auth sahifalar (layout yashiriladi) */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+        
 
             {/* Boshqa barcha sahifalar (layout ko‘rinadi) */}
             <Route path="/" element={<HomePage />} />

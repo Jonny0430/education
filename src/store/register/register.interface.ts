@@ -1,3 +1,4 @@
+import { MemberType } from "../../lib/enum.member";
 
 
 
@@ -27,11 +28,13 @@ export type LoginResponse = {
     memberImage?: string;
     memberPassword: string;
     avatarUrl: string;
+    memberType: MemberType.ADMIN
   member: {
     id: number;
     memberNick: string;
     memberImage?: string | null | undefined;
     memberPassword: string;
+    memberType: MemberType.ADMIN
   };
 };
 

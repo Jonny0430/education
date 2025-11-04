@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { AuthMember } from "./auth.interface";
 import { postLogin } from "../register/register.action";
+import { MemberType } from "../../lib/enum.member";
 
 
 type Status = 'idle'|'loading'|'success'|'error';
 export type AuthState = {
   status: Status;
-  data: { id: string; memberNick: string; memberPhone: string; memberPassword: string; memberImage: string;  token: string } | null;
+  data: { id: string; memberNick: string; memberPhone: string; memberPassword: string; memberImage: string; memberType: MemberType.ADMIN;  token: string } | null;
   error: string | null;
 };
 

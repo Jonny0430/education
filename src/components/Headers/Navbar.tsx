@@ -48,6 +48,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store/store";
 import { logout } from "../../store/auth/auth.slice";
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { MemberType } from "../../lib/enum.member";
 
 
 
@@ -107,8 +108,10 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
 
   const isLoading = status === 'loading';
   const isAuthed = !!data;
-  // Main menu drawer (hamburger)
   const menu = useDisclosure();
+  const isAdmin = data?.memberType === MemberType.ADMIN;
+
+
 
   // Panels / Modals
   const settings = useDisclosure();
@@ -252,7 +255,7 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
           <Tooltip label="Settings">
             <IconButton aria-label="Settings" icon={<SettingsIcon />} size="sm" variant="ghost" onClick={settings.onOpen} />
           </Tooltip>
-        {isLoading ? (
+        {isLoading && isAdmin ? (
           <Spinner size={'sm'} />
         ) : isAuthed ? (
           <Menu>
@@ -265,7 +268,10 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
             <MenuList>
               <MenuItem onClick={() => navigate('/profile')}>
                Profile
-              </MenuItem>
+              </MenuItem>  
+
+              <MenuItem onClick={() => navigate('/admin')}>Admin Panel</MenuItem>
+      
               <MenuItem
                   onClick={() => {
                     dispatch(logout());
