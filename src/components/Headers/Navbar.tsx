@@ -255,42 +255,41 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
           <Tooltip label="Settings">
             <IconButton aria-label="Settings" icon={<SettingsIcon />} size="sm" variant="ghost" onClick={settings.onOpen} />
           </Tooltip>
-        {isLoading && isAdmin ? (
-          <Spinner size={'sm'} />
-        ) : isAuthed ? (
-          <Menu>
-            <MenuButton>
-              <Avatar
-                size='sm'
-                name={data?.memberNick}
-                src={data.memberImage}/>
-            </MenuButton>
-            <MenuList>
-              <MenuItem onClick={() => navigate('/profile')}>
-               Profile
-              </MenuItem>  
+       {isLoading ? (
+              <Spinner size="sm" />
+            ) : isAuthed ? (
+              <Menu>
+                <MenuButton as={Button} variant="ghost" p={0}>
+                  <Avatar
+                    size="sm"
+                    name={data?.memberNick}
+                    src={data?.avatarUrl || '/default.png'}
+                  />
+                </MenuButton>
+                <MenuList>
+                  <MenuItem onClick={() => navigate('/profile')}>Profile</MenuItem>
 
-              <MenuItem onClick={() => navigate('/admin')}>Admin Panel</MenuItem>
-      
-              <MenuItem
-                  onClick={() => {
-                    dispatch(logout());
-                    navigate('/login')
-                  }}
-                  bgColor={'red.300'}
+                  {isAdmin && (
+                    <MenuItem onClick={() => navigate('/admin')}>Admin Panel</MenuItem>
+                  )}
+
+                  <MenuItem
+                    onClick={() => {
+                      dispatch(logout());
+                      navigate('/', { replace: true });
+                    }}
                   >
                     Logout
                   </MenuItem>
-            </MenuList>
-          </Menu>
-        ) : (
-           <HStack>
-            <Button as={RouterLink} to="/login" colorScheme="blue" variant="solid" size="sm">
-              Kirish
-            </Button>
-          </HStack>
-        )}
-           
+                </MenuList>
+              </Menu>
+            ) : (
+              <HStack>
+                <Button as={RouterLink} to="/login" colorScheme="blue" size="sm">
+                  Kirish
+                </Button>
+              </HStack>
+            )}
         </HStack>
       </Flex>
 

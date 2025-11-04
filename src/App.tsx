@@ -25,11 +25,26 @@ import TranslateAndShare from "./screens/TranslatePage/TranslatePage";
 import EshitishPage from "./screens/EshitishTestPage";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import LoginPage from "./components/LoginPage/page";
 import RegisterPage from "./components/RegisterPage/page";
 import { UserPage } from "./components/UserPage/page";
 import { AdminPage } from "./components/AdminPage/page";
+import { hydrateFromStorage, loadAuthFromStorageSafe } from "./store/auth/auth.slice";
+import { useAppDispatch } from "./hooks/hooks";
+
+
+
+export function AppBootstrapper() {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    const saved = loadAuthFromStorageSafe();
+    dispatch(hydrateFromStorage(saved));
+  }, [dispatch]);
+  return null;
+}
+
+
 
 function AppShell() {
   const appBg = useColorModeValue("#f4faff", "#f4faff");
@@ -39,6 +54,7 @@ function AppShell() {
   const HIDE_LAYOUT = ["/login", "/register", "/admin", "/profile"];
   const hide = HIDE_LAYOUT.includes(pathname);
 
+    
 
   return (
     <Flex direction="column" minH="100vh" bg={appBg}>
@@ -70,7 +86,12 @@ function AppShell() {
         >
           <Routes>  
             <Route path="/profile" element={<UserPage />} />
-            <Route path="/admin" element={<AdminPage />} />
+
+            
+              <Route path="/admin" element={
+                   <AdminPage />
+                } />
+            
 
             {/* Auth sahifalar (layout yashiriladi) */}
             <Route path="/login" element={<LoginPage />} />
@@ -126,6 +147,7 @@ export default function App() {
     <I18nextProvider i18n={i18n}>
       <Suspense fallback={<div style={{ padding: 16 }}>Loading…</div>}>
         <ChakraProvider theme={theme}>
+          <AppBootstrapper />
           <AppShell />
           <HubSpotChat />
         </ChakraProvider>

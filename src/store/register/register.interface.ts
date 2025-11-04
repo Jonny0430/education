@@ -39,6 +39,7 @@ export type LoginResponse = {
 };
 
 export type RegisterResponse = {
+  memberImage?: string | null;
   token: string;
   member: {
     id: number;

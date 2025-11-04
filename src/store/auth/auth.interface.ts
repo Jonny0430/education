@@ -9,7 +9,7 @@ export type Member = {
     memberPassword: string;
     memberPhone?: string;
     memberImage?: string;
-    avatarUrl: string;
+    avatarUrl: string | null;
     memberType: MemberType.ADMIN
 };
 
