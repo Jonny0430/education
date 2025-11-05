@@ -1,4 +1,4 @@
-import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, Hide, Show, useColorModeValue, useDisclosure } from "@chakra-ui/react";
 import AdminNavbar from "../layout/AdminNavbar";
 import AdminSidebar from "../layout/AdminSidebar";
 
@@ -7,6 +7,7 @@ export const AdminPage = () => {
   const headerBg = useColorModeValue("white", "gray.800");
   const borderCl = useColorModeValue("blackAlpha.200", "whiteAlpha.200");
 
+    const menu = useDisclosure();
   return (
     <Flex direction="column" minH="100vh" bg={appBg} /* overflow bo‘lmasin */>
       {/* HEADER */}
@@ -19,13 +20,19 @@ export const AdminPage = () => {
         borderBottom="1px solid"
         borderColor={borderCl}
       >
-        <AdminNavbar notifCount={1} />
+        <AdminNavbar notifCount={1} onMenuClick={function (): void {
+          throw new Error("Function not implemented.");
+        } } />
       </Box>
 
       {/* SIDEBAR (desktop) */}
-      <Box as="aside" zIndex={1} display={{ base: "none", md: "block" }}>
-        <AdminSidebar />
-      </Box>
+
+         <Hide below="md">
+          <AdminSidebar variant="static" navH={'64px'} />
+        </Hide>
+       <Show below="md">
+          <AdminSidebar variant="drawer" isOpen={menu.isOpen} onClose={menu.onClose} />
+        </Show>
 
       {/* PAGE CONTENT */}
       <Box flex="1" />

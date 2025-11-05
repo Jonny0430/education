@@ -32,6 +32,11 @@ import { UserPage } from "./components/UserPage/page";
 import { AdminPage } from "./components/AdminPage/page";
 import { hydrateFromStorage, loadAuthFromStorageSafe } from "./store/auth/auth.slice";
 import { useAppDispatch } from "./hooks/hooks";
+import { AdminHome } from "./components/screens/AdminHome/page";
+import { AdminUser } from "./components/screens/AdminUser/page";
+import { AdminAzo } from "./components/screens/AdminAzo/page";
+import { AdminCursesCreate } from "./components/screens/AdminCursesCreate/page";
+import { AdminCurse } from "./components/screens/AdminCurse/page";
 
 
 
@@ -51,7 +56,7 @@ function AppShell() {
   const { pathname } = useLocation();
 
   // Qaysi yo‘llarda layout (Navbar/Sidebar/Footer) yashiriladi
-  const HIDE_LAYOUT = ["/login", "/register", "/admin", "/profile"];
+  const HIDE_LAYOUT = ["/login", "/register", "/admin", "/profile", ];
   const hide = HIDE_LAYOUT.includes(pathname);
 
     
@@ -91,14 +96,15 @@ function AppShell() {
               <Route path="/admin" element={
                    <AdminPage />
                 } />
-            
+            <Route path="/admin/home" element={<AdminHome />} />
+            <Route path="/admin/user" element={<AdminUser /> } />
+            <Route path="/admin/azo" element={<AdminAzo />} />
+            <Route path="/admin/curse/create" element={<AdminCursesCreate />} />
+            <Route path="/admin/curse" element={<AdminCurse />} />
+    
 
-            {/* Auth sahifalar (layout yashiriladi) */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-        
-
-            {/* Boshqa barcha sahifalar (layout ko‘rinadi) */}
             <Route path="/" element={<HomePage />} />
             <Route path="/soulte" element={<SoultePage />} />
             <Route path="/soulte/:id" element={<GrammarDetailPage />} />
