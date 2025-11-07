@@ -1,4 +1,5 @@
 "use client";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Flex,
@@ -25,7 +26,12 @@ import {
   Stack,
   RadioGroup,
   Radio,
-  Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
   Spinner,
   Menu,
   MenuButton,
@@ -33,28 +39,31 @@ import {
   MenuList,
   MenuItem,
 } from "@chakra-ui/react";
-import { Link, NavLink } from "react-router-dom";
+
 import { QuestionIcon, SettingsIcon, BellIcon } from "@chakra-ui/icons";
+import { FiMenu } from "react-icons/fi";
 import { MdOutlineMenuBook, MdOutlinePriceChange } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { LuNewspaper } from "react-icons/lu";
 import { FaQuestionCircle } from "react-icons/fa";
-import { FiMenu } from "react-icons/fi";
-import type { IconType } from "react-icons";
-import { useEffect, useState } from "react";
 import { VscUnmute } from "react-icons/vsc";
 import { SiGoogletranslate } from "react-icons/si";
+import type { IconType } from "react-icons";
+
+import { Link as RouterLink, NavLink, useLocation, useNavigate } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../../store/store";
+import type { AppDispatch, RootState } from "../../store/store";
 import { logout } from "../../store/auth/auth.slice";
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { MemberType } from "../../lib/enum.member";
 
+/** Admin layout komponentlari */
+import AdminNavbar from "../layout/AdminNavbar";
+import AdminSidebar from "../layout/AdminSidebar";
 
-
-
-
-/* === Sidebar bo‘limlari === */
+/* =========================================
+   Umumiy (Public) Navbar uchun konfiguratsiya
+   ========================================= */
 type NavItem = { id: string; label: string; icon: IconType; path: string; muted?: boolean };
 type NavSection = { id: string; title: string; items: NavItem[] };
 
@@ -82,7 +91,9 @@ const sections: readonly NavSection[] = [
   },
 ] as const;
 
-/* === Til xaritasi va helperlar === */
+/* =========================================
+   Til holati
+   ========================================= */
 const LANG_LABEL: Record<string, string> = { en: "EN", uz: "UZ", ru: "RU", ko: "KO" };
 type LangCode = keyof typeof LANG_LABEL;
 
@@ -92,35 +103,73 @@ function loadLang(): LangCode {
   return (v === "en" || v === "uz" || v === "ru" || v === "ko") ? v : "en";
 }
 
+/* =========================================
+   Yagona Navbar Switcher
+   ========================================= */
 type HeaderProps = { notifCount?: number };
 
 export default function Navbar({ notifCount = 1 }: HeaderProps) {
+  const { pathname } = useLocation();
+  const isAdminRoute = pathname === "/admin" || pathname.startsWith("/admin/");
+
+  // Agar admin route bo'lsa — Public navbarni chiqarmaymiz, AdminNavbar+AdminSidebar ko'rsatamiz
+  if (isAdminRoute) {
+    return <AdminTopBarWithDrawer notifCount={notifCount} />;
+  }
+  // Aks holda — Public navbar
+  return <PublicTopBar notifCount={notifCount} />;
+}
+
+/* =========================================
+   ADMIN TOPBAR + (mobil) DRAWER SIDEBAR
+   ========================================= */
+function AdminTopBarWithDrawer({ notifCount = 0 }: { notifCount?: number }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const headerBg = useColorModeValue("white", "gray.800");
+  const borderCl = useColorModeValue("blackAlpha.200", "whiteAlpha.200");
+
+  return (
+    <Box position="sticky" top={0} zIndex={1000} bg={headerBg} borderBottom="1px solid" borderColor={borderCl} h="64px">
+      {/* Admin Navbar (hamburger tugmasi onOpen) */}
+      <AdminNavbar onMenuClick={onOpen} notifCount={notifCount} />
+
+      {/* Mobil: AdminSidebar drawer */}
+      <AdminSidebar variant="drawer" isOpen={isOpen} onClose={onClose} />
+    </Box>
+  );
+}
+
+/* =========================================
+   PUBLIC (UMUMIY) NAVBAR
+   ========================================= */
+function PublicTopBar({ notifCount = 1 }: HeaderProps) {
   const barBg   = useColorModeValue("white", "gray.800");
   const border  = useColorModeValue("blackAlpha.200", "whiteAlpha.300");
   const titleCl = useColorModeValue("gray.900", "gray.100");
   const badgeBg = useColorModeValue("red.500", "red.400");
   const hoverBg = useColorModeValue("blackAlpha.50", "whiteAlpha.100");
   const activeBg= useColorModeValue("blackAlpha.100", "whiteAlpha.200");
-  // select the auth/member slice from the store; adjust to match your RootState shape
-  const { status, data } = useSelector((s: RootState) => s.reducer);
+
+  // ⚠️ Store selektor: sizning RootState’da slice nomi `auth` bo‘lishi ehtimol — moslab o‘zgartiring
+  const sel = useSelector((s: RootState) => (s as any).auth ?? (s as any).reducer ?? { status: "idle", data: null });
+  const { status, data } = sel;
+
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
-  const isLoading = status === 'loading';
-  const isAuthed = !!data;
-  const menu = useDisclosure();
-  const isAdmin = data?.memberType === MemberType.ADMIN;
+  const isLoading = status === "loading";
+  const isAuthed  = !!data;
+  const isAdmin   = data?.memberType === MemberType.ADMIN;
 
+  // Panellar / modallar (Public)
+  const menu         = useDisclosure(); // mobil left drawer (public)
+  const settings     = useDisclosure();
+  const notifications= useDisclosure();
+  const media        = useDisclosure();
+  const language     = useDisclosure();
+  const help         = useDisclosure();
 
-
-  // Panels / Modals
-  const settings = useDisclosure();
-  const notifications = useDisclosure();
-  const media = useDisclosure();
-  const language = useDisclosure();
-  const help = useDisclosure();
-
-  // === TIL HOLATI ===
+  // Til holati
   const [lang, setLang] = useState<LangCode>("en");
   const [pendingLang, setPendingLang] = useState<LangCode>("en");
 
@@ -137,19 +186,17 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
   const saveLanguage = () => {
     setLang(pendingLang);
     localStorage.setItem("app_lang", pendingLang);
-    // Tashqi tinglovchilar uchun event
     window.dispatchEvent(new CustomEvent("app:languageChanged", { detail: { lang: pendingLang } }));
     language.onClose();
   };
 
-  // Sidebar ro‘yxati
+  // Public sidebar ro‘yxati
   const renderNavList = (onItemClick?: () => void) => (
     <VStack align="stretch" spacing={8}>
       {sections.map((sec) => (
         <Box key={sec.id}>
           <Text
             fontSize="xs"
-            // eslint-disable-next-line react-hooks/rules-of-hooks
             color={useColorModeValue("gray.600", "gray.400")}
             textTransform="uppercase"
             letterSpacing="0.05em"
@@ -158,6 +205,7 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
           >
             {sec.title}
           </Text>
+
           <VStack align="stretch" spacing={1}>
             {sec.items.map((item) => (
               <NavLink
@@ -186,6 +234,7 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
               </NavLink>
             ))}
           </VStack>
+
           {sec.id === "general" && <Divider my={4} borderColor={border} />}
         </Box>
       ))}
@@ -206,7 +255,7 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
             onClick={menu.isOpen ? menu.onClose : menu.onOpen}
             display={{ base: "inline-flex", lg: "none" }}
           />
-          <a href="/"><Text fontWeight="bold" color={titleCl}>Education</Text></a>
+          <RouterLink to="/"><Text fontWeight="bold" color={titleCl}>Education</Text></RouterLink>
         </HStack>
 
         {/* O‘ng: amallar */}
@@ -216,21 +265,16 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
           </Tooltip>
 
           <Tooltip label="Lysine">
-            <Link to={'/lysine'}>
-            <IconButton aria-label="Lysine" icon={<VscUnmute />} size="sm" variant="ghost"/>
-            </Link>
+            <IconButton as={RouterLink} to="/lysine" aria-label="Lysine" icon={<VscUnmute />} size="sm" variant="ghost" />
           </Tooltip>
 
-          <Tooltip label="Lysine">
-            <Link to={'/translate'}>
-            <IconButton aria-label="Lysine" icon={<SiGoogletranslate />} size="sm" variant="ghost"/>
-            </Link>
+          <Tooltip label="Translate">
+            <IconButton as={RouterLink} to="/translate" aria-label="Translate" icon={<SiGoogletranslate />} size="sm" variant="ghost" />
           </Tooltip>
 
           <Button size="sm" variant="ghost" rounded="md" onClick={language.onOpen}>
             {LANG_LABEL[lang]}
           </Button>
-            
 
           <Box position="relative">
             <Tooltip label="Notifications">
@@ -255,45 +299,42 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
           <Tooltip label="Settings">
             <IconButton aria-label="Settings" icon={<SettingsIcon />} size="sm" variant="ghost" onClick={settings.onOpen} />
           </Tooltip>
-       {isLoading ? (
-              <Spinner size="sm" />
-            ) : isAuthed ? (
-              <Menu>
-                <MenuButton as={Button} variant="ghost" p={0}>
-                  <Avatar
-                    size="sm"
-                    name={data?.memberNick}
-                    src={data?.avatarUrl || '/default.png'}
-                  />
-                </MenuButton>
-                <MenuList>
-                  <MenuItem onClick={() => navigate('/profile')}>Profile</MenuItem>
 
-                  {isAdmin && (
-                    <MenuItem onClick={() => navigate('/admin')}>Admin Panel</MenuItem>
-                  )}
-
-                  <MenuItem
-                    onClick={() => {
-                      dispatch(logout());
-                      navigate('/', { replace: true });
-                    }}
-                  >
-                    Logout
-                  </MenuItem>
-                </MenuList>
-              </Menu>
-            ) : (
-              <HStack>
-                <Button as={RouterLink} to="/login" colorScheme="blue" size="sm">
-                  Kirish
-                </Button>
-              </HStack>
-            )}
+          {isLoading ? (
+            <Spinner size="sm" />
+          ) : isAuthed ? (
+            <Menu>
+              <MenuButton as={Button} variant="ghost" p={0}>
+                <Avatar
+                  size="sm"
+                  name={data?.memberNick ?? ""}
+                  src={data?.avatarUrl || data?.memberImage || "/default.png"}
+                />
+              </MenuButton>
+              <MenuList>
+                <MenuItem onClick={() => navigate("/profile")}>Profile</MenuItem>
+                {isAdmin && <MenuItem onClick={() => navigate("/admin")}>Admin Panel</MenuItem>}
+                <MenuItem
+                  onClick={() => {
+                    dispatch(logout());
+                    navigate("/", { replace: true });
+                  }}
+                >
+                  Logout
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          ) : (
+            <HStack>
+              <Button as={RouterLink} to="/login" colorScheme="blue" size="sm">
+                Kirish
+              </Button>
+            </HStack>
+          )}
         </HStack>
       </Flex>
 
-      {/* Mobil Drawer menyu */}
+      {/* PUBLIC — Mobil Drawer menyu */}
       <Drawer placement="left" isOpen={menu.isOpen} onClose={menu.onClose}>
         <DrawerOverlay />
         <DrawerContent>
@@ -376,14 +417,14 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
         </DrawerContent>
       </Drawer>
 
-      {/* LANGUAGE — Modal (tilar bo‘limi) */}
+      {/* LANGUAGE — Modal */}
       <Modal isOpen={language.isOpen} onClose={language.onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader fontFamily="inter">Tilni tanlang</ModalHeader>
           <ModalCloseButton />
-          <ModalBody pb={6} fontFamily="inter">
-            <RadioGroup value={pendingLang} onChange={(v) => { setPendingLang(v); }}>
+        <ModalBody pb={6} fontFamily="inter">
+            <RadioGroup value={pendingLang} onChange={(v) => { setPendingLang(v as LangCode); }}>
               <VStack align="stretch" spacing={3}>
                 <Radio value="en">English</Radio>
                 <Radio value="uz">O‘zbekcha</Radio>
@@ -417,9 +458,5 @@ export default function Navbar({ notifCount = 1 }: HeaderProps) {
         </ModalContent>
       </Modal>
     </Box>
-    
   );
 }
-
-
-

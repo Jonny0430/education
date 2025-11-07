@@ -28,7 +28,6 @@ import i18n from "./i18n";
 import { Suspense, useEffect } from "react";
 import LoginPage from "./components/LoginPage/page";
 import RegisterPage from "./components/RegisterPage/page";
-import { UserPage } from "./components/UserPage/page";
 import { AdminPage } from "./components/AdminPage/page";
 import { hydrateFromStorage, loadAuthFromStorageSafe } from "./store/auth/auth.slice";
 import { useAppDispatch } from "./hooks/hooks";
@@ -37,8 +36,7 @@ import { AdminUser } from "./components/screens/AdminUser/page";
 import { AdminAzo } from "./components/screens/AdminAzo/page";
 import { AdminCursesCreate } from "./components/screens/AdminCursesCreate/page";
 import { AdminCurse } from "./components/screens/AdminCurse/page";
-
-
+import UserProfilePage from "./components/UserPage/page";
 
 export function AppBootstrapper() {
   const dispatch = useAppDispatch();
@@ -49,37 +47,33 @@ export function AppBootstrapper() {
   return null;
 }
 
-
-
 function AppShell() {
   const appBg = useColorModeValue("#f4faff", "#f4faff");
   const { pathname } = useLocation();
 
-  // Qaysi yo‘llarda layout (Navbar/Sidebar/Footer) yashiriladi
-  const HIDE_LAYOUT = ["/login", "/register", "/admin", "/profile", ];
-  const hide = HIDE_LAYOUT.includes(pathname);
-
-    
+  // ✅ ADMIN ostidagi hamma yo‘llarda public layoutni yashiramiz
+  const isAdmin = pathname === "/admin" || pathname.startsWith("/admin/");
+  const hide = isAdmin || pathname === "/login" || pathname === "/register" || pathname === "/profile";
 
   return (
     <Flex direction="column" minH="100vh" bg={appBg}>
-      {/* HEADER */}
+      {/* HEADER (faqat public) */}
       {!hide && (
         <Box as="header" position="sticky" top={0} zIndex={10}>
           <Navbar notifCount={1} />
         </Box>
       )}
 
-      {/* O‘RTA QATOR */}
+      {/* CONTENT ROW */}
       <Flex as="section" flex="1" minH={0} overflow="hidden" bg={appBg}>
-        {/* SIDEBAR */}
+        {/* SIDEBAR (faqat public) */}
         {!hide && (
           <Box as="aside" zIndex={999} display={{ base: "none", md: "block" }}>
             <Sidebar />
           </Box>
         )}
 
-        {/* MAIN — faqat shu scroll bo‘ladi */}
+        {/* MAIN */}
         <Box
           as="main"
           flex="1"
@@ -89,22 +83,23 @@ function AppShell() {
           px={{ base: 4, md: 6 }}
           py={{ base: 4, md: 6 }}
         >
-          <Routes>  
-            <Route path="/profile" element={<UserPage />} />
+          <Routes>
+            {/* Profile (layoutsiz) */}
+            <Route path="/profile" element={<UserProfilePage />} />
 
-            
-              <Route path="/admin" element={
-                   <AdminPage />
-                } />
+            {/* ADMIN sahifalar (har biri o‘z layoutini beradi) */}
+            <Route path="/admin" element={<AdminPage />} />
             <Route path="/admin/home" element={<AdminHome />} />
-            <Route path="/admin/user" element={<AdminUser /> } />
+            <Route path="/admin/user" element={<AdminUser />} />
             <Route path="/admin/azo" element={<AdminAzo />} />
             <Route path="/admin/curse/create" element={<AdminCursesCreate />} />
-            <Route path="/admin/curse" element={<AdminCurse />} />
-    
+            <Route path="/admin/curse" element={<AdminCurse />} /> {/* ← to‘g‘rilandi */}
 
+            {/* Auth (layoutsiz) */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+
+            {/* PUBLIC sahifalar */}
             <Route path="/" element={<HomePage />} />
             <Route path="/soulte" element={<SoultePage />} />
             <Route path="/soulte/:id" element={<GrammarDetailPage />} />
@@ -123,22 +118,16 @@ function AppShell() {
             <Route path="/courses/:id" element={<CategoryDetailPage />} />
             <Route
               path="/books/:id"
-              element={
-                <BookDetailModal
-                  isOpen={false}
-                  onClose={() => {
-                    /* agar modal kerak bo'lmasa, hozircha bunday qoldiring */
-                  }}
-                />
-              }
+              element={<BookDetailModal isOpen={false} onClose={() => { /* empty */ }} />}
             />
+
             {/* Not found */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Box>
       </Flex>
 
-      {/* FOOTER */}
+      {/* FOOTER (faqat public) */}
       {!hide && (
         <Box as="footer" mt={16}>
           <Footer />

@@ -1,56 +1,55 @@
-// AdminLayout.tsx
-import { Box, Flex, Show, useDisclosure } from '@chakra-ui/react';
-import AdminNavbar from './AdminNavbar';
-import AdminSidebar from './AdminSidebar';        // <-- bitta sidebarni ishlatamiz
-// Agar alohida "Headers/Sidebar" bo'lsa, uni olib tashlang yoki AdminSidebar'ga birlashtiring
+// src/layouts/AdminLayout.tsx
+"use client";
 
-const HEADER_H = 64;
-const SIDEBAR_W = 264;
+import { Outlet } from "react-router-dom";
+import { Box, Flex, useDisclosure, useColorModeValue } from "@chakra-ui/react";
+import AdminNavbar from "./AdminNavbar";
+import AdminSidebar  from "./AdminSidebar";
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  // Mobil drawer nazorati
+
+export default function AdminLayout() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-const menu = useDisclosure();
+  const appBg = useColorModeValue("#f4faff", "#0b1220");
+
   return (
-    <Flex direction="column" minH="100vh" bg="#f4faff">
-      {/* HEADER */}
+    <Flex direction="column" minH="100vh" bg={appBg}>
+      {/* HEADER (sticky) */}
       <Box
         as="header"
         position="sticky"
         top={0}
         zIndex={1000}
-        h={`${HEADER_H}px`}
+        h={'64px'}
         bg="white"
         boxShadow="sm"
       >
-        {/* Navbar ichida "menu" tugma bo'ladi va onOpen ni chaqiradi */}
+        {/* AdminNavbar ichida position/fixed ishlatmang; sticky'ni layout beradi */}
         <AdminNavbar onMenuClick={onOpen} />
       </Box>
 
       <Flex as="section" flex="1" minH={0} overflow="hidden">
-        {/* DESKTOP: statik sidebar */}
+        {/* DESKTOP: static sidebar (md va undan katta) */}
         <Box
-          display={{ base: 'none', md: 'block' }}
-          w={`${SIDEBAR_W}px`}
+          display={{ base: "none", md: "block" }}
+          w={'64px'}
           flexShrink={0}
           position="sticky"
-          top={`${HEADER_H}px`}
+          top={'64px'}
           alignSelf="flex-start"
-          h={`calc(100vh - ${HEADER_H}px)`}
+          h={'calc(100vh - 64px'}
           overflowY="auto"
           bg="white"
           borderRight="1px solid"
           borderColor="gray.100"
           zIndex={999}
         >
-         <AdminSidebar variant="static" navH={`${HEADER_H}px`} />
+          <AdminSidebar variant="static" navH={'64px'} />
         </Box>
 
-       
-         <Show below="md">
-          <AdminSidebar variant="drawer" isOpen={menu.isOpen} onClose={menu.onClose} />
-        </Show>
-        {/* MAIN */}
+        {/* MOBILE: drawer sidebar (base–md) */}
+        <AdminSidebar variant="drawer" isOpen={isOpen} onClose={onClose} />
+
+        {/* MAIN CONTENT */}
         <Box
           as="main"
           flex="1"
@@ -60,7 +59,7 @@ const menu = useDisclosure();
           px={{ base: 4, md: 6 }}
           py={{ base: 4, md: 6 }}
         >
-          {children}
+          <Outlet />
         </Box>
       </Flex>
     </Flex>
